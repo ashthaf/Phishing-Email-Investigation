@@ -140,7 +140,8 @@ sudo apt full-upgrade -y
 ---
 Next
 
-```markdown
+```
+markdown
 # Installing Essential Investigation Tools
 
 The following utilities were installed to support phishing investigations.
