@@ -137,11 +137,8 @@ sudo apt update
 sudo apt full-upgrade -y
 
 
----
-Next
 
 ```
-markdown
 # Installing Essential Investigation Tools
 
 The following utilities were installed to support phishing investigations.
@@ -175,12 +172,8 @@ git config --global user.name "Abdull Ashthaf CK"
 git config --global user.email "ashthaf935@gmail.com"
 
 
----
-
-Next
 
 ```
-markdown
 # Creating Investigation Workspace
 
 A structured CyberLab directory was created to organize evidence, indicators of compromise (IOCs), reports, scripts, resources, and forensic tools.
@@ -198,12 +191,8 @@ CyberLab/
 └── Tools
 
 
----
-
-# Lab Verification
 
 ```
-markdown
 # Lab Verification
 
 The environment was successfully verified.
