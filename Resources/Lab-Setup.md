@@ -136,8 +136,6 @@ Immediately after installation, the package repositories were updated using:
 sudo apt update
 sudo apt full-upgrade -y
 
-
-
 ```
 # Installing Essential Investigation Tools
 
@@ -171,8 +169,6 @@ Commands used:
 git config --global user.name "Abdull Ashthaf CK"
 git config --global user.email "ashthaf935@gmail.com"
 
-
-
 ```
 # Creating Investigation Workspace
 
@@ -189,8 +185,6 @@ CyberLab/
 ├── Scripts
 ├── Resources
 └── Tools
-
-
 
 ```
 # Lab Verification
