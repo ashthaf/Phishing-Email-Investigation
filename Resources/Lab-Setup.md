@@ -179,7 +179,8 @@ git config --global user.email "ashthaf935@gmail.com"
 
 Next
 
-```markdown
+```
+markdown
 # Creating Investigation Workspace
 
 A structured CyberLab directory was created to organize evidence, indicators of compromise (IOCs), reports, scripts, resources, and forensic tools.
@@ -201,7 +202,8 @@ CyberLab/
 
 # Lab Verification
 
-```markdown
+```
+markdown
 # Lab Verification
 
 The environment was successfully verified.
