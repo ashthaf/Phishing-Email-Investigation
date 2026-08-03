@@ -80,7 +80,7 @@ The installer image provides a complete offline installation while allowing cust
 
 Screenshot:
 
-![Downloading Kali](../Screenshots/lab-Setup/01-kali-installer-download-page.png)
+![Downloading Kali](../Screenshots/lab-setup/01-kali-installer-download-page.png)
 
 # Creating the Virtual Machine
 
