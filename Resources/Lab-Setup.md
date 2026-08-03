@@ -90,7 +90,7 @@ The virtual machine was configured to run a 64-bit Linux operating system using 
 
 Screenshot:
 
-![Creating VM](../Screenshots/Lab-Setup/03-create-virtual-machine.png)
+![Creating VM](../Screenshots/lab-setup/03-create-vm.png)
 
 # Configuring Virtual Hardware
 
@@ -106,7 +106,7 @@ These settings provide sufficient performance for phishing investigations while 
 
 Screenshot:
 
-![Hardware Configuration](../Screenshots/Lab-Setup/04-vm-hardware-settings.png)
+![Hardware Configuration](../Screenshots/lab-setup/04-virtual-hardware.png)
 
 # Installing Kali Linux
 
@@ -116,7 +116,7 @@ The default XFCE desktop environment and recommended tools were selected during 
 
 Screenshot:
 
-![Installation](../Screenshots/Lab-Setup/08-kali-installer-menu.png)
+![Installation](../Screenshots/lab-setup/14-kali-boot-menu.png)
 
 # First Login
 
@@ -126,7 +126,7 @@ A new analyst account was used to access the investigation environment.
 
 Screenshot:
 
-![First Login](../Screenshots/Lab-Setup/11-first-login.png)
+![First Login](../Screenshots/lab-setup/21-first-login.png)
 
 # Updating Kali Linux
 
@@ -157,7 +157,7 @@ The following utilities were installed to support phishing investigations.
 
 Screenshot:
 
-![Tools Installation](../Screenshots/Lab-Setup/14-essential-tools-installation.png)
+![Tools Installation](../Screenshots/lab-setup/22-essential-tools-installed.png)
 
 # Configuring Git
 
