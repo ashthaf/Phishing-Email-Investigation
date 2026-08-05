@@ -91,7 +91,7 @@ The extracted IOCs can be used for:
 
 ## URL Extraction
 
-![Extracted URLs](../Screenshots/extracted-urls.png)
+![Extracted URLs](../Screenshots/url.png)
 
 Indicators extracted from embedded phishing URLs.
 
@@ -99,7 +99,7 @@ Indicators extracted from embedded phishing URLs.
 
 ## Sender Information
 
-![Sender Information](../Screenshots/sender-information.png)
+![Sender Information](../Screenshots/senderinformation.png)
 
 Email-related indicators collected from the message metadata.
 
@@ -107,7 +107,7 @@ Email-related indicators collected from the message metadata.
 
 ## Host Information
 
-![Host Information](../Screenshots/host-information.png)
+![Host Information](../Screenshots/host.png)
 
 Infrastructure indicators extracted during routing analysis.
 
