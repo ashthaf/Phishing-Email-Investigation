@@ -1,1 +1,20 @@
+# Extracted URLs
+# CASE-01 – Microsoft 365 Phishing Email Investigation
 
+URLs Identified
+
+1.
+https://is.gd/...
+
+Purpose:
+Shortened URL used to conceal the phishing destination.
+
+--------------------------------------------------
+
+2.
+https://lolalhopb.firebaseio.com/...
+
+Purpose:
+Credential harvesting page hosted on Firebase.
+
+Total URLs: 2
