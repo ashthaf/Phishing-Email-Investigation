@@ -1,84 +1,21 @@
-# Case 01 – Microsoft 365 Phishing Email Investigation
+# Investigation
 
 ## Case Information
 
-| Field | Value |
-|-------|-------|
-| Case ID | CASE-01 |
-| Investigation Type | Phishing Email |
-| Target Brand | Microsoft 365 |
-| Severity | High |
-| Status | Completed |
-| Analyst | Abdull Ashthaf CK |
-| Date | August 2026 |
+Case ID: CASE-001
 
----
+Case Name: Microsoft 365 Password Reset Email
 
-# Executive Summary
+Status: In Progress
 
-A phishing email impersonating Microsoft 365 was investigated to determine whether it posed a security risk.
+Priority: Medium
 
-The investigation focused on identifying spoofed sender information, suspicious email headers, malicious URLs, indicators of compromise (IOCs), and attacker techniques.
+Analyst: Abdull Ashthaf CK
 
-Artifacts collected during the investigation were analyzed and documented according to standard incident response procedures.
+Date Opened: 2026-08-05
 
----
+Evidence ID: EVID-001
 
-# Investigation Objectives
+Evidence Type: Email (.eml)
 
-- Preserve the original email
-- Analyze email headers
-- Verify sender authenticity
-- Extract URLs
-- Identify Indicators of Compromise (IOCs)
-- Check reputation using Threat Intelligence
-- Map attacker behavior to MITRE ATT&CK
-- Produce a professional incident report
-
----
-
-# Investigation Workflow
-
-```
-Email Received
-      │
-      ▼
-Evidence Collection
-      │
-      ▼
-Header Analysis
-      │
-      ▼
-URL Analysis
-      │
-      ▼
-IOC Extraction
-      │
-      ▼
-Threat Intelligence
-      │
-      ▼
-MITRE ATT&CK Mapping
-      │
-      ▼
-Incident Report
-```
-
----
-
-# Evidence Collected
-
-| Artifact | Status |
-|-----------|--------|
-| Original Email | Pending |
-| Email Headers | Pending |
-| URLs | Pending |
-| Attachments | Pending |
-| IOC List | Pending |
-| Screenshots | Pending |
-
----
-
-# Investigation Notes
-
-This document will be updated throughout the investigation as evidence is collected and analyzed.
+Original Sample: sample-7918.eml
