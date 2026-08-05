@@ -1,1 +1,75 @@
-
+{
+  "case_id": "CASE-01-Microsoft365",
+  "ioc_version": "1.0",
+  "generated_by": "Abdull Ashthaf CK",
+  "ioc_count": {
+    "urls": 1,
+    "domains": 4,
+    "ip_addresses": 2,
+    "email_addresses": 2,
+    "message_ids": 1,
+    "attachments": 0
+  },
+  "indicators": [
+    {
+      "type": "url",
+      "value": "https://is.gd/gy0upk?mode=resetPassword",
+      "confidence": "High",
+      "description": "Shortened phishing URL"
+    },
+    {
+      "type": "domain",
+      "value": "is.gd",
+      "confidence": "Medium",
+      "description": "URL shortening service"
+    },
+    {
+      "type": "domain",
+      "value": "lolalhopb.firebaseio.com",
+      "confidence": "High",
+      "description": "Credential harvesting page"
+    },
+    {
+      "type": "domain",
+      "value": "firebaseio.com",
+      "confidence": "Low",
+      "description": "Legitimate Google Firebase hosting platform"
+    },
+    {
+      "type": "domain",
+      "value": "googleusercontent.com",
+      "confidence": "Low",
+      "description": "Legitimate Google cloud infrastructure"
+    },
+    {
+      "type": "ip",
+      "value": "104.25.233.53",
+      "confidence": "Low",
+      "description": "Cloudflare infrastructure"
+    },
+    {
+      "type": "ip",
+      "value": "209.85.210.72",
+      "confidence": "Low",
+      "description": "Google Mail server observed during routing"
+    },
+    {
+      "type": "email",
+      "value": "Sender Email",
+      "confidence": "Medium",
+      "description": "Observed sender address"
+    },
+    {
+      "type": "email",
+      "value": "Recipient Email",
+      "confidence": "Low",
+      "description": "Target mailbox"
+    },
+    {
+      "type": "message_id",
+      "value": "Original Message-ID",
+      "confidence": "High",
+      "description": "Unique email identifier"
+    }
+  ]
+}
