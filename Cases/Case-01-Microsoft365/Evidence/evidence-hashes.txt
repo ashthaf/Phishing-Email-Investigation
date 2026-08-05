@@ -1,1 +1,32 @@
+=========================================================
+Evidence Integrity Verification
+=========================================================
 
+Evidence:
+phishing-email.eml
+
+---------------------------------------------------------
+
+MD5
+
+<PASTE_YOUR_MD5_HASH_HERE>
+
+Verified: YES
+
+---------------------------------------------------------
+
+SHA256
+
+<PASTE_YOUR_SHA256_HASH_HERE>
+
+Verified: YES
+
+---------------------------------------------------------
+
+Integrity Status
+
+Evidence integrity successfully verified.
+
+No modifications detected.
+
+=========================================================
