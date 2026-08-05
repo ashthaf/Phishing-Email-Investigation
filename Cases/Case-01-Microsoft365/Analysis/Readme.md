@@ -1,8 +1,9 @@
 ![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
 ![Case](https://img.shields.io/badge/Case-01-blue)
-![Threat-Credential%20Harvesting-red)
-![Platform-Microsoft%20365-0078D4)
-![MITRE-ATT%26CK-orange)
+![Threat](https://img.shields.io/badge/Threat-Credential_Harvesting-red)
+![Platform](https://img.shields.io/badge/Platform-Microsoft_365-0078D4)
+![Investigation](https://img.shields.io/badge/Type-Phishing_Investigation-purple)
+![MITRE ATT&CK](https://img.shields.io/badge/Framework-MITRE_ATT%26CK-orange)
 # CASE-01 Technical Analysis
 
 ## Overview
