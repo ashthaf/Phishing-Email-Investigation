@@ -202,6 +202,55 @@ Because these services have strong reputations, traditional reputation-based def
 Although the infrastructure itself is legitimate, the shortened URL was detected as phishing by multiple security vendors, confirming malicious use.
 
 ---
+---
+
+# Investigation Evidence
+
+## VirusTotal
+
+![VirusTotal URL](../Screenshots/virustotal-url.png)
+
+URL reputation analysis.
+
+![VirusTotal Domain](../Screenshots/virustotal-domain.png)
+
+Domain reputation analysis.
+
+![VirusTotal IP](../Screenshots/virustotal-ip.png)
+
+IP reputation analysis.
+
+---
+
+## AbuseIPDB
+
+![AbuseIPDB](../Screenshots/abuseipdb.png)
+
+IP reputation lookup.
+
+---
+
+## Cisco Talos
+
+![Cisco Talos](../Screenshots/cisco-talos.png)
+
+Infrastructure reputation review.
+
+---
+
+## PhishTank
+
+![PhishTank](../Screenshots/phishtank.png)
+
+Phishing verification.
+
+---
+
+## Email Reputation
+
+![EmailRep](../Screenshots/emailrep.png)
+
+Email reputation lookup attempt.
 
 # Conclusion
 
