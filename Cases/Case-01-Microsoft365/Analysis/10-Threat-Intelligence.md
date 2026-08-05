@@ -224,7 +224,7 @@ IP reputation analysis.
 
 ## AbuseIPDB
 
-![AbuseIPDB](../Screenshots/abuseipdb.png)
+![AbuseIPDB](../Screenshots/abuseip.png)
 
 IP reputation lookup.
 
@@ -232,7 +232,7 @@ IP reputation lookup.
 
 ## Cisco Talos
 
-![Cisco Talos](../Screenshots/cisco-talos.png)
+![Cisco Talos](../Screenshots/talosdomain.png)
 
 Infrastructure reputation review.
 
