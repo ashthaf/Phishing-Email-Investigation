@@ -138,6 +138,39 @@ The embedded URL exhibits multiple characteristics commonly associated with cred
 Although the final destination could not be resolved due to the sanitized nature of the training sample, sufficient evidence exists to classify the URL as **highly suspicious**.
 
 ---
+---
+
+# Investigation Evidence
+
+## URL Extraction
+
+![Extracted URLs](../Screenshots/extracted-urls.png)
+
+Embedded URLs extracted from the phishing email.
+
+---
+
+## URL Investigation
+
+![URL Analysis](../Screenshots/url-analysis.png)
+
+URLs were expanded and investigated.
+
+---
+
+## URLScan Summary
+
+![URLScan Summary](../Screenshots/urlscan-summary.png)
+
+URLScan results summarizing observed behaviour.
+
+---
+
+## HTTP Transactions
+
+![Transactions](../Screenshots/urlscan-transactions.png)
+
+Network transactions captured by URLScan.
 
 ## Conclusion
 
