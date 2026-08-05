@@ -18,7 +18,7 @@ sed '/^$/q' sample-7918.eml
 
 ## Header Extraction
 
-![Header Extraction](../Screenshots/header-extraction.png)
+![Header Extraction](../Screenshots/headerextraction.png)
 
 Email headers were extracted successfully from the original EML file.
 
@@ -26,7 +26,7 @@ Email headers were extracted successfully from the original EML file.
 
 ## Subject Analysis
 
-![Subject Analysis](../Screenshots/subject-analysis.png)
+![Subject Analysis](../Screenshots/subject.png)
 
 The subject line was reviewed for indicators of urgency and impersonation.
 
@@ -34,7 +34,7 @@ The subject line was reviewed for indicators of urgency and impersonation.
 
 ## MIME Analysis
 
-![Content Type](../Screenshots/content-type.png)
+![Content Type](../Screenshots/contenttype.png)
 
 The MIME Content-Type confirmed the structure of the email.
 
@@ -42,7 +42,7 @@ The MIME Content-Type confirmed the structure of the email.
 
 ## Extracted Body
 
-![Body Files](../Screenshots/body-files.png)
+![Body Files](../Screenshots/bodyfiles.png)
 
 The extracted email body files were examined for embedded content.
 
@@ -50,7 +50,7 @@ The extracted email body files were examined for embedded content.
 
 ## Plain Text Body
 
-![Plain Text](../Screenshots/email-text-1.png)
+![Plain Text](../Screenshots/textfile1.png)
 
 Plain text version of the email.
 
@@ -58,7 +58,7 @@ Plain text version of the email.
 
 ## HTML Body
 
-![HTML Body](../Screenshots/email-text-2.png)
+![HTML Body](../Screenshots/textfile2.png)
 
 HTML version of the phishing email.
 
