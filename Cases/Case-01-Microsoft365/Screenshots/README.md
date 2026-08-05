@@ -4,106 +4,153 @@
 
 This directory contains all screenshots collected during the investigation of **CASE-01 – Microsoft 365 Phishing Email**.
 
-The screenshots document each stage of the investigation, from evidence preservation through header analysis, routing analysis, authentication verification, content analysis, URL investigation, threat intelligence enrichment, and MITRE ATT&CK mapping.
-
-These images serve as supporting evidence for the findings documented throughout the case.
+The screenshots document every stage of the investigation and provide visual evidence supporting the findings documented throughout the case.
 
 ---
 
-# Investigation Coverage
+# Purpose
 
-The screenshots in this directory include evidence for:
+These screenshots serve as supporting evidence for:
 
-- Case preparation
 - Evidence preservation
 - Email extraction
 - Header analysis
-- Mail routing analysis
-- Authentication analysis
+- Routing analysis
 - Sender verification
+- Authentication verification
 - Content analysis
-- URL analysis
-- Threat intelligence lookups
+- URL investigation
+- Threat intelligence enrichment
 - MITRE ATT&CK mapping
-- IOC validation
+- Final incident documentation
 
 ---
 
 # Screenshot Inventory
 
+## Evidence Preservation
+
 | Screenshot | Description |
 |------------|-------------|
-| caseworkstation.png | Investigation workspace preparation |
-| workingcopy.png | Working copy creation |
+| case-workstation.png | Investigation workspace preparation |
+| working-copy.png | Working copy creation |
 | md5.png | MD5 hash generation |
-| md5verified.png | MD5 hash verification |
+| md5-verified.png | MD5 hash verification |
 | sha256.png | SHA256 hash generation |
-| sha256verified.png | SHA256 hash verification |
-| chain1.png | Chain of custody documentation |
-| chain2.png | Chain of custody verification |
-| InitialTriage.png | Initial email triage |
-| og mail.png | Original email evidence |
-| ripmime.png | Email extraction using ripMIME |
-| headerextraction.png | Header extraction process |
-| subject.png | Subject header analysis |
-| contenttype.png | MIME Content-Type analysis |
-| bodyfiles.png | Extracted email body files |
-| textfile1.png | Plain text email content |
-| textfile2.png | HTML email content |
-| hopanalysis.png | Mail hop analysis |
-| hopscollected.png | Collected Received headers |
-| Mailroutenumbered.png | Numbered mail route |
-| routinganalysis.png | Mail routing analysis |
-| host.png | Host information |
-| hostanalysis.png | Host analysis |
-| domain.png | Domain lookup |
-| domainanalysis.png | Domain investigation |
-| senderanalysis.png | Sender analysis |
-| senderinformation.png | Sender information |
-| authenticationanalysis.png | Authentication overview |
-| spf.png *(if present)* | SPF verification |
+| sha256-verified.png | SHA256 hash verification |
+| chain-of-custody-1.png | Chain of custody documentation |
+| chain-of-custody-2.png | Chain of custody verification |
+
+---
+
+## Initial Analysis
+
+| Screenshot | Description |
+|------------|-------------|
+| initial-triage.png | Initial phishing email assessment |
+| original-email.png | Original email evidence |
+| ripmime-extraction.png | Email extraction using ripMIME |
+
+---
+
+## Header Analysis
+
+| Screenshot | Description |
+|------------|-------------|
+| header-extraction.png | Header extraction process |
+| subject-analysis.png | Subject field analysis |
+| content-type.png | MIME Content-Type analysis |
+| body-files.png | Extracted email body files |
+| email-text-1.png | Plain text email content |
+| email-text-2.png | HTML email content |
+
+---
+
+## Routing Analysis
+
+| Screenshot | Description |
+|------------|-------------|
+| mail-route-numbered.png | Numbered mail route |
+| hop-analysis.png | Mail hop analysis |
+| received-hops.png | Received header collection |
+| routing-analysis.png | Email routing reconstruction |
+| host-analysis.png | Host analysis |
+| host-information.png | Host information |
+
+---
+
+## Sender & Authentication
+
+| Screenshot | Description |
+|------------|-------------|
+| sender-analysis.png | Sender analysis |
+| sender-information.png | Sender details |
+| authentication-analysis.png | Authentication overview |
+| spf.png | SPF verification |
 | dkim.png | DKIM verification |
 | dmarc.png | DMARC verification |
-| arecord.png | DNS A record lookup |
-| TXT.png | TXT record lookup |
-| mx.png | MX record lookup |
-| reversedns.png | Reverse DNS lookup |
-| reversevirus.png | Reverse IP investigation |
+| dns-a-record.png | DNS A record lookup |
+| dns-txt-record.png | TXT record lookup |
+| dns-mx-record.png | MX record lookup |
+| reverse-dns.png | Reverse DNS lookup |
+| reverse-ip-analysis.png | Reverse IP investigation |
 | whois.png | WHOIS lookup |
-| url.png | URL extraction |
-| url1.png | URL analysis |
-| url2.png | URL investigation |
-| urllimit1.png | URL expansion |
-| urllimit2.png | URL redirect analysis |
-| virustotalurl.png | VirusTotal URL analysis |
-| virusip.png | VirusTotal IP reputation |
-| virusdomain.png | VirusTotal domain lookup |
-| abuseip.png | AbuseIPDB lookup |
-| talosdomain.png | Cisco Talos reputation lookup |
-| emailrep.png | Email reputation lookup attempt |
+| domain-analysis.png | Domain investigation |
+| domain-information.png | Domain information |
+
+---
+
+## URL Analysis
+
+| Screenshot | Description |
+|------------|-------------|
+| extracted-urls.png | Extracted URLs |
+| url-analysis.png | URL investigation |
+| urlscan-summary.png | URLScan summary |
+| urlscan-transactions.png | URLScan HTTP transactions |
+
+---
+
+## Threat Intelligence
+
+| Screenshot | Description |
+|------------|-------------|
+| virustotal-url.png | VirusTotal URL analysis |
+| virustotal-domain.png | VirusTotal domain reputation |
+| virustotal-ip.png | VirusTotal IP reputation |
+| abuseipdb.png | AbuseIPDB lookup |
+| cisco-talos.png | Cisco Talos reputation |
 | phishtank.png | PhishTank verification |
-| m1.png | MITRE ATT&CK mapping – Spearphishing Link |
-| m2.png | MITRE ATT&CK mapping – Acquire Infrastructure |
-| m3.png | MITRE ATT&CK mapping – Masquerading |
-| m4.png | MITRE ATT&CK mapping – User Execution |
+| emailrep.png | Email reputation lookup attempt |
+
+---
+
+## MITRE ATT&CK Mapping
+
+| Screenshot | Description |
+|------------|-------------|
+| mitre-spearphishing-link.png | T1566.002 – Spearphishing Link |
+| mitre-acquire-infrastructure.png | T1583.006 – Acquire Infrastructure: Web Services |
+| mitre-masquerading.png | T1036 – Masquerading |
+| mitre-user-execution.png | T1204 – User Execution |
 
 ---
 
 # Notes
 
-Some screenshots represent intermediate investigation steps and are included for documentation completeness.
+This investigation primarily relied on command-line forensic tools and OSINT platforms to preserve evidence and perform technical analysis.
 
-Future investigations will also include:
+Future investigations will additionally include:
 
-- Thunderbird email rendering
-- MXToolbox authentication verification
-- Additional DNS analysis
+- Thunderbird visual email rendering
+- MXToolbox authentication validation
 - Email client visual inspection
+- Additional DNS verification
 
-These enhancements have been incorporated into the investigation methodology and will be used in future cases.
+These improvements have been incorporated into the investigation workflow for subsequent cases.
 
 ---
 
-# Total Investigation Evidence
+# Summary
 
-This folder contains visual documentation covering every major phase of the investigation and serves as supporting evidence for the final incident report.
+This directory contains the complete visual evidence collected during the investigation of **CASE-01** and supports every major phase of the phishing email investigation lifecycle.
