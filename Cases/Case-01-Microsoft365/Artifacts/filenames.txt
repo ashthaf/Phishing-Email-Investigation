@@ -1,1 +1,24 @@
+# Evidence Files
+# CASE-01 – Microsoft 365 Phishing Email Investigation
 
+Evidence Collected
+
+sample-7918.eml
+phishing-email.zip
+
+Generated Documentation
+
+IOC-Report.md
+Investigation.md
+Incident-Report.md
+Timeline.md
+
+Generated Artifact Files
+
+domains.txt
+urls.txt
+ips.txt
+email-addresses.txt
+message-ids.txt
+
+Total Evidence Files: 10
