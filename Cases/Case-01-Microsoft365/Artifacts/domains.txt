@@ -1,6 +1,23 @@
 # Extracted Domains
-# CASE-01 – Microsoft 365 Phishing Investigation
+# CASE-01 – Microsoft 365 Phishing Email Investigation
 
-office365-microsoft.com
+Source:
+- Email Headers
+- Embedded URLs
+- Threat Intelligence
 
-Total Domains: 1
+Domains Identified
+
+1. is.gd
+   Purpose: URL shortening service used to hide the phishing destination.
+
+2. lolalhopb.firebaseio.com
+   Purpose: Firebase-hosted credential harvesting page.
+
+3. firebaseio.com
+   Purpose: Legitimate Google cloud hosting platform abused by the attacker.
+
+4. googleusercontent.com
+   Purpose: Legitimate Google infrastructure observed during investigation.
+
+Total Domains: 4
