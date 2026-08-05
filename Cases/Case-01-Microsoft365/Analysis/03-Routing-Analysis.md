@@ -72,11 +72,12 @@ Each mail hop was reviewed to identify suspicious routing behaviour.
 
 ---
 
-## Received Headers
+## Routing Reconstruction
 
-![Received Headers](../Screenshots/received-hops.png)
+![Routing Analysis](../Screenshots/routinganalysis.png
+)
 
-The Received header chain was analyzed.
+The email routing path was reconstructed successfully.
 
 ---
 
