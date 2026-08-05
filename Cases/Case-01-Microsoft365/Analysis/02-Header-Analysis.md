@@ -12,6 +12,57 @@ The complete email header was extracted from the working copy using:
 sed '/^$/q' sample-7918.eml
 ```
 
+---
+
+# Investigation Evidence
+
+## Header Extraction
+
+![Header Extraction](../Screenshots/header-extraction.png)
+
+Email headers were extracted successfully from the original EML file.
+
+---
+
+## Subject Analysis
+
+![Subject Analysis](../Screenshots/subject-analysis.png)
+
+The subject line was reviewed for indicators of urgency and impersonation.
+
+---
+
+## MIME Analysis
+
+![Content Type](../Screenshots/content-type.png)
+
+The MIME Content-Type confirmed the structure of the email.
+
+---
+
+## Extracted Body
+
+![Body Files](../Screenshots/body-files.png)
+
+The extracted email body files were examined for embedded content.
+
+---
+
+## Plain Text Body
+
+![Plain Text](../Screenshots/email-text-1.png)
+
+Plain text version of the email.
+
+---
+
+## HTML Body
+
+![HTML Body](../Screenshots/email-text-2.png)
+
+HTML version of the phishing email.
+
+
 ## Results
 
 - Header extracted successfully
