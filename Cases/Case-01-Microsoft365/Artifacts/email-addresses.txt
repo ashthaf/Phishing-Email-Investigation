@@ -1,1 +1,19 @@
+# Extracted Email Addresses
+# CASE-01 – Microsoft 365 Phishing Email Investigation
 
+Email Addresses Identified
+
+1. Phishing Sender Address
+Purpose:
+Sender observed in the phishing email.
+
+--------------------------------------------------
+
+2. Recipient Mailbox
+Purpose:
+Target mailbox used during the investigation.
+
+Note:
+Actual email addresses have been intentionally omitted from the public repository to protect privacy while preserving investigation methodology.
+
+Total Email Addresses: 2
