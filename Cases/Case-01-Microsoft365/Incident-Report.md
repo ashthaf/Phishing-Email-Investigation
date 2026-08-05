@@ -1,123 +1,166 @@
-# Case 01 – Incident Report
+# Incident Report
 
-## Incident Information
+## Executive Summary
+
+A phishing email impersonating a Microsoft 365 password reset notification was investigated following the Master Phishing Investigation Playbook.
+
+The email successfully passed SPF, DKIM, and DMARC authentication because the attacker abused legitimate email infrastructure rather than spoofing the sender domain. The message relied on social engineering techniques to convince recipients to reset their Microsoft 365 password through an embedded phishing link.
+
+No malicious attachments were present. The primary attack vector was a shortened URL that redirected users toward a Firebase-hosted phishing page.
+
+Based on the collected evidence, the email was classified as a **High Risk Credential Phishing Attempt**.
+
+---
+
+# Case Information
 
 | Field | Value |
-|--------|-------|
+|-------|-------|
 | Case ID | CASE-01 |
-| Incident Type | Phishing Email |
-| Target Brand | Microsoft 365 |
-| Severity | High |
-| Status | Under Investigation |
+| Case Name | Microsoft 365 Credential Phishing Investigation |
 | Analyst | Abdull Ashthaf CK |
-| Date | August 2026 |
+| Investigation Date | 2026-08-05 |
+| Email Platform | Microsoft 365 |
+| Status | Closed |
 
 ---
 
-# Executive Summary
+# Incident Classification
 
-A suspicious email impersonating Microsoft 365 was submitted for analysis.
-
-The objective of this investigation is to determine whether the email is malicious by examining the email headers, sender authentication mechanisms, embedded URLs, attachments, and infrastructure associated with the message.
-
-The investigation follows standard Digital Forensics and Incident Response (DFIR) procedures to preserve evidence, extract Indicators of Compromise (IOCs), and document findings.
-
----
-
-# Incident Description
-
-A user reported receiving an email claiming to originate from Microsoft 365.
-
-The message requested user interaction and will be analyzed to determine whether it represents a phishing attempt or a legitimate communication.
+| Category | Value |
+|----------|-------|
+| Incident Type | Credential Phishing |
+| Delivery Method | Email |
+| Primary Attack Vector | Embedded URL |
+| Attachments | None |
+| Target | Microsoft 365 Credentials |
+| Risk Rating | High |
 
 ---
 
-# Scope
+# Investigation Summary
 
-The investigation includes:
+The investigation included:
 
-- Email Header Analysis
-- SPF Validation
-- DKIM Validation
-- DMARC Validation
-- URL Analysis
-- Attachment Analysis (if applicable)
-- IOC Extraction
-- Threat Intelligence Validation
-- MITRE ATT&CK Mapping
-
----
-
-# Investigation Findings
-
-| Category | Status |
-|-----------|--------|
-| Original Email Preserved | Pending |
-| Headers Analyzed | Pending |
-| Sender Verified | Pending |
-| URLs Extracted | Pending |
-| Attachments Reviewed | Pending |
-| IOC List Created | Pending |
-| Threat Intelligence Completed | Pending |
+- Initial triage
+- Email header analysis
+- Routing analysis
+- Authentication verification (SPF, DKIM, DMARC)
+- Sender verification
+- Content analysis
+- URL analysis
+- Attachment verification
+- IOC extraction
+- Threat intelligence enrichment
+- MITRE ATT&CK mapping
+- Risk assessment
 
 ---
 
-# Indicators of Compromise (IOCs)
+# Technical Findings
 
-| Type | Value | Status |
-|------|-------|--------|
-| Sender Email | Pending | Pending |
-| Sender Domain | Pending | Pending |
-| Return-Path | Pending | Pending |
-| Source IP | Pending | Pending |
-| URLs | Pending | Pending |
-| File Hashes | Pending | Pending |
+## Email Authentication
+
+- SPF: Pass
+- DKIM: Pass
+- DMARC: Pass
+
+The attacker leveraged trusted email infrastructure, allowing authentication checks to succeed.
+
+---
+
+## Sender Analysis
+
+The sender appeared legitimate from an authentication perspective but attempted to impersonate Microsoft 365 through social engineering.
+
+---
+
+## Content Analysis
+
+The email used:
+
+- Password reset theme
+- Urgency
+- User action request
+- Microsoft branding
+- Credential harvesting lure
+
+---
+
+## URL Analysis
+
+The investigation identified:
+
+- URL shortening service (is.gd)
+- Firebase-hosted destination
+- Trusted cloud infrastructure abused for phishing
+
+Threat intelligence indicated suspicious and phishing-related characteristics despite the use of legitimate hosting providers.
+
+---
+
+## Attachment Analysis
+
+No attachments were present.
+
+The phishing campaign relied entirely on embedded URLs rather than malware delivery.
+
+---
+
+# Indicators of Compromise (Summary)
+
+| Type | Indicator |
+|------|-----------|
+| Email Address | Sender email identified during investigation |
+| URL | Embedded phishing URL |
+| Shortened URL | is.gd |
+| Domain | lolalhopb.firebaseio.com |
+| IP Address | Google infrastructure observed during delivery |
+
+A complete IOC list is available in the **IOCs** directory.
 
 ---
 
 # MITRE ATT&CK Mapping
 
-| Technique | ID | Status |
-|-----------|----|--------|
-| Phishing | T1566 | Pending |
-| Spearphishing Link | T1566.002 | Pending |
-| Spearphishing Attachment | T1566.001 | Pending |
+| Technique | Description |
+|-----------|-------------|
+| T1566.002 | Spearphishing Link |
+| T1583.006 | Acquire Infrastructure: Web Services |
+| T1204.001 | User Execution: Malicious Link |
 
 ---
 
 # Risk Assessment
 
-| Category | Rating |
-|-----------|--------|
-| Likelihood | Pending |
-| Impact | Pending |
-| Overall Risk | Pending |
+Overall Risk: **High**
+
+Reasoning:
+
+- Credential theft objective
+- Social engineering
+- Trusted infrastructure
+- Successful email authentication
+- URL shortening used to obscure destination
 
 ---
 
-# Recommendations
+# Recommended Actions
 
-Recommendations will be updated after completing the investigation.
-
-Potential recommendations may include:
-
-- Block malicious domains.
-- Block malicious IP addresses.
-- Remove phishing emails from affected mailboxes.
-- Educate users regarding phishing awareness.
-- Update email security policies.
-- Monitor for additional indicators.
+- Block the phishing URL.
+- Block identified malicious domains.
+- Notify affected users.
+- Monitor authentication logs for suspicious sign-ins.
+- Reset credentials if user interaction occurred.
+- Improve phishing awareness training.
+- Update email filtering rules.
 
 ---
 
 # Conclusion
 
-The investigation is currently in progress.
+The investigation determined that the email was a credential phishing attempt targeting Microsoft 365 users.
 
-The final conclusion will be documented after all evidence has been collected, validated, and analyzed.
+Although the message successfully passed standard email authentication checks, the embedded phishing URL, impersonation techniques, and social engineering indicators confirmed malicious intent.
 
----
-
-# Report Status
-
-**Status:** 🟡 Under Investigation
+The incident demonstrates that successful SPF, DKIM, and DMARC validation alone should not be considered sufficient evidence of legitimacy. A complete investigation involving technical analysis, threat intelligence, and analyst judgment remains essential for accurately identifying phishing campaigns.
