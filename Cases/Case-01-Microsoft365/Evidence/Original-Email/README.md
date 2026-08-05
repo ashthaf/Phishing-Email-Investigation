@@ -1,14 +1,28 @@
-# Original Email Evidence
+# Original Email
 
-This directory contains the original phishing email collected for Case-01.
+## Overview
 
-The original email must never be modified.
+This directory stores the original phishing email used during CASE-01.
 
-All analysis will be performed using copies of the evidence.
+The original email serves as the primary source of evidence and must remain unchanged throughout the investigation.
 
-## Evidence Rules
+---
 
-- Preserve original timestamps.
-- Never edit the original email.
-- Work only on copies.
-- Record every action performed during the investigation.
+## Contents
+
+- phishing-email.eml
+- email-source.txt
+
+---
+
+## Evidence Handling
+
+- Original evidence preserved.
+- No modifications performed.
+- Integrity verified using MD5 and SHA256 hashes.
+
+---
+
+**Evidence ID:** E-001
+
+**Status:** Preserved
