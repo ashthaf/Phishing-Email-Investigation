@@ -125,6 +125,20 @@ Email authentication mechanisms (SPF, DKIM, and DMARC) were successfully validat
 Although no evidence of credential compromise or malware execution was found, the potential impact of a successful attack would be significant. Based on the observed attack techniques and potential business consequences, the incident is classified as **High Risk**.
 
 ---
+---
+
+# Investigation Evidence
+
+The overall risk assessment was derived from evidence collected throughout the investigation, including:
+
+- Header analysis
+- Authentication verification
+- Sender investigation
+- URL analysis
+- Threat intelligence findings
+- MITRE ATT&CK mapping
+
+The combined evidence supports the final **High Risk** classification assigned to this phishing campaign.
 
 # Conclusion
 
