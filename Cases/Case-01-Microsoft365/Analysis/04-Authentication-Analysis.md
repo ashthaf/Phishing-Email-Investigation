@@ -42,7 +42,7 @@ The email successfully passed SPF and DKIM authentication and Microsoft's Compos
 
 ## Authentication Summary
 
-![Authentication](../Screenshots/authentication-analysis.png)
+![Authentication](../Screenshots/authenticationanalysis.png)
 
 Authentication results extracted from the email header.
 
@@ -50,7 +50,7 @@ Authentication results extracted from the email header.
 
 ## SPF
 
-![SPF](../Screenshots/spf.png)
+![SPF](../Screenshots/authenticationanalysis.png)
 
 SPF validation completed successfully.
 
