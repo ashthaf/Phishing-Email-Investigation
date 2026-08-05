@@ -1,1 +1,26 @@
+=========================================================
+Email Acquisition Information
+=========================================================
 
+Case ID:
+CASE-01
+
+Evidence:
+Original phishing email (.eml)
+
+Source:
+Educational phishing sample used for laboratory investigation.
+
+Purpose:
+Training and incident response analysis.
+
+Acquisition Method:
+Imported into the investigation workstation without modification.
+
+Integrity:
+Verified using MD5 and SHA256 hashes.
+
+Status:
+Evidence preserved.
+
+=========================================================
