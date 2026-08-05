@@ -85,6 +85,32 @@ The extracted IOCs can be used for:
 - IOC enrichment using VirusTotal, URLScan, AbuseIPDB, and other threat intelligence platforms
 
 ---
+---
+
+# Investigation Evidence
+
+## URL Extraction
+
+![Extracted URLs](../Screenshots/extracted-urls.png)
+
+Indicators extracted from embedded phishing URLs.
+
+---
+
+## Sender Information
+
+![Sender Information](../Screenshots/sender-information.png)
+
+Email-related indicators collected from the message metadata.
+
+---
+
+## Host Information
+
+![Host Information](../Screenshots/host-information.png)
+
+Infrastructure indicators extracted during routing analysis.
+
 
 ## Phase Outcome
 
