@@ -1,1 +1,42 @@
+=========================================================
+Authentication Analysis
+=========================================================
 
+SPF
+-----------------------------------------
+Result : PASS
+
+Reason:
+The sending server was authorized to send mail on behalf of the sender's domain.
+
+---------------------------------------------------------
+
+DKIM
+-----------------------------------------
+Result : PASS
+
+Reason:
+The DKIM signature was successfully verified.
+
+---------------------------------------------------------
+
+DMARC
+-----------------------------------------
+Result : PASS
+
+Reason:
+SPF and DKIM aligned with the sender domain.
+
+---------------------------------------------------------
+
+Overall Assessment
+
+✔ SPF Passed
+✔ DKIM Passed
+✔ DMARC Passed
+
+Authentication Verdict:
+The sender successfully authenticated.
+
+Note:
+Successful authentication does not guarantee that an email is safe. Legitimate services can be abused to deliver phishing emails.
