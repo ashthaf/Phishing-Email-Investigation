@@ -16,3 +16,21 @@ An email claiming to be a password reset notification was received for analysis.
 ## Initial Assessment
 
 The email claims to be a password reset notification. The sender is not a Microsoft domain and the project name "lolalhopp" appears unusual. Further investigation is required before determining whether the email is malicious.
+
+---
+
+# Investigation Evidence
+
+## Initial Assessment
+
+![Initial Triage](../Screenshots/initial-triage.png)
+
+The email was initially reviewed to determine whether it exhibited characteristics of a phishing attempt.
+
+---
+
+## Original Email
+
+![Original Email](../Screenshots/original-email.png)
+
+The original email was preserved and reviewed before deeper technical analysis.
