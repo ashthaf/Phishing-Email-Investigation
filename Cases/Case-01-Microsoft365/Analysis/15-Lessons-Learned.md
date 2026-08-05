@@ -125,7 +125,18 @@ Throughout the investigation, multiple forensic techniques were applied, includi
 The investigation also highlighted the importance of validating findings with multiple sources rather than relying on a single indicator.
 
 ---
+---
 
+# Investigation Evidence
+
+This phase summarizes the knowledge gained from the investigation rather than introducing new technical evidence.
+
+Key improvements identified for future investigations include:
+
+- Incorporating Thunderbird for visual email inspection.
+- Validating SPF, DKIM, and DMARC records using MXToolbox.
+- Continuing to preserve original evidence with cryptographic hashes.
+- Maintaining a hybrid investigation workflow combining command-line tools, email clients, DNS analysis, and OSINT platforms.
 # Conclusion
 
 This phishing campaign successfully demonstrated how attackers can abuse trusted cloud infrastructure and social engineering techniques to create convincing credential harvesting emails.
