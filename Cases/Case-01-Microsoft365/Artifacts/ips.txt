@@ -1,1 +1,32 @@
+# Extracted IP Addresses
+# CASE-01 – Microsoft 365 Phishing Email Investigation
 
+IP Addresses Identified
+
+1. 104.25.233.53
+
+Provider:
+Cloudflare
+
+Purpose:
+Infrastructure serving the shortened URL.
+
+Assessment:
+Legitimate Cloudflare infrastructure.
+Not malicious by itself.
+
+--------------------------------------------------
+
+2. 209.85.210.72
+
+Provider:
+Google
+
+Purpose:
+Observed in email routing.
+
+Assessment:
+Legitimate Google mail infrastructure.
+Contextual indicator only.
+
+Total IP Addresses: 2
