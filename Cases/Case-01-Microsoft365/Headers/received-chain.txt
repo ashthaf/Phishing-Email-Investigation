@@ -1,1 +1,45 @@
+=========================================================
+Mail Routing Summary
+=========================================================
 
+Mail Flow
+
+Sender
+    │
+    ▼
+Microsoft 365 Infrastructure
+    │
+    ▼
+Microsoft Exchange Online Protection
+    │
+    ▼
+Recipient Mail Server
+    │
+    ▼
+Recipient Mailbox
+
+---------------------------------------------------------
+
+Routing Observations
+
+• Multiple legitimate Microsoft mail servers observed
+• TLS encryption used during transmission
+• No suspicious intermediate relays identified
+• Delivery path consistent with Microsoft 365 infrastructure
+
+---------------------------------------------------------
+
+Delivery Assessment
+
+Routing Status:
+Normal
+
+Suspicious Mail Hops:
+None
+
+Routing Verdict:
+The message traveled through legitimate Microsoft infrastructure.
+
+=========================================================
+Analysis completed successfully.
+=========================================================
