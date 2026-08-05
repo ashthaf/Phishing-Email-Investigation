@@ -104,6 +104,71 @@ However, these findings **do not prove the email is legitimate**. Cloud-hosted s
 Further analysis will focus on the email content, embedded URLs, and user interaction to determine malicious intent.
 
 ---
+---
+
+# Investigation Evidence
+
+## Sender Analysis
+
+![Sender Analysis](../Screenshots/sender-analysis.png)
+
+Sender identity was examined.
+
+---
+
+## Sender Information
+
+![Sender Information](../Screenshots/sender-information.png)
+
+Sender metadata extracted from the email.
+
+---
+
+## WHOIS
+
+![WHOIS](../Screenshots/whois.png)
+
+WHOIS information gathered for the sender domain.
+
+---
+
+## Domain Analysis
+
+![Domain Analysis](../Screenshots/domain-analysis.png)
+
+Domain ownership and infrastructure reviewed.
+
+---
+
+## DNS Records
+
+![A Record](../Screenshots/dns-a-record.png)
+
+DNS A record lookup.
+
+![MX Record](../Screenshots/dns-mx-record.png)
+
+MX record lookup.
+
+![TXT Record](../Screenshots/dns-txt-record.png)
+
+TXT record lookup.
+
+---
+
+## Reverse DNS
+
+![Reverse DNS](../Screenshots/reverse-dns.png)
+
+Reverse DNS lookup performed.
+
+---
+
+## Reverse IP
+
+![Reverse IP](../Screenshots/reverse-ip-analysis.png)
+
+Reverse IP investigation completed.
 
 ## Conclusion
 
