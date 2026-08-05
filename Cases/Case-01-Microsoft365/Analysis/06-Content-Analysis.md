@@ -74,6 +74,31 @@ https://is.gd/...
 - Email attempts credential harvesting through a fake password reset notification.
 
 ---
+---
+
+# Investigation Evidence
+
+## Plain Text Content
+
+![Plain Text](../Screenshots/email-text-1.png)
+
+Plain text version of the phishing email.
+
+---
+
+## HTML Content
+
+![HTML Content](../Screenshots/email-text-2.png)
+
+HTML version of the phishing email.
+
+---
+
+## Extracted Body
+
+![Body Files](../Screenshots/body-files.png)
+
+Extracted body content reviewed for phishing indicators.
 
 ## Conclusion
 
