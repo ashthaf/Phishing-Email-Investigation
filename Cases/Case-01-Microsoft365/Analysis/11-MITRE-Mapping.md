@@ -190,6 +190,33 @@ The attacker impersonated Microsoft 365 password reset notifications and relied 
 No malware execution or malicious attachments were observed during this investigation. The attack focused exclusively on credential harvesting through social engineering.
 
 ---
+---
+
+# Investigation Evidence
+
+## ATT&CK Mapping
+
+![T1566.002](../Screenshots/mitre-spearphishing-link.png)
+
+Spearphishing Link (T1566.002)
+
+---
+
+![T1583.006](../Screenshots/mitre-acquire-infrastructure.png)
+
+Acquire Infrastructure: Web Services (T1583.006)
+
+---
+
+![T1036](../Screenshots/mitre-masquerading.png)
+
+Masquerading (T1036)
+
+---
+
+![T1204](../Screenshots/mitre-user-execution.png)
+
+User Execution (T1204)
 
 # Conclusion
 
