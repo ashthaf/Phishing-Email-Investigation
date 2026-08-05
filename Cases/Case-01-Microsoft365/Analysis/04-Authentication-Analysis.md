@@ -35,3 +35,38 @@ Microsoft's Composite Authentication succeeded, indicating the email passed its 
 ## Analyst Assessment
 
 The email successfully passed SPF and DKIM authentication and Microsoft's Composite Authentication. Although the sender was authenticated, this does not guarantee the email is benign. Legitimate cloud platforms such as Google Firebase can be abused to distribute phishing emails. Further investigation of the sender identity, embedded URLs, and email content is required.
+
+---
+
+# Investigation Evidence
+
+## Authentication Summary
+
+![Authentication](../Screenshots/authentication-analysis.png)
+
+Authentication results extracted from the email header.
+
+---
+
+## SPF
+
+![SPF](../Screenshots/spf.png)
+
+SPF validation completed successfully.
+
+---
+
+## DKIM
+
+![DKIM](../Screenshots/dkim.png)
+
+DKIM signature verified successfully.
+
+---
+
+## DMARC
+
+![DMARC](../Screenshots/dmarc.png)
+
+DMARC validation confirmed alignment with the sender domain.
+
