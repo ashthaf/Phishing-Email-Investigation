@@ -1,1 +1,11 @@
-
+Type,Indicator,Description,Confidence,Notes
+URL,https://is.gd/gy0upk?mode=resetPassword,Shortened phishing URL,High,Used to redirect victim
+Domain,is.gd,URL shortening service,Medium,Used to conceal destination
+Domain,lolalhopb.firebaseio.com,Credential harvesting page,High,Hosted on Firebase
+Domain,firebaseio.com,Google Firebase hosting platform,Low,Legitimate service abused by attacker
+Domain,googleusercontent.com,Google cloud infrastructure,Low,Observed during investigation
+IP,104.25.233.53,Cloudflare infrastructure,Low,Associated with is.gd
+IP,209.85.210.72,Google Mail server,Low,Observed in email routing
+Email,Sender Email,Observed sender address,Medium,See original email headers
+Email,Recipient Email,Target mailbox,Low,Redacted for privacy
+Message-ID,Original Message-ID,Unique email identifier,High,See extracted headers
