@@ -23,7 +23,7 @@ The email claims to be a password reset notification. The sender is not a Micros
 
 ## Initial Assessment
 
-![Initial Triage](../Screenshots/initial-triage.png)
+![Initial Triage](../Cases/Case-01-Microsoft365/Screenshots/InitialTriage.png)
 
 The email was initially reviewed to determine whether it exhibited characteristics of a phishing attempt.
 
