@@ -80,7 +80,7 @@ https://is.gd/...
 
 ## Plain Text Content
 
-![Plain Text](../Screenshots/email-text-1.png)
+![Plain Text](../Screenshots/textfile1.png)
 
 Plain text version of the phishing email.
 
@@ -88,7 +88,7 @@ Plain text version of the phishing email.
 
 ## HTML Content
 
-![HTML Content](../Screenshots/email-text-2.png)
+![HTML Content](../Screenshots/textfile2.png)
 
 HTML version of the phishing email.
 
@@ -96,7 +96,7 @@ HTML version of the phishing email.
 
 ## Extracted Body
 
-![Body Files](../Screenshots/body-files.png)
+![Body Files](../Screenshots/bodyfiles.png)
 
 Extracted body content reviewed for phishing indicators.
 
