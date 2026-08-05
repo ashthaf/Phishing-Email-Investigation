@@ -1,1 +1,10 @@
+# Message Identifiers
+# CASE-01 – Microsoft 365 Phishing Email Investigation
 
+Message-ID
+
+Message-ID extracted successfully from the original email header.
+
+The complete Message-ID has been omitted from the public repository because it uniquely identifies the original email sample.
+
+Total Message IDs: 1
