@@ -1,19 +1,46 @@
 # Chain of Custody
 
-## Evidence Information
+## Case Information
 
-Evidence ID: EVID-001
+**Case ID:** CASE-01
 
-Evidence Name: sample-7918.eml
+**Investigation:** Microsoft 365 Credential Phishing
 
-Collected From: Phishing Sample Repository
+---
 
-Collected By: Abdull Ashthaf CK
+## Evidence Item
 
-Collection Date: 2026-08-05
+| Item | Description |
+|------|-------------|
+| Evidence ID | E-001 |
+| Evidence Type | Original Email (.eml) |
+| Source | Sample phishing email |
+| Acquisition Method | Imported into investigation workstation |
+| Storage Location | Evidence/Original-Email/ |
 
-Purpose:
-Training / Phishing Investigation Lab
+---
 
-Integrity Verification:
-Pending
+## Evidence Handling Log
+
+| Date | Action | Analyst |
+|------|--------|---------|
+| Investigation Day | Evidence acquired | Abdull Ashthaf CK |
+| Investigation Day | Hashes calculated | Abdull Ashthaf CK |
+| Investigation Day | Analysis performed | Abdull Ashthaf CK |
+| Investigation Day | Evidence preserved | Abdull Ashthaf CK |
+
+---
+
+## Integrity Verification
+
+MD5 and SHA256 hashes were calculated immediately after acquisition.
+
+Evidence remained unmodified throughout the investigation.
+
+---
+
+## Final Status
+
+Evidence integrity maintained.
+
+No unauthorized modifications detected.
