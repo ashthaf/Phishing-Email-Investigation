@@ -110,7 +110,7 @@ Further analysis will focus on the email content, embedded URLs, and user intera
 
 ## Sender Analysis
 
-![Sender Analysis](../Screenshots/sender-analysis.png)
+![Sender Analysis](../Screenshots/senderanalysis.png)
 
 Sender identity was examined.
 
@@ -118,7 +118,7 @@ Sender identity was examined.
 
 ## Sender Information
 
-![Sender Information](../Screenshots/sender-information.png)
+![Sender Information](../Screenshots/senderinformation.png)
 
 Sender metadata extracted from the email.
 
@@ -134,7 +134,7 @@ WHOIS information gathered for the sender domain.
 
 ## Domain Analysis
 
-![Domain Analysis](../Screenshots/domain-analysis.png)
+![Domain Analysis](../Screenshots/domainanalysis.png)
 
 Domain ownership and infrastructure reviewed.
 
@@ -142,15 +142,15 @@ Domain ownership and infrastructure reviewed.
 
 ## DNS Records
 
-![A Record](../Screenshots/dns-a-record.png)
+![A Record](../Screenshots/arecord.png)
 
 DNS A record lookup.
 
-![MX Record](../Screenshots/dns-mx-record.png)
+![MX Record](../Screenshots/mx.png)
 
 MX record lookup.
 
-![TXT Record](../Screenshots/dns-txt-record.png)
+![TXT Record](../Screenshots/TXT.png)
 
 TXT record lookup.
 
@@ -158,17 +158,12 @@ TXT record lookup.
 
 ## Reverse DNS
 
-![Reverse DNS](../Screenshots/reverse-dns.png)
+![Reverse DNS](../Screenshots/reversedns.png)
 
 Reverse DNS lookup performed.
 
 ---
 
-## Reverse IP
-
-![Reverse IP](../Screenshots/reverse-ip-analysis.png)
-
-Reverse IP investigation completed.
 
 ## Conclusion
 
