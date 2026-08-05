@@ -76,6 +76,13 @@ Instead, the attacker relies entirely on a **credential phishing URL** embedded 
 This technique is commonly used to bypass attachment-based email security controls and encourage user interaction through social engineering.
 
 ---
+---
+
+# Investigation Evidence
+
+No screenshots are included for this phase because **no file attachments were present** in the phishing email.
+
+The investigation confirmed that the attack relied solely on embedded phishing URLs rather than attachment-based malware.
 
 ## Conclusion
 
