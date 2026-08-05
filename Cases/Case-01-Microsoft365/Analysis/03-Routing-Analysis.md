@@ -51,3 +51,53 @@ The email was relayed internally within Microsoft's Exchange Online infrastructu
 **Observation:**
 
 The final processing occurred on a Microsoft Exchange Online mailbox server. The loopback address (::1) indicates local processing within the Exchange server during mailbox delivery. This is expected behavior and is not considered suspicious.
+
+---
+
+# Investigation Evidence
+
+## Mail Route
+
+![Mail Route](../Screenshots/mail-route-numbered.png)
+
+The complete delivery path was reconstructed from the Received headers.
+
+---
+
+## Hop Analysis
+
+![Hop Analysis](../Screenshots/hop-analysis.png)
+
+Each mail hop was reviewed to identify suspicious routing behaviour.
+
+---
+
+## Received Headers
+
+![Received Headers](../Screenshots/received-hops.png)
+
+The Received header chain was analyzed.
+
+---
+
+## Routing Reconstruction
+
+![Routing Analysis](../Screenshots/routing-analysis.png)
+
+The email routing path was reconstructed successfully.
+
+---
+
+## Host Analysis
+
+![Host Analysis](../Screenshots/host-analysis.png)
+
+Mail server host information was examined.
+
+---
+
+## Host Information
+
+![Host Information](../Screenshots/host-information.png)
+
+Supporting host information collected during routing analysis.
