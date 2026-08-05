@@ -1,1 +1,49 @@
+=========================================================
+CASE-01 - Original Email Header Summary
+=========================================================
 
+Subject:
+Action Required: Update Your Microsoft 365 Password
+
+From:
+Microsoft Outlook <no-reply@outlook.com>
+
+To:
+Target User
+
+Return-Path:
+no-reply@outlook.com
+
+Reply-To:
+Not Present
+
+Message-ID:
+Captured during header extraction
+
+Date:
+Extracted from original email header
+
+MIME-Version:
+1.0
+
+Content-Type:
+multipart/alternative
+
+Authentication Results:
+SPF: Pass
+DKIM: Pass
+DMARC: Pass
+
+X-Originating-IP:
+Not Present
+
+Priority:
+Normal
+
+=========================================================
+Source:
+Original .eml file
+
+Status:
+Extracted successfully
+=========================================================
