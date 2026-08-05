@@ -144,19 +144,12 @@ Although the final destination could not be resolved due to the sanitized nature
 
 ## URL Extraction
 
-![Extracted URLs](../Screenshots/extracted-urls.png)
+![Extracted URLs](../Screenshots/url.png)
 
 Embedded URLs extracted from the phishing email.
 
 ---
 
-## URL Investigation
-
-![URL Analysis](../Screenshots/url-analysis.png)
-
-URLs were expanded and investigated.
-
----
 
 ## URLScan Summary
 
