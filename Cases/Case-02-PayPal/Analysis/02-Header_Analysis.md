@@ -40,7 +40,7 @@ The output confirmed that the email headers were successfully extracted.
 
 ### Screenshot
 
-![Header Verification](../Screenshots/header-verification.png)
+![Header Verification](../Screenshots/header-analysis/header-saved.png)
 
 ---
 
@@ -56,7 +56,7 @@ wc -l ~/CyberLab/Cases/Case-02-paypal/Evidence/Headers/email-header.txt
 
 ### Screenshot
 
-![Header Line Count](../Screenshots/header-line-count.png)
+![Header Line Count](../Screenshots/header-analysis/header-line-count.png)
 
 ---
 
