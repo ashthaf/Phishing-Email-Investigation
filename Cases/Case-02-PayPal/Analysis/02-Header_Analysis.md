@@ -22,7 +22,7 @@ This command extracts everything from the beginning of the email until the first
 
 ### Screenshot
 
-![Header Extraction](../Screenshots/header-extraction.png)
+![Header Extraction](../Screenshots/header-analysis/header-extraction.png)
 
 ---
 
