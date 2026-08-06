@@ -43,7 +43,7 @@ The email passed through **4 routing hops** before reaching the recipient.
 
 ### Screenshot
 
-![Received Header Count](../Screenshots/routing-analysis/received-header-count.png)
+![Received Header Count](../Screenshots/routing-analysis/Received-header-count.png)
 
 ---
 
@@ -57,7 +57,7 @@ nl -ba ~/CyberLab/Cases/Case-02-paypal/Evidence/Headers/Received-header.txt
 
 ### Screenshot
 
-![Routing Hop Numbering](../Screenshots/routing-analysis/received-hop-numbering.png)
+![Routing Hop Numbering](../Screenshots/routing-analysis/Received-hop-numbering.png)
 
 ---
 
