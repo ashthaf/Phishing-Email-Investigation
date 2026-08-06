@@ -1,4 +1,4 @@
-# Phase 02 – Initial Triage
+# Phase 01 – Initial Triage
 
 ## Objective
 
@@ -92,7 +92,7 @@ Shows the isolated Kali Linux investigation environment with Thunderbird used to
 
 The phishing email opened inside Mozilla Thunderbird for visual inspection.
 
-![Original Email](../../Assets/Screenshots/Case-02/email-opened.png)
+![Original Email](../Screenshots/Case-02/email-opened.png)
 
 ---
 
