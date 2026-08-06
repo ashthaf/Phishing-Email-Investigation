@@ -84,7 +84,7 @@ The following evidence was documented during the Initial Triage phase.
 
 Shows the isolated Kali Linux investigation environment with Thunderbird used to safely examine the phishing email.
 
-![Investigation Workspace](../../Assets/Screenshots/Case-02/email-opened-thunderbird.png)
+![Investigation Workspace](../Screenshots/email-opened-thunderbird.png)
 
 ---
 
