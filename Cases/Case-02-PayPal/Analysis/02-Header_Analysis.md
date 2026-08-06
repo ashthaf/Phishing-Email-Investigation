@@ -82,7 +82,7 @@ Ihre einmalige Chance, jehd <service@stayfriends.de>
 
 ### Screenshot
 
-![From Header](../Screenshots/from-header.png)
+![From Header](../Screenshots/header-analysis/from-header.png)
 
 ---
 
@@ -106,7 +106,7 @@ The message was delivered to a phishing analysis mailbox.
 
 ### Screenshot
 
-![To Header](../Screenshots/to-header.png)
+![To Header](../Screenshots/header-analysis/To-header.png)
 
 ---
 
@@ -132,7 +132,7 @@ This is a common phishing lure intended to attract user attention and encourage 
 
 ### Screenshot
 
-![Subject Header](../Screenshots/subject-header.png)
+![Subject Header](../Screenshots/header-analysis/subject-header.png)
 
 ---
 
@@ -159,7 +159,7 @@ HTML emails can contain embedded hyperlinks, images, styling, and other elements
 
 ### Screenshot
 
-![Content Type](../Screenshots/content-type-mime.png)
+![Content Type](../Screenshots/header-analysis/mime-info.png)
 
 ---
 
@@ -185,7 +185,7 @@ Although uncommon, phishing emails may omit this header or intentionally manipul
 
 ### Screenshot
 
-![Message ID](../Screenshots/message-id.png)
+![Message ID](../Screenshots/header-analysis/Message-ID-header.png)
 
 ---
 
@@ -211,7 +211,7 @@ Some mail gateways remove or rewrite this field during delivery.
 
 ### Screenshot
 
-![Return Path](../Screenshots/return-path.png)
+![Return Path](../Screenshots/header-analysis/Return-Path.png)
 
 ---
 
@@ -231,7 +231,7 @@ A detailed investigation of SPF, DKIM, and DMARC validation is covered in **Phas
 
 ### Screenshot
 
-![Authentication Headers](../Screenshots/authentication-headers.png)
+![Authentication Headers](../Screenshots/header-analysis/Authentication-Results.png)
 
 ---
 
@@ -251,7 +251,7 @@ Detailed mail flow reconstruction is covered in **Phase 03 – Routing Analysis*
 
 ### Screenshot
 
-![Received Headers](../Screenshots/received-headers.png)
+![Received Headers](../Screenshots/header-analysis/Received-headers.png)
 
 ---
 
