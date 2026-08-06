@@ -1,18 +1,14 @@
-# Phase 02 – Header Analysis
+# Header Analysis
 
 ## Objective
 
-The objective of this phase is to extract and examine the email headers from the phishing email. Email headers contain valuable metadata that helps investigators identify the sender, recipient, authentication status, message format, and mail routing information.
-
-This phase focuses on identifying key header fields while leaving detailed Routing Analysis and Authentication Analysis for their dedicated phases.
+The objective of this phase is to extract the complete email header from the phishing email and identify important metadata required for further forensic investigation.
 
 ---
 
 # Header Extraction
 
-The original phishing email was stored in **EML** format.
-
-The header section was extracted using the following command:
+The email header was extracted from the original `.eml` file using the following command:
 
 ```bash
 sed '/^$/q' sample-1407.eml > ~/CyberLab/Cases/Case-02-paypal/Evidence/Headers/email-header.txt
@@ -36,23 +32,25 @@ Command used:
 head ~/CyberLab/Cases/Case-02-paypal/Evidence/Headers/email-header.txt
 ```
 
-The output confirmed that the email headers were successfully extracted.
+This confirmed that the header was successfully extracted before continuing the investigation.
 
 ### Screenshot
 
-![Header Verification](../Screenshots/header-analysis/header-saved.png)
+![Header Saved](../Screenshots/header-analysis/header-saved.png)
 
 ---
 
-# Header Line Count
+# Header Size Verification
 
-The extracted header contains **259 lines**.
+The total number of header lines was verified.
 
-Command used:
+Command:
 
 ```bash
 wc -l ~/CyberLab/Cases/Case-02-paypal/Evidence/Headers/email-header.txt
 ```
+
+This helps ensure that the entire header was extracted successfully.
 
 ### Screenshot
 
@@ -60,25 +58,31 @@ wc -l ~/CyberLab/Cases/Case-02-paypal/Evidence/Headers/email-header.txt
 
 ---
 
-# Sender Information
+# Important Header Fields Identified
 
-Command:
+Several important forensic headers were identified during manual inspection.
 
-```bash
-grep "^From:" ~/CyberLab/Cases/Case-02-paypal/Evidence/Headers/email-header.txt
+| Header | Observation |
+|---------|-------------|
+| From | Present |
+| Subject | Present |
+| MIME-Version | Present |
+| Content-Type | Present |
+| Date | Present |
+| Message-ID | Present |
+| Return-Path | Present |
+| Authentication-Results | Present |
+| Received | Multiple headers present |
+
+---
+
+# From Header
+
+The visible sender address identified in the email header is:
+
 ```
-
-Output:
-
-```text
-Ihre einmalige Chance, jehd <service@stayfriends.de>
+service@stayfriends.de
 ```
-
-### Observation
-
-- Display name is written in German.
-- Sender email belongs to the **stayfriends.de** domain.
-- Further reputation analysis will be performed later.
 
 ### Screenshot
 
@@ -86,49 +90,13 @@ Ihre einmalige Chance, jehd <service@stayfriends.de>
 
 ---
 
-# Recipient Information
+# Subject Header
 
-Command:
+The email subject identified was:
 
-```bash
-grep "^To:" ~/CyberLab/Cases/Case-02-paypal/Evidence/Headers/email-header.txt
 ```
-
-Output:
-
-```text
-phishing@pot
+Ihre einmalige Chance
 ```
-
-### Observation
-
-The message was delivered to a phishing analysis mailbox.
-
-### Screenshot
-
-![To Header](../Screenshots/header-analysis/To-header.png)
-
----
-
-# Subject Analysis
-
-Command:
-
-```bash
-grep "^Subject:" ~/CyberLab/Cases/Case-02-paypal/Evidence/Headers/email-header.txt
-```
-
-Output:
-
-```text
-1.000€ Gratis Paypal Guthabenkarte
-```
-
-### Observation
-
-The subject claims the recipient has won a free €1000 PayPal gift card.
-
-This is a common phishing lure intended to attract user attention and encourage interaction.
 
 ### Screenshot
 
@@ -136,144 +104,93 @@ This is a common phishing lure intended to attract user attention and encourage 
 
 ---
 
-# MIME Version and Content Type
+# MIME Information
 
-Command:
-
-```bash
-grep -Ei "Content-Type|MIME-Version" ~/CyberLab/Cases/Case-02-paypal/Evidence/Headers/email-header.txt
-```
-
-Output:
-
-```text
-Content-Type: text/html; charset=UTF-8
-MIME-Version: 1.0
-```
-
-### Observation
-
-The email is delivered as an HTML message using UTF-8 encoding.
-
-HTML emails can contain embedded hyperlinks, images, styling, and other elements commonly used in phishing campaigns.
+The email uses MIME encoding for formatting.
 
 ### Screenshot
 
-![Content Type](../Screenshots/header-analysis/mime-info.png)
+![MIME Information](../Screenshots/header-analysis/mime-info.png)
 
 ---
 
-# Message-ID Analysis
+# Return-Path
 
-Command:
+The email contains the following Return-Path:
 
-```bash
-grep "^Message-ID:" ~/CyberLab/Cases/Case-02-paypal/Evidence/Headers/email-header.txt
+```
+return@messaggerocappuccino.it
 ```
 
-Output:
+The Return-Path differs from the visible sender address.
 
-```text
-No Message-ID found
-```
+This indicates that although the user sees the email coming from **stayfriends.de**, bounce messages are directed to **messaggerocappuccino.it**, suggesting the email was transmitted through separate mail infrastructure.
 
-### Observation
-
-No Message-ID header exists within the email.
-
-Although uncommon, phishing emails may omit this header or intentionally manipulate it.
+A different Return-Path is not unusual by itself, but it is an important indicator that should be validated together with SPF, DKIM, DMARC, and routing analysis.
 
 ### Screenshot
 
-![Message ID](../Screenshots/header-analysis/Message-ID-header.png)
+![Return Path](../Screenshots/header-analysis/rp.png)
 
 ---
 
-# Return-Path Analysis
+# Authentication Results Header
 
-Command:
+The Authentication-Results header was extracted for detailed analysis.
 
-```bash
-grep "^Return-Path:" ~/CyberLab/Cases/Case-02-paypal/Evidence/Headers/email-header.txt
+Observed result:
+
+```
+SPF = Pass
+DKIM = Pass
+DMARC = Pass
 ```
 
-Output:
+These authentication results indicate that the email passed domain authentication checks at Microsoft's mail gateway.
 
-```text
-No Return-Path found
-```
+However, successful authentication alone does **not** guarantee that an email is legitimate because attackers may send emails from compromised or legitimately configured third-party infrastructure.
 
-### Observation
-
-No Return-Path header was present.
-
-Some mail gateways remove or rewrite this field during delivery.
+Detailed authentication analysis is documented separately in the Authentication Analysis phase.
 
 ### Screenshot
 
-![Return Path](../Screenshots/header-analysis/Return-Path.png)
-
----
-
-# Authentication Headers
-
-Command:
-
-```bash
-grep -Ei "spf|dkim|dmarc|Authentication-Results" sample-1407.eml
-```
-
-### Observation
-
-Authentication headers were identified within the email.
-
-A detailed investigation of SPF, DKIM, and DMARC validation is covered in **Phase 04 – Authentication Analysis**.
-
-### Screenshot
-
-![Authentication Headers](../Screenshots/header-analysis/Authentication-Results.png)
+![Authentication Results](../Screenshots/header-analysis/Authentication-Results.png)
 
 ---
 
 # Received Headers
 
-Command:
+Multiple Received headers were identified.
 
-```bash
-grep "^Received:" ~/CyberLab/Cases/Case-02-paypal/Evidence/Headers/email-header.txt
-```
-
-### Observation
-
-Multiple **Received** headers were identified, indicating the path taken by the email through different mail servers before reaching the recipient.
-
-Detailed mail flow reconstruction is covered in **Phase 03 – Routing Analysis**.
-
-### Screenshot
-
-![Received Headers](../Screenshots/header-analysis/Received-headers.png)
+These will be analyzed separately during the Routing Analysis phase to reconstruct the email delivery path from the originating server to Microsoft's mail infrastructure.
 
 ---
 
-# Summary
+# Initial Findings
 
-The email header was successfully extracted and analyzed.
+The header extraction phase successfully recovered the complete email metadata required for forensic analysis.
 
-The following key information was identified:
+Key observations include:
 
-| Header | Result |
-|---------|--------|
-| From | service@stayfriends.de |
-| To | phishing@pot |
-| Subject | 1.000€ Gratis Paypal Guthabenkarte |
-| MIME Version | 1.0 |
-| Content Type | text/html; charset=UTF-8 |
-| Message-ID | Not Present |
-| Return-Path | Not Present |
-| Authentication Headers | Present |
-| Received Headers | Multiple |
+- Complete email header extracted successfully.
+- Multiple Received headers identified.
+- Return-Path present and differs from the visible sender.
+- Authentication-Results header present.
+- SPF, DKIM, and DMARC passed.
+- Sender information, routing information, and authentication data are available for further investigation.
 
-The extracted header provides the foundation for the next phases of the investigation:
+---
 
-- Phase 03 – Routing Analysis
-- Phase 04 – Authentication Analysis
+# Conclusion
+
+The header extraction was completed successfully without data loss.
+
+The extracted header provides sufficient forensic evidence to proceed with:
+
+- Routing Analysis
+- Sender Analysis
+- Authentication Analysis
+- Content Analysis
+- URL Analysis
+
+The presence of multiple routing headers, a distinct Return-Path domain, and successful authentication records provides a strong foundation for the remaining phases of the investigation.
