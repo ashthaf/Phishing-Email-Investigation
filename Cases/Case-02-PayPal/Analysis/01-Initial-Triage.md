@@ -84,7 +84,7 @@ The following evidence was documented during the Initial Triage phase.
 
 Shows the isolated Kali Linux investigation environment with Thunderbird used to safely examine the phishing email.
 
-![Investigation Workspace](../../Assets/Screenshots/Case-02/investigation-workstation.png)
+![Investigation Workspace](../../Assets/Screenshots/Case-02/email-opened-thunderbird.png)
 
 ---
 
@@ -100,7 +100,7 @@ The phishing email opened inside Mozilla Thunderbird for visual inspection.
 
 Displays the sender address, recipient, subject line, and email metadata visible in Thunderbird.
 
-![Sender Information](../../Assets/Screenshots/Case-02/email-sender-info.png)
+![Sender Information](../Screenshots/email-sender-info.png)
 
 ---
 
@@ -108,7 +108,7 @@ Displays the sender address, recipient, subject line, and email metadata visible
 
 Thunderbird automatically blocked external content, preventing remote resources from loading during analysis.
 
-![Remote Content Warning](../../Assets/Screenshots/Case-02/remote-content-warning.png)
+![Remote Content Warning](../Screenshots/remote-content-warning.png)
 
 ---
 
@@ -116,7 +116,7 @@ Thunderbird automatically blocked external content, preventing remote resources 
 
 Shows the beginning of the phishing email, including the PayPal branding and fraudulent reward notification.
 
-![Email Body Top](../Screenshots/Initial-Triage/email-body-top.png)
+![Email Body Top](../Screenshots/email-body-top.png)
 
 ---
 
@@ -124,7 +124,7 @@ Shows the beginning of the phishing email, including the PayPal branding and fra
 
 Displays the embedded call-to-action link and unsubscribe section found near the end of the email.
 
-![Email Body Bottom](../../Assets/Screenshots/Case-02/email-body-bottom.png)
+![Email Body Bottom](../Screenshots/email-body-bottom.png)
 
 ---
 
@@ -132,7 +132,7 @@ Displays the embedded call-to-action link and unsubscribe section found near the
 
 Initial examination of the original email headers and message content from the command line before performing detailed header analysis.
 
-![Raw Email](../../Assets/Screenshots/Case-02/email-raw.png)
+![Raw Email](../Screenshots/email-raw.png)
 
 ---
 
