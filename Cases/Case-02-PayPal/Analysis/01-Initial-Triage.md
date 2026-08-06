@@ -116,7 +116,7 @@ Thunderbird automatically blocked external content, preventing remote resources 
 
 Shows the beginning of the phishing email, including the PayPal branding and fraudulent reward notification.
 
-![Email Body Top](../../Assets/Screenshots/Case-02/email-body-top.png)
+![Email Body Top](../Screenshots/Initial-Triage/email-body-top.png)
 
 ---
 
