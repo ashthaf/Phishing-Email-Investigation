@@ -1,97 +1,71 @@
-# Chain of Custody
+# 🔒 Chain of Custody
 
-## Case Information
+![Evidence](https://img.shields.io/badge/Evidence-Chain%20of%20Custody-blue)
+![Integrity](https://img.shields.io/badge/Integrity-Preserved-brightgreen)
+![Status](https://img.shields.io/badge/Status-Complete-green)
 
-| Field | Value |
-|--------|-------|
+---
+
+# 📖 Overview
+
+This document records the handling of digital evidence throughout the PayPal phishing email investigation. Maintaining a documented chain of custody helps ensure the integrity, authenticity, and traceability of evidence used during the investigation.
+
+---
+
+# Investigation Information
+
+| Item | Value |
+|------|-------|
 | Case ID | CASE-02 |
-| Case Name | PayPal Gift Card Phishing Investigation |
-| Evidence ID | EVID-001 |
-| Evidence Type | Original Phishing Email (.eml) |
-| Original File | sample-1407.eml |
-| Stored As | phishing-email.eml |
-| Analyst | Abdull Ashthaf CK |
-| Investigation Platform | Kali Linux |
-| Status | Preserved |
-
----
-
-# Purpose
-
-This document records the handling, preservation, and integrity verification of the original phishing email throughout the investigation.
-
-Maintaining a documented chain of custody ensures that the evidence remains authentic, unaltered, and traceable during every phase of the investigation.
-
----
-
-# Evidence Acquisition
-
-| Property | Value |
-|----------|-------|
-| Source | Public phishing email sample repository |
-| Acquisition Method | Copied into the investigation workspace |
-| File Format | .eml |
-| Preservation Method | Original file retained without modification |
-| Working Copy | Created for forensic analysis |
-| Password Protected Archive | phishing-email.zip |
-
----
-
-# Evidence Integrity
-
-Evidence integrity was verified using cryptographic hash functions.
-
-| Algorithm | Status |
-|-----------|--------|
-| MD5 | Verified |
-| SHA256 | Verified |
-
-The generated hash values matched during verification, confirming that the evidence remained unchanged throughout preservation.
+| Case Name | PayPal Phishing Email Investigation |
+| Incident Type | Credential Harvesting Phishing |
+| Primary Evidence | sample-1407.eml |
+| Investigator | Abdull Ashthaf CK |
+| Investigation Platform | Kali Linux Virtual Machine |
 
 ---
 
 # Evidence Handling Log
 
-| Date | Time | Action | Analyst |
-|------|------|--------|---------|
-| YYYY-MM-DD | HH:MM | Original email acquired | Abdull Ashthaf CK |
-| YYYY-MM-DD | HH:MM | Working copy created | Abdull Ashthaf CK |
-| YYYY-MM-DD | HH:MM | MD5 generated | Abdull Ashthaf CK |
-| YYYY-MM-DD | HH:MM | SHA256 generated | Abdull Ashthaf CK |
-| YYYY-MM-DD | HH:MM | Hashes verified | Abdull Ashthaf CK |
-| YYYY-MM-DD | HH:MM | Password-protected ZIP created | Abdull Ashthaf CK |
-
-> Replace the date and time with the actual values from your investigation.
-
----
-
-# Storage Information
-
-| Item | Location |
-|------|----------|
-| Original Email | Evidence/Original-Email/phishing-email.eml |
-| Protected Archive | Evidence/Original-Email/phishing-email.zip |
-
-Archive Password:
-
-```text
-infected
-```
+| Date / Phase | Action | Evidence | Performed By |
+|--------------|--------|----------|--------------|
+| Initial Triage | Original phishing email received and preserved | sample-1407.eml | Abdull Ashthaf CK |
+| Header Analysis | Email headers extracted for forensic analysis | email-header.txt | Abdull Ashthaf CK |
+| Routing Analysis | Received headers analyzed | Received-header.txt | Abdull Ashthaf CK |
+| Content Analysis | HTML body extracted | phishing-email.html | Abdull Ashthaf CK |
+| URL Analysis | URLs and domains extracted | extracted_urls.txt, domains.txt | Abdull Ashthaf CK |
+| DNS Analysis | DNS lookup performed | dig.txt | Abdull Ashthaf CK |
+| WHOIS Analysis | WHOIS information collected | whois.txt | Abdull Ashthaf CK |
+| IOC Extraction | Indicators of Compromise documented | IOC Summary | Abdull Ashthaf CK |
+| Threat Intelligence | External validation completed | VirusTotal, URLScan, Talos, AbuseIPDB | Abdull Ashthaf CK |
+| Final Reporting | Incident documentation completed | Investigation Report | Abdull Ashthaf CK |
 
 ---
 
-# Evidence Handling Notes
+# Evidence Integrity
 
-- The original phishing email was never modified.
-- All analysis was performed using a working copy.
-- Cryptographic hashes were generated before analysis.
-- The archived sample is password protected to prevent accidental execution or inspection.
-- Evidence was handled within an isolated Kali Linux virtual machine.
+Throughout the investigation:
+
+- The original phishing email remained preserved.
+- Analysis was performed using extracted artifacts where applicable.
+- No evidence was intentionally modified.
+- Findings were documented immediately after each analysis phase.
+- Supporting screenshots were captured throughout the investigation.
+
+---
+
+# Evidence Storage
+
+| Evidence Type | Location |
+|---------------|----------|
+| Original Email | Evidence/Original-Email |
+| Headers | Headers |
+| URL Artifacts | Artifacts/URL-Analysis |
+| Investigation Notes | Evidence |
+| Screenshots | Screenshots |
 
 ---
 
 # Conclusion
 
-The integrity of the original phishing email was successfully preserved throughout the investigation.
-
-The evidence is suitable for continued forensic analysis and documentation.
+The chain of custody was maintained throughout the investigation. Evidence was preserved, documented, and analyzed in a controlled environment, ensuring the integrity and reproducibility of the investigation.
