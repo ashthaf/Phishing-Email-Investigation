@@ -205,7 +205,7 @@ The resolved IP address associated with **easilett.com** was investigated using 
 
 ### Screenshot
 
-![AbuseIPDB](../Screenshots/threat-intelligence/abuseipdb-domain.png)
+![AbuseIPDB](../Screenshots/threat-intelligence/abuseipdb.png)
 
 ### Observation
 
@@ -227,7 +227,7 @@ The domain was further examined using MXToolbox to validate its DNS and email se
 
 ### Screenshot
 
-![MX Record](../Screenshots/threat-intelligence/mxtoolbox-mx.png)
+![MX Record](../Screenshots/threat-intelligence/mx.png)
 
 ### Observation
 
@@ -241,7 +241,7 @@ This indicates that the domain is not configured to receive email, which is unus
 
 ### Screenshot
 
-![SPF Record](../Screenshots/threat-intelligence/mxtoolbox-spf.png)
+![SPF Record](../Screenshots/threat-intelligence/spf.png)
 
 ### Observation
 
@@ -255,7 +255,7 @@ Without an SPF policy, the domain does not define which mail servers are authori
 
 ### Screenshot
 
-![DMARC Record](../Screenshots/threat-intelligence/mxtoolbox-dmarc.png)
+![DMARC Record](../Screenshots/threat-intelligence/dmarc.png)
 
 ### Observation
 
@@ -330,7 +330,7 @@ whois stayfriends.de
 
 ### Screenshot
 
-![WHOIS](../Screenshots/threat-intelligence/whois-stayfriends.png)
+![WHOIS](../Screenshots/threat-intelligence/who-is-stayfriends.png)
 
 ### Observation
 
