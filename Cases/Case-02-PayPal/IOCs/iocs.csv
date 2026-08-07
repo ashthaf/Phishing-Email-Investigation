@@ -1,0 +1,9 @@
+Type,Value,Assessment
+Sender Email,service@stayfriends.de,Suspicious
+Return-Path,return@messaggerocappuccino.it,Suspicious
+External IP,77.91.100.118,Suspicious
+Internal Relay IP,10.167.8.70,Internal
+Domain,easilett.com,Suspicious
+Domain,fonts.googleapis.com,Legitimate
+MIME Type,text/html,HTML Email
+Subject,"1.000€ Gratis Paypal Guthabenkarte, phishing@pot",Phishing Lure
