@@ -102,7 +102,7 @@ The following evidence was documented during the Initial Triage phase:
 
 ## Investigation Workspace
 
-Shows the isolated Kali Linux investigation environment with Thunderbird used to safely examine the phishing email.
+![Initial Triage](../Screenshots/email-opened-thunderbird.png)
 
 
 
@@ -110,7 +110,7 @@ Shows the isolated Kali Linux investigation environment with Thunderbird used to
 
 ## Original Email Opened
 
-The phishing email opened inside Mozilla Thunderbird for visual inspection.
+![Initial Triage](../Screenshots/email-opened.png)
 
 
 
@@ -118,7 +118,7 @@ The phishing email opened inside Mozilla Thunderbird for visual inspection.
 
 ## Sender Information
 
-Displays the sender address, recipient, subject line, and email metadata visible in Thunderbird.
+![Initial Triage](../Screenshots/email-sender-info.png)
 
 
 
@@ -126,7 +126,7 @@ Displays the sender address, recipient, subject line, and email metadata visible
 
 ## Remote Content Protection
 
-Thunderbird automatically blocked external content, preventing remote resources from loading during analysis.
+![Initial Triage](../Screenshots/remote-content-warning.png)
 
 
 
@@ -134,7 +134,7 @@ Thunderbird automatically blocked external content, preventing remote resources 
 
 ## Email Body (Upper Section)
 
-Shows the beginning of the phishing email, including the PayPal branding and fraudulent reward notification.
+![Initial Triage](../Screenshots/email-body-top.png)
 
 
 
@@ -142,7 +142,7 @@ Shows the beginning of the phishing email, including the PayPal branding and fra
 
 ## Email Body (Lower Section)
 
-Displays the embedded call-to-action link and unsubscribe section located near the end of the email.
+![Initial Triage](../Screenshots/email-body-bottom.png)
 
 
 
@@ -150,7 +150,7 @@ Displays the embedded call-to-action link and unsubscribe section located near t
 
 ## Raw Email Preview
 
-Initial examination of the original email headers and message content from the command line before performing detailed header analysis.
+![Initial Triage](../Screenshots/email-raw.png)
 
 
 
