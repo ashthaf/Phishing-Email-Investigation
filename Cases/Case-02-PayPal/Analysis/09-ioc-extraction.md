@@ -59,7 +59,7 @@ grep "^Return-Path:" ~/CyberLab/Cases/Case-02-paypal/Evidence/Headers/email-head
 
 ### Screenshot
 
-![Return Path](../Screenshots/IOC-extraction/return-path.png)
+![Return Path](../Screenshots/IOC-extraction/rp.png)
 
 ### Observation
 
@@ -117,7 +117,7 @@ grep "^Message-ID:" ~/CyberLab/Cases/Case-02-paypal/Evidence/Headers/email-heade
 
 ### Screenshot
 
-![Message ID](../Screenshots/IOC-extraction/message-id-header.png)
+![Message ID](../Screenshots/IOC-extraction/Message-ID-header.png)
 
 ### Observation
 
@@ -135,7 +135,7 @@ grep "^Received:" ~/CyberLab/Cases/Case-02-paypal/Evidence/Headers/email-header.
 
 ### Screenshot
 
-![Received Headers](../Screenshots/IOC-extraction/received-headers.png)
+![Received Headers](../Screenshots/IOC-extraction/Received-headers.png)
 
 ### Observation
 
@@ -213,7 +213,7 @@ The email was examined for attachments.
 
 ### Screenshot
 
-![Attachment Search](../Screenshots/IOC-extraction/attachment-search.png)
+![Attachment Search](../Screenshots/IOC-extraction/Attachement-search.png)
 
 ### Observation
 
