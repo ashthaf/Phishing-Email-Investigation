@@ -48,7 +48,7 @@ The domain was submitted to VirusTotal for reputation analysis.
 
 ### Screenshot
 
-![VirusTotal Summary](Images/virustotal-summary.png)
+![VirusTotal Summary](../Screenshots/threat-intelligence/virustotal-summary.png)
 
 ### Observation
 
@@ -60,7 +60,7 @@ Although the overall detection rate is low, even a single phishing detection is 
 
 ### Detection Details
 
-![VirusTotal Detection](Images/virustotal-details.png)
+![VirusTotal Detection](../Screenshots/threat-intelligence/virustotal-details.png)
 
 ### Observation
 
@@ -76,7 +76,7 @@ This mixed reputation suggests that the domain may represent newly emerging phis
 
 ### Infrastructure Relationships
 
-![VirusTotal Relations](Images/virustotal-relations.png)
+![VirusTotal Relations](../Screenshots/threat-intelligence/virustotal-relations.png)
 
 ### Observation
 
@@ -92,7 +92,7 @@ The domain was investigated using URLScan.io to observe its behavior, page conte
 
 ### Summary
 
-![URLScan Summary](Images/urlscan-summary.png)
+![URLScan Summary](../Screenshots/threat-intelligence/urlscan-summary.png)
 
 ### Observation
 
@@ -111,7 +111,7 @@ Although the page does not directly imitate PayPal, it is unrelated to the phish
 
 ### Outgoing Links
 
-![URLScan Links](Images/urlscan-links.png)
+![URLScan Links](../Screenshots/threat-intelligence/urlscan-links.png)
 
 ### Observation
 
@@ -123,7 +123,7 @@ The presence of numerous outbound links that are unrelated to the phishing theme
 
 ### DOM Analysis
 
-![URLScan DOM](Images/urlscan-dom.png)
+![URLScan DOM](../Screenshots/threat-intelligence/urlscan-dom.png)
 
 ### Observation
 
@@ -146,7 +146,7 @@ cat ~/CyberLab/Cases/Case-02-paypal/Artifacts/URL-Analysis/whois.txt
 
 ### Screenshot
 
-![WHOIS](Images/whois-domain.png)
+![WHOIS](../Screenshots/threat-intelligence/whois-domain.png)
 
 ### Observation
 
@@ -169,7 +169,7 @@ Cisco Talos was used to evaluate the domain's reputation.
 
 ### Screenshot
 
-![Cisco Talos](Images/talos-reputation.png)
+![Cisco Talos](../Screenshots/threat-intelligence/talos-reputation.png)
 
 ### Observation
 
@@ -187,7 +187,7 @@ The hosting IP associated with the domain (**168.76.87.16**) was investigated us
 
 ### Screenshot
 
-![AbuseIPDB](Images/abuseipdb.png)
+![AbuseIPDB](../Screenshots/threat-intelligence/abuseipdb.png)
 
 ### Observation
 
@@ -209,7 +209,7 @@ DNS infrastructure was validated using MXToolbox.
 
 ## DNS Records
 
-![DNS Records](Images/dns.png)
+![DNS Records](../Screenshots/threat-intelligence/dns.png)
 
 ### Observation
 
@@ -225,7 +225,7 @@ This confirms that the domain is active and reachable.
 
 ## MX Records
 
-![MX Records](Images/mx.png)
+![MX Records](../Screenshots/threat-intelligence/mx.png)
 
 ### Observation
 
@@ -237,7 +237,7 @@ The absence of MX records indicates that the domain is not configured to receive
 
 ## SPF Record
 
-![SPF Record](Images/spf.png)
+![SPF Record](../Screenshots/threat-intelligence/spf.png)
 
 ### Observation
 
@@ -249,7 +249,7 @@ Without an SPF policy, the domain lacks sender authentication mechanisms that he
 
 ## DMARC Record
 
-![DMARC Record](Images/dmarc.png)
+![DMARC Record](../Screenshots/threat-intelligence/dmarc.png)
 
 ### Observation
 
@@ -288,7 +288,7 @@ The sender domain was investigated using VirusTotal.
 
 ### Screenshot
 
-![VirusTotal Stayfriends](Images/vt-stayfriends.png)
+![VirusTotal Stayfriends](../Screenshots/threat-intelligence/vt-stayfriends.png)
 
 ### Observation
 
@@ -308,7 +308,7 @@ The sender domain was further verified using Cisco Talos Intelligence.
 
 ### Screenshot
 
-![Talos Stayfriends](Images/talos-stayfriends.png)
+![Talos Stayfriends](../Screenshots/threat-intelligence/talos-stayfriends.png)
 
 ### Observation
 
@@ -331,7 +331,7 @@ WHOIS information was reviewed to confirm that the domain is actively registered
 
 ### Screenshot
 
-![WHOIS Stayfriends](Images/who-is-stayfriends.png)
+![WHOIS Stayfriends](../Screenshots/threat-intelligence/who-is-stayfriends.png)
 
 ### Observation
 
@@ -371,7 +371,7 @@ The Return-Path domain was searched in VirusTotal.
 
 ### Screenshot
 
-![VirusTotal Return Path](Images/vt-returnpath.png)
+![VirusTotal Return Path](../Screenshots/threat-intelligence/vt-returnpath.png)
 
 ### Observation
 
@@ -387,7 +387,7 @@ The Return-Path domain was investigated using Cisco Talos.
 
 ### Screenshot
 
-![Talos Return Path](Images/talos-returnpath.png)
+![Talos Return Path](../Screenshots/threat-intelligence/talos-returnpath.png)
 
 ### Observation
 
@@ -411,7 +411,7 @@ whois messagsgerocappuccino.it
 
 ### Screenshot
 
-![WHOIS Return Path](Images/whois-returnpath.png)
+![WHOIS Return Path](../Screenshots/threat-intelligence/whois-returnpath.png)
 
 ### Observation
 
@@ -447,7 +447,7 @@ The IP address was investigated using AbuseIPDB.
 
 ### Screenshot
 
-![AbuseIPDB](Images/abuseipdb.png)
+![AbuseIPDB](../Screenshots/threat-intelligence/abuseipdb.png)
 
 ### Observation
 
@@ -472,7 +472,7 @@ The IP address was also investigated using VirusTotal.
 
 ### Screenshot
 
-![VirusTotal IP](Images/vt-ip.png)
+![VirusTotal IP](../Screenshots/threat-intelligence/vt-ip.png)
 
 ### Observation
 
@@ -488,7 +488,7 @@ Cisco Talos Intelligence was used to verify the IP reputation.
 
 ### Screenshot
 
-![Talos IP](Images/talos-ip.png)
+![Talos IP](../Screenshots/threat-intelligence/talos-ip.png)
 
 ### Observation
 
