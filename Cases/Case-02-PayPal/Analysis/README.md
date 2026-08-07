@@ -3,14 +3,11 @@
 <p align="left">
 
 <img src="https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge" />
-<img src="https://img.shields.io/badge/Severity-High-red?style=for-the-badge" />
 <img src="https://img.shields.io/badge/Case-02-blue?style=for-the-badge" />
-<img src="https://img.shields.io/badge/Incident-Credential%20Harvesting-darkred?style=for-the-badge" />
-<img src="https://img.shields.io/badge/Target-PayPal-00457C?style=for-the-badge" />
+<img src="https://img.shields.io/badge/Threat-Credential%20Harvesting-red?style=for-the-badge" />
 <img src="https://img.shields.io/badge/Platform-Kali%20Linux-557C94?style=for-the-badge" />
+<img src="https://img.shields.io/badge/Type-PayPal%20Phishing-8A2BE2?style=for-the-badge" />
 <img src="https://img.shields.io/badge/Framework-MITRE%20ATT%26CK-orange?style=for-the-badge" />
-<img src="https://img.shields.io/badge/IOC-Extracted-success?style=for-the-badge" />
-<img src="https://img.shields.io/badge/Threat%20Intel-Completed-yellow?style=for-the-badge" />
 
 </p>
 
