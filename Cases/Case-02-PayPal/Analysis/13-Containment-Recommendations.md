@@ -1,14 +1,36 @@
-# Containment Recommendations
+# 🛡️ Phase 13 – Containment Recommendations
 
-## Objective
+![Status](https://img.shields.io/badge/Status-Completed-44CC11)
+![Phase](https://img.shields.io/badge/Phase-13-blue)
+![Category](https://img.shields.io/badge/Category-Containment%20Recommendations-red)
+![Case](https://img.shields.io/badge/Case-02-blue)
+![Response](https://img.shields.io/badge/Response-Incident%20Containment-orange)
 
-The objective of this phase is to recommend immediate and long-term actions to contain the phishing campaign, reduce the risk of compromise, and prevent similar attacks in the future.
+---
+
+# 📖 Overview
+
+This phase provides immediate and long-term recommendations to contain the identified phishing campaign, reduce the likelihood of compromise, and improve the organization's resilience against similar phishing attacks in the future.
+
+The recommendations are based on the evidence collected throughout the investigation, including the extracted Indicators of Compromise (IOCs), Threat Intelligence findings, and MITRE ATT&CK mapping.
+
+---
+
+# 🎯 Objectives
+
+- Contain the identified phishing campaign.
+- Prevent further user interaction with the phishing infrastructure.
+- Reduce the likelihood of credential compromise.
+- Improve organizational detection and response capabilities.
+- Strengthen long-term email security controls.
 
 ---
 
 # Immediate Containment Actions
 
 The following actions should be performed immediately after identifying the phishing email.
+
+---
 
 ## 1. Block the Phishing Domain
 
@@ -20,7 +42,7 @@ The identified phishing domain should be blocked at:
 - Firewall
 - Endpoint Protection Platform
 
-**Domain to Block**
+### Domain to Block
 
 ```
 easilett.com
@@ -32,7 +54,7 @@ easilett.com
 
 The originating IP address should be monitored and blocked where appropriate.
 
-**IP Address**
+### IP Address
 
 ```
 77.91.100.118
@@ -46,10 +68,10 @@ Blocking the source IP may reduce further phishing attempts originating from the
 
 Search all mailboxes for messages matching the following indicators:
 
-- Sender: service@stayfriends.de
-- Return-Path: return@messagsgerocappuccino.it
-- Subject: 1.000€ Gratis Paypal Guthabenkarte
-- Embedded links containing easilett.com
+- Sender: `service@stayfriends.de`
+- Return-Path: `return@messagsgerocappuccino.it`
+- Subject: `1.000€ Gratis Paypal Guthabenkarte`
+- Embedded links containing **easilett.com**
 
 Any matching emails should be quarantined or removed.
 
@@ -59,7 +81,7 @@ Any matching emails should be quarantined or removed.
 
 Users who received the phishing email should be notified immediately.
 
-The notification should instruct users:
+The notification should instruct users to:
 
 - Do not click embedded links.
 - Do not submit credentials.
@@ -81,7 +103,9 @@ If a user interacted with the phishing website:
 
 # Detection Recommendations
 
-The following detection rules should be implemented.
+The following detection rules should be implemented to improve the organization's ability to identify similar phishing campaigns.
+
+---
 
 ## Email Gateway
 
@@ -99,7 +123,7 @@ Create rules to detect:
 
 Generate alerts when:
 
-- Users access easilett.com
+- Users access **easilett.com**
 - DNS requests resolve to suspicious domains
 - Similar phishing emails are received
 - Suspicious email authentication failures occur
@@ -108,16 +132,16 @@ Generate alerts when:
 
 ## Threat Intelligence
 
-Add the following IOCs to internal blocklists:
+Add the following Indicators of Compromise (IOCs) to internal blocklists:
 
 | IOC Type | Value |
-|----------|-------|
+| -------- | -------------------------------------------------------------------------- |
 | Domain | easilett.com |
 | Source IP | 77.91.100.118 |
 | Sender Email | service@stayfriends.de |
 | Return-Path | return@messagsgerocappuccino.it |
 
-These indicators should also be shared with organizational threat intelligence repositories where applicable.
+These indicators should also be shared with organizational Threat Intelligence repositories where applicable.
 
 ---
 
@@ -139,16 +163,32 @@ To reduce the likelihood of future phishing incidents, the organization should:
 
 Security teams should:
 
-- Monitor for suspicious email infrastructure.
-- Validate sender authentication before delivery.
+- Monitor suspicious email infrastructure.
+- Validate sender authentication before email delivery.
 - Continuously update phishing detection rules.
-- Review threat intelligence feeds for newly observed phishing domains.
+- Review Threat Intelligence feeds for newly observed phishing domains.
 - Improve visibility into email routing and authentication failures.
 
 ---
 
-# Conclusion
+# 💡 Analyst Assessment
+
+The investigation demonstrates that the phishing campaign relied primarily on social engineering rather than malware delivery.
+
+By combining trusted branding, attacker-controlled infrastructure, and persuasive phishing content, the threat actor attempted to convince recipients to voluntarily disclose sensitive information.
+
+Implementing the recommended containment measures will significantly reduce the likelihood of successful credential harvesting attacks while improving the organization's overall detection and response capabilities.
+
+---
+
+# ✅ Conclusion
 
 The phishing campaign relied on social engineering rather than malware delivery. Rapid identification, IOC blocking, user awareness, and continuous monitoring are essential to minimizing the impact of similar attacks.
 
 Implementing the recommendations described above will significantly reduce the likelihood of successful phishing attacks and improve the organization's overall email security posture.
+
+---
+
+# ➡️ Next Phase
+
+Continue to **Phase 14 – Incident Report** to summarize the investigation findings, document the incident timeline, and provide the final case assessment.
