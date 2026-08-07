@@ -1,10 +1,20 @@
 ==================================================
-DNS Lookup
+DNS Lookup Artifact
 ==================================================
 
 Case ID        : CASE-02
+Artifact       : DNS Lookup
 Target Domain  : easilett.com
-Command        : dig easilett.com
+Command Used   : dig easilett.com
+Generated On   : During URL Analysis
 
---------------------------------------------------
+==================================================
+RAW OUTPUT
+==================================================
 
+<PASTE YOUR ORIGINAL DIG OUTPUT HERE EXACTLY>
+
+==================================================
+END OF ARTIFACT
+
+This artifact was generated directly from the investigation and preserved in its original form for forensic purposes.
