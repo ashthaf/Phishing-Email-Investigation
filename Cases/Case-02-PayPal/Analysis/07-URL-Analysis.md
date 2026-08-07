@@ -66,7 +66,7 @@ Only Google's font service was directly referenced using HTTPS.
 
 ### Screenshot
 
-![Domain Extraction](../../Screenshots/url-analysis/domain-extraction.png)
+![Domain Extraction](../Screenshots/url-analysis/domain-extraction.png)
 
 ---
 
@@ -108,7 +108,7 @@ IP Address:
 
 ### Screenshot
 
-![dig](../../Screenshots/url-analysis/dig-domain.png)
+![dig](../Screenshots/url-analysis/dig-domain.png)
 
 ---
 
@@ -128,7 +128,7 @@ easilett.com has address 168.76.87.16
 
 ### Screenshot
 
-![Host Lookup](../../Screenshots/url-analysis/host-lookup.png)
+![Host Lookup](../Screenshots/url-analysis/host-lookup.png)
 
 ---
 
@@ -159,7 +159,7 @@ whois.txt
 
 ### Screenshot
 
-![WHOIS](../../Screenshots/url-analysis/whois.png)
+![WHOIS](../Screenshots/url-analysis/whois.png)
 
 ---
 
@@ -173,7 +173,7 @@ No mail server (MX record) was configured.
 
 Screenshot:
 
-![MX Lookup](../../Screenshots/url-analysis/mx.png)
+![MX Lookup](../Screenshots/url-analysis/mx.png)
 
 ---
 
@@ -185,7 +185,7 @@ This increases the risk of email spoofing.
 
 Screenshot:
 
-![SPF](../../Screenshots/url-analysis/spf.png)
+![SPF](../Screenshots/url-analysis/spf.png)
 
 ---
 
@@ -197,7 +197,7 @@ Without DMARC protection, phishing emails are easier to spoof.
 
 Screenshot:
 
-![DMARC](../../Screenshots/url-analysis/dmarc.png)
+![DMARC](../Screenshots/url-analysis/dmarc.png)
 
 ---
 
@@ -213,7 +213,7 @@ IP Address
 
 Screenshot:
 
-![DNS](../../Screenshots/url-analysis/dns.png)
+![DNS](../Screenshots/url-analysis/dns.png)
 
 ---
 
@@ -245,11 +245,11 @@ Phishing
 
 Screenshots:
 
-![VirusTotal Summary](../../Screenshots/url-analysis/virustotal-summary.png)
+![VirusTotal Summary](../Screenshots/url-analysis/virustotal-summary.png)
 
-![VirusTotal Details](../../Screenshots/url-analysis/virustotal-details.png)
+![VirusTotal Details](../Screenshots/url-analysis/virustotal-details.png)
 
-![VirusTotal Relations](../../Screenshots/url-analysis/virustotal-relations.png)
+![VirusTotal Relations](../Screenshots/url-analysis/virustotal-relations.png)
 
 ---
 
@@ -266,11 +266,11 @@ Findings:
 
 Screenshots:
 
-![URLScan Summary](../../Screenshots/url-analysis/urlscan-summary.png)
+![URLScan Summary](../Screenshots/url-analysis/urlscan-summary.png)
 
-![URLScan Links](../../Screenshots/url-analysis/urlscan-links.png)
+![URLScan Links](../Screenshots/url-analysis/urlscan-links.png)
 
-![URLScan DOM](../../Screenshots/url-analysis/urlscan-dom.png)
+![URLScan DOM](../Screenshots/url-analysis/urlscan-dom.png)
 
 ---
 
@@ -286,7 +286,7 @@ No Talos blocklisting was present.
 
 Screenshot:
 
-![Talos](../../Screenshots/url-analysis/talos-reputation.png)
+![Talos](../Screenshots/url-analysis/talos-reputation.png)
 
 ---
 
@@ -307,7 +307,7 @@ Result:
 
 Screenshot:
 
-![AbuseIPDB](../../Screenshots/url-analysis/abuseipdb.png)
+![AbuseIPDB](../Screenshots/url-analysis/abuseipdb.png)
 
 ---
 
