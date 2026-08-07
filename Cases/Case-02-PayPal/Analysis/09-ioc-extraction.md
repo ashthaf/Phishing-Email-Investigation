@@ -16,7 +16,8 @@ The objective of this phase is to identify and document all Indicators of Compro
 | Subject | 1.000€ Gratis Paypal Guthabenkarte, phishing@pot | Social Engineering Lure |
 | Source IP | 77.91.100.118 | Suspicious |
 | Internal Relay IP | 10.167.8.70 | Internal Infrastructure |
-| Domain | fonts.googleapis.com | Legitimate |
+| Suspicious Domain | easilett.com | Suspicious |
+| Legitimate Domain | fonts.googleapis.com | Legitimate |
 | Attachment | None | No Attachment Found |
 | MIME Type | text/html | HTML Email |
 | Message-ID | Not Present | N/A |
@@ -37,7 +38,7 @@ grep "^From:" ~/CyberLab/Cases/Case-02-paypal/Evidence/Headers/email-header.txt
 
 ### Screenshot
 
-![Sender Email](../Screenshots/IOC-extraction/from-header.png)
+![Sender Email](../Screenshots/IOC-extraction/sender-email.png)
 
 ### Observation
 
@@ -59,7 +60,7 @@ grep "^Return-Path:" ~/CyberLab/Cases/Case-02-paypal/Evidence/Headers/email-head
 
 ### Screenshot
 
-![Return Path](../Screenshots/IOC-extraction/rp.png)
+![Return Path](../Screenshots/IOC-extraction/return-path.png)
 
 ### Observation
 
@@ -99,7 +100,7 @@ grep "^Subject:" ~/CyberLab/Cases/Case-02-paypal/Evidence/Headers/email-header.t
 
 ### Screenshot
 
-![Subject](../Screenshots/IOC-extraction/subject-header.png)
+![Subject](../Screenshots/IOC-extraction/subject.png)
 
 ### Observation
 
@@ -117,7 +118,7 @@ grep "^Message-ID:" ~/CyberLab/Cases/Case-02-paypal/Evidence/Headers/email-heade
 
 ### Screenshot
 
-![Message ID](../Screenshots/IOC-extraction/Message-ID-header.png)
+![Message ID](../Screenshots/IOC-extraction/message-id.png)
 
 ### Observation
 
@@ -135,7 +136,7 @@ grep "^Received:" ~/CyberLab/Cases/Case-02-paypal/Evidence/Headers/email-header.
 
 ### Screenshot
 
-![Received Headers](../Screenshots/IOC-extraction/Received-headers.png)
+![Received Headers](../Screenshots/IOC-extraction/received.png)
 
 ### Observation
 
@@ -158,7 +159,7 @@ grep -Eo '([0-9]{1,3}\.){3}[0-9]{1,3}' sample-1407.eml | sort -u
 
 ### Screenshot
 
-![IP Addresses](../Screenshots/IOC-extraction/ip-addresses.png)
+![IP Extraction](../Screenshots/IOC-extraction/ip-extraction.png)
 
 ### Extracted IPs
 
@@ -173,7 +174,7 @@ The external IP (77.91.100.118) is considered the primary IOC, while 10.167.8.70
 
 # URL Extraction
 
-URLs embedded within the HTML email were extracted.
+URLs embedded within the HTML email were extracted during the URL Analysis phase.
 
 ### Screenshot
 
@@ -181,29 +182,33 @@ URLs embedded within the HTML email were extracted.
 
 ### Observation
 
-Only one external resource was identified:
+The phishing email referenced both a legitimate external resource and a suspicious domain identified during the investigation.
 
 - https://fonts.googleapis.com/
-
-This is a legitimate Google-hosted stylesheet used for formatting and is not considered malicious.
+- easilett.com
 
 ---
 
 # Domain Extraction
 
-Domains were extracted from the identified URLs.
+The domains identified during URL Analysis were reviewed and classified based on their purpose and relevance to the phishing campaign.
 
 ### Screenshot
 
 ![Domain Extraction](../Screenshots/IOC-extraction/domain-extraction.png)
 
-### Extracted Domain
+### Extracted Domains
 
-- fonts.googleapis.com
+| Domain | Classification |
+|---------|----------------|
+| easilett.com | Suspicious |
+| fonts.googleapis.com | Legitimate |
 
 ### Observation
 
-The extracted domain is legitimate and does not indicate malicious activity.
+The domain **easilett.com** was identified within the phishing email content and is unrelated to PayPal. It is considered a primary Indicator of Compromise (IOC) and will be investigated further during the Threat Intelligence phase.
+
+The **fonts.googleapis.com** domain is a legitimate Google-hosted resource used to load web fonts for HTML rendering and is not considered malicious.
 
 ---
 
@@ -213,7 +218,7 @@ The email was examined for attachments.
 
 ### Screenshot
 
-![Attachment Search](../Screenshots/IOC-extraction/Attachement-search.png)
+![Attachment Check](../Screenshots/IOC-extraction/attachment-check.png)
 
 ### Observation
 
@@ -247,6 +252,7 @@ The phishing email consists of HTML content and does not contain any attached fi
 | service@stayfriends.de | Suspicious Sender |
 | return@messagsgerocappuccino.it | Suspicious Return-Path |
 | 77.91.100.118 | Suspicious External IP |
+| easilett.com | Suspicious Domain |
 | fonts.googleapis.com | Legitimate Domain |
 | HTML Email | Email Format |
 | No Attachment | Verified |
@@ -255,6 +261,8 @@ The phishing email consists of HTML content and does not contain any attached fi
 
 # Conclusion
 
-The IOC extraction phase identified several indicators associated with the phishing campaign. The sender email, Return-Path, and originating IP address are considered suspicious and should be retained for further threat intelligence analysis. No malicious attachments were identified, and the only extracted domain (`fonts.googleapis.com`) is a legitimate external resource used for rendering HTML content.
+The IOC extraction phase identified several indicators associated with the phishing campaign. The sender email, Return-Path, originating IP address, and the domain **easilett.com** are considered suspicious and should be retained for further threat intelligence analysis. The **fonts.googleapis.com** domain is a legitimate external resource used for rendering HTML content and does not represent malicious infrastructure.
+
+No malicious attachments were identified, and the email was delivered as an HTML message.
 
 The extracted IOCs will be validated during the Threat Intelligence phase to determine their reputation, historical activity, and potential association with known phishing infrastructure.
