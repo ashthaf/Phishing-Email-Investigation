@@ -144,7 +144,7 @@ This confirms that the email consists solely of an HTML message body.
 
 **Screenshot**
 
-![Content Type](../Screenshots/Attachment-analysis/content-type.png)
+![Content Type](../Screenshots/Attachement-analysis/content-type.png)
 
 ---
 
