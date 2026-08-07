@@ -1,134 +1,106 @@
-# Evidence Summary
+# 📑 Evidence Summary
 
-## CASE Information
-
-| Field | Value |
-|--------|-------|
-| Case ID | CASE-02 |
-| Case Name | PayPal Gift Card Phishing Investigation |
-| Evidence ID | EVID-001 |
-| Analyst | Abdull Ashthaf CK |
-| Investigation Platform | Kali Linux |
-| Status | Preserved |
+![Evidence](https://img.shields.io/badge/Evidence-Summary-blue)
+![Status](https://img.shields.io/badge/Status-Complete-brightgreen)
 
 ---
 
-# Evidence Overview
+# 📖 Overview
 
-This document provides a summary of the primary evidence collected during **CASE-02**.
+This document summarizes the primary evidence collected during the investigation of the PayPal phishing email.
 
-The evidence consists of the original phishing email preserved in its native `.eml` format and a password-protected archive created for safe storage and distribution.
-
-The integrity of the evidence was verified using cryptographic hash functions prior to analysis.
+The collected evidence formed the basis for all subsequent analysis phases, including header analysis, routing analysis, authentication verification, content analysis, URL investigation, IOC extraction, Threat Intelligence validation, and incident reporting.
 
 ---
 
 # Primary Evidence
 
-| Property | Value |
-|----------|-------|
-| Original File | sample-1407.eml |
-| Investigation Copy | phishing-email.eml |
-| Archive | phishing-email.zip |
-| File Format | RFC 822 Email (.eml) |
-| Archive Password | infected |
+| Evidence | Description |
+|----------|-------------|
+| sample-1407.eml | Original phishing email sample |
 
 ---
 
-# Evidence Location
+# Extracted Evidence
 
-| Evidence | Location |
-|----------|----------|
-| Original Email | Evidence/Original-Email/phishing-email.eml |
-| Password-Protected Archive | Evidence/Original-Email/phishing-email.zip |
-| Chain of Custody | Evidence/chain-of-custody.md |
-| Evidence Notes | Evidence/notes.md |
+## Email Headers
 
----
+- email-header.txt
+- Received-header.txt
 
-# Integrity Verification
+Purpose:
 
-Evidence integrity was verified before any forensic analysis.
-
-| Algorithm | Status |
-|-----------|--------|
-| MD5 | ✅ Verified |
-| SHA256 | ✅ Verified |
-
-The generated hash values matched during verification, confirming that the evidence remained unchanged throughout the preservation process.
+- Sender analysis
+- Routing analysis
+- Authentication verification
 
 ---
 
-# Evidence Metadata
+## Email Content
 
-The following information was collected from the original email before analysis:
+- phishing-email.html
 
-- File type
-- File size
-- File permissions
-- File ownership
-- File timestamps
-- MD5 hash
-- SHA256 hash
+Purpose:
 
-Metadata collection was performed using standard Linux forensic utilities.
+- HTML analysis
+- Hyperlink extraction
+- Content analysis
 
 ---
 
-# Preservation Activities
+## URL Investigation
 
-The following actions were completed during the evidence preservation phase:
+- extracted_urls.txt
+- domains.txt
+- dig.txt
+- whois.txt
 
-- Original phishing email preserved.
-- Working copy created.
-- MD5 hash generated.
-- SHA256 hash generated.
-- Hash values verified.
-- Password-protected archive created.
-- Chain of custody documented.
-- Evidence metadata collected.
+Purpose:
 
----
-
-# Initial Assessment
-
-The email appears to impersonate the **PayPal** brand using a promotional gift card theme.
-
-At the time of preservation, no modifications were made to the original evidence.
-
-Technical analysis of the email content, sender infrastructure, authentication mechanisms, URLs, and Indicators of Compromise (IOCs) will be performed during subsequent investigation phases.
+- URL analysis
+- Domain investigation
+- DNS validation
+- WHOIS verification
 
 ---
 
-# Related Documentation
+## Threat Intelligence
 
-- chain-of-custody.md
-- notes.md
-- Original-Email/
-- Headers/
-- Artifacts/
-- IOCs/
-- Analysis/
+The extracted indicators were validated using:
 
----
-
-# Evidence Status
-
-| Item | Status |
-|------|--------|
-| Original Email Preserved | ✅ |
-| Working Copy Created | ✅ |
-| MD5 Generated | ✅ |
-| SHA256 Generated | ✅ |
-| Hashes Verified | ✅ |
-| Archive Protected | ✅ |
-| Metadata Collected | ✅ |
-| Ready for Technical Analysis | ✅ |
+- VirusTotal
+- URLScan.io
+- Cisco Talos
+- AbuseIPDB
+- MXToolbox
+- WHOIS
 
 ---
 
-**Prepared By:** Abdull Ashthaf CK
+# Key Indicators of Compromise
 
-**Project:** Phishing Email Investigation & Incident Response Lab
+| Type | Value |
+|------|-------|
+| Sender | service@stayfriends.de |
+| Return-Path | return@messaggerocappuccino.it |
+| Source IP | 77.91.100.118 |
+| Suspicious Domain | easilett.com |
+| Legitimate Domain | fonts.googleapis.com |
 
-**Case:** CASE-02 – PayPal Gift Card Phishing Investigation
+---
+
+# Investigation Outcome
+
+The investigation determined that:
+
+- The email impersonated PayPal.
+- The campaign relied on social engineering.
+- Embedded hyperlinks redirected victims to attacker-controlled infrastructure.
+- No malware attachments were identified.
+- The campaign was classified as a credential harvesting phishing attack.
+
+---
+
+# Conclusion
+
+The collected evidence provided sufficient technical information to reconstruct the phishing campaign, identify the supporting infrastructure, extract actionable Indicators of Compromise (IOCs), and complete the incident investigation.
