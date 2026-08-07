@@ -1,14 +1,32 @@
-# Phase 01 – Initial Triage
+# 🚨 Phase 01 – Initial Triage
 
-## Objective
-
-The objective of the Initial Triage phase was to perform a safe preliminary assessment of the suspicious email while preserving the original evidence. No interaction with embedded links, remote content, or external resources was performed during this stage.
-
-The email was reviewed inside an isolated Kali Linux virtual machine using Mozilla Thunderbird to identify visible phishing characteristics before proceeding to detailed forensic analysis.
+![Status](https://img.shields.io/badge/Status-Completed-44CC11)
+![Phase](https://img.shields.io/badge/Phase-01-blue)
+![Category](https://img.shields.io/badge/Category-Initial%20Triage-red)
+![Severity](https://img.shields.io/badge/Severity-High-red)
+![Case](https://img.shields.io/badge/Case-02-blue)
 
 ---
 
-# Investigation Environment
+# 📖 Overview
+
+The **Initial Triage** phase focused on performing a safe preliminary assessment of the suspicious email while preserving the integrity of the original evidence. During this stage, no interaction with embedded hyperlinks, remote content, or external resources was performed.
+
+The email was examined inside an isolated **Kali Linux** virtual machine using **Mozilla Thunderbird** to identify visible phishing indicators before proceeding with detailed forensic analysis.
+
+---
+
+# 🎯 Objectives
+
+- Preserve the original email evidence.
+- Perform a safe visual inspection of the email.
+- Identify obvious phishing indicators.
+- Determine whether further forensic investigation is required.
+- Prevent accidental interaction with attacker-controlled infrastructure.
+
+---
+
+# 🖥️ Investigation Environment
 
 | Item | Value |
 |------|-------|
@@ -21,26 +39,26 @@ The email was reviewed inside an isolated Kali Linux virtual machine using Mozil
 
 ---
 
-# Initial Visual Inspection
+# 🔍 Initial Visual Inspection
 
-The phishing email was opened inside Mozilla Thunderbird.
+The phishing email was opened within **Mozilla Thunderbird** in an isolated virtual environment.
 
-Immediately after opening the message, Thunderbird displayed a warning indicating that **remote content had been blocked**. This prevents external images or tracking resources from loading automatically and is an important security feature when investigating suspicious emails.
+Immediately upon opening the message, Thunderbird displayed a warning indicating that **remote content had been blocked**. This security feature prevents external images, tracking pixels, and other remote resources from loading automatically, reducing the risk of accidental communication with attacker-controlled infrastructure.
 
-The email impersonates **PayPal** by claiming that the recipient has won a **€1000 PayPal Gift Card** and urges the user to claim the reward by clicking embedded hyperlinks.
+The email impersonated **PayPal**, claiming that the recipient had won a **€1000 PayPal Gift Card** and encouraging immediate action by clicking embedded hyperlinks to claim the reward.
 
-No attachments were observed during the initial inspection.
+No file attachments were present within the message.
 
 ---
 
-# Initial Findings
+# 🚩 Initial Findings
 
 | Observation | Result |
-|------------|--------|
+|-------------|--------|
 | Brand Impersonation | PayPal |
 | Language | German |
 | Theme | Gift Card / Prize |
-| Social Engineering | Reward Based |
+| Social Engineering | Reward-Based Lure |
 | Urgency | High |
 | Remote Content | Blocked |
 | Attachments | None |
@@ -49,109 +67,102 @@ No attachments were observed during the initial inspection.
 
 ---
 
-# Initial Risk Assessment
+# 📊 Initial Risk Assessment
 
-Several phishing indicators were identified during the visual inspection.
+The preliminary assessment identified several characteristics commonly associated with phishing campaigns.
 
-- Uses PayPal branding without verification.
-- Promises a high-value monetary reward.
-- Encourages immediate user interaction.
-- Contains embedded hyperlinks.
-- Uses generic recipient information.
-- Relies on social engineering rather than technical exploitation.
+- PayPal branding was used to establish credibility.
+- The email promised a high-value monetary reward.
+- Recipients were encouraged to take immediate action.
+- Multiple embedded hyperlinks were present.
+- Generic recipient targeting was observed.
+- The message relied heavily on social engineering techniques.
 
-Based on these observations, the email was classified as **High Risk** and advanced to detailed forensic analysis.
+Based on these observations, the email was classified as **High Risk** and escalated for comprehensive forensic analysis.
 
 ---
 
-# Evidence Collected
+# 📂 Evidence Collected
 
-The following evidence was documented during the Initial Triage phase.
+The following evidence was preserved during the Initial Triage phase:
 
-- Original phishing email
-- Email subject
+- Original phishing email (.eml)
+- Email subject line
 - Sender information
-- Remote content warning
-- Email body
-- Embedded hyperlinks (visual)
+- Thunderbird remote content warning
+- HTML email body
+- Embedded hyperlinks (visual inspection)
 - Raw email preview
 
 ---
 
-# Screenshots
+# 📸 Screenshots
 
 ## Investigation Workspace
 
-Shows the isolated Kali Linux investigation environment with Thunderbird used to safely examine the phishing email.
-
-![Investigation Workspace](../Screenshots/email-opened-thunderbird.png)
+Shows the isolated Kali Linux environment used to safely investigate the phishing email.
 
 ---
 
 ## Original Email Opened
 
-The phishing email opened inside Mozilla Thunderbird for visual inspection.
-
-![Original Email](../Screenshots/email-opened.png)
+Displays the phishing email opened in Mozilla Thunderbird.
 
 ---
 
 ## Sender Information
 
-Displays the sender address, recipient, subject line, and email metadata visible in Thunderbird.
-
-![Sender Information](../Screenshots/email-sender-info.png)
+Shows the sender address, recipient, subject line, and visible email metadata.
 
 ---
 
 ## Remote Content Protection
 
-Thunderbird automatically blocked external content, preventing remote resources from loading during analysis.
-
-![Remote Content Warning](../Screenshots/remote-content-warning.png)
+Illustrates Thunderbird blocking remote content to prevent communication with external resources.
 
 ---
 
 ## Email Body (Upper Section)
 
-Shows the beginning of the phishing email, including the PayPal branding and fraudulent reward notification.
-
-![Email Body Top](../Screenshots/email-body-top.png)
+Displays the PayPal branding and fraudulent gift card notification.
 
 ---
 
 ## Email Body (Lower Section)
 
-Displays the embedded call-to-action link and unsubscribe section found near the end of the email.
-
-![Email Body Bottom](../Screenshots/email-body-bottom.png)
+Shows the embedded call-to-action hyperlink and footer section of the phishing email.
 
 ---
 
 ## Raw Email Preview
 
-Initial examination of the original email headers and message content from the command line before performing detailed header analysis.
-
-![Raw Email](../Screenshots/email-raw.png)
+Displays the original email content viewed from the command line prior to detailed header analysis.
 
 ---
 
-# Analyst Notes
+# 💡 Analyst Notes
 
-The email was examined in a controlled virtual environment.
+The investigation was conducted entirely within an isolated virtual machine to preserve evidence and prevent accidental interaction with attacker infrastructure.
 
-No hyperlinks were clicked.
+During this phase:
 
-No remote content was loaded.
+- No hyperlinks were clicked.
+- No remote content was loaded.
+- No attachments were executed.
+- Evidence integrity was maintained throughout the investigation.
 
-No attachments were executed.
-
-Evidence integrity was maintained throughout the initial assessment.
+These precautions ensured that the original evidence remained unaltered and suitable for subsequent forensic analysis.
 
 ---
 
-# Conclusion
+# ✅ Conclusion
 
-The initial triage confirmed that the message exhibits multiple characteristics commonly associated with phishing campaigns, including PayPal brand impersonation, reward-based social engineering, and embedded hyperlinks designed to encourage user interaction.
+The initial triage confirmed multiple indicators consistent with a phishing campaign, including PayPal brand impersonation, reward-based social engineering, urgent call-to-action messaging, and embedded hyperlinks intended to encourage user interaction.
 
-The findings from this phase justified proceeding with detailed technical analysis of the email headers, routing information, authentication mechanisms, embedded URLs, and associated infrastructure in the subsequent phases of the investigation.
+Although no technical analysis was performed during this phase, the preliminary findings justified escalation to a full forensic investigation, including detailed examination of the email headers, routing path, authentication mechanisms, embedded URLs, and associated attacker infrastructure.
+
+---
+
+# ➡️ Next Phase
+
+Continue to **02-Header-Analysis.md** to analyze the SMTP headers, sender information, message routing, and email authentication records.
