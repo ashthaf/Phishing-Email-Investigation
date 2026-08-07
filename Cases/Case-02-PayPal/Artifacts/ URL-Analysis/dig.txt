@@ -1,20 +1,20 @@
-==================================================
-DNS Lookup Artifact
-==================================================
+$ dig easilett.com
 
-Case ID        : CASE-02
-Artifact       : DNS Lookup
-Target Domain  : easilett.com
-Command Used   : dig easilett.com
-Generated On   : During URL Analysis
+; <<>> DiG 9.20.26-1-Debian <<>> easilett.com
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 19702
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
 
-==================================================
-RAW OUTPUT
-==================================================
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1472
+;; QUESTION SECTION:
+;easilett.com.              IN      A
 
-<PASTE YOUR ORIGINAL DIG OUTPUT HERE EXACTLY>
+;; ANSWER SECTION:
+easilett.com.        30      IN      A       168.76.87.16
 
-==================================================
-END OF ARTIFACT
-
-This artifact was generated directly from the investigation and preserved in its original form for forensic purposes.
+;; Query time: 8 msec
+;; SERVER: 203.153.41.28#53(203.153.41.28) (UDP)
+;; WHEN: Fri Aug 07 21:42:23 IST 2026
+;; MSG SIZE  rcvd: 57
