@@ -33,7 +33,7 @@ Only one HTML file was extracted.
 
 **Screenshot**
 
-![Attachment Files](../Screenshots/attachment-analysis/Attachemnt-files.png)
+![Attachment Files](../Screenshots/Attachement-analysis/Attachemnt-files.png)
 
 ---
 
@@ -57,7 +57,7 @@ Only the HTML email body was present.
 
 **Screenshot**
 
-![Attachment Search](../Screenshots/attachment-analysis/Attachement-search.png)
+![Attachment Search](../Screenshots/Attachement-analysis/Attachement-search.png)
 
 ---
 
@@ -92,7 +92,7 @@ No attachment files were identified.
 
 **Screenshot**
 
-![Attachment Types](../Screenshots/attachment-analysis/Attachement-types.png)
+![Attachment Types](../Screenshots/Attachement-analysis/Attachement-types.png)
 
 ---
 
@@ -118,7 +118,7 @@ No attachment-related headers were found.
 
 **Screenshot**
 
-![Content Disposition](../Screenshots/Attachment-analysis/content-disposition.png)
+![Content Disposition](../Screenshots/Attachement-analysis/content-disposition.png)
 
 ---
 
@@ -144,7 +144,7 @@ This confirms that the email consists solely of an HTML message body.
 
 **Screenshot**
 
-![Content Type](../Screenshots/attachment-analysis/content-type.png)
+![Content Type](../Screenshots/Attachment-analysis/content-type.png)
 
 ---
 
