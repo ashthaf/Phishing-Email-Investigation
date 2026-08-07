@@ -205,7 +205,7 @@ The resolved IP address associated with **easilett.com** was investigated using 
 
 ### Screenshot
 
-![AbuseIPDB](../Screenshots/threat-intelligence/abuseipdb-domain.png)
+![AbuseIPDB](../Screenshots/threat-intelligence/abuseipdb.png)
 
 ### Observation
 
