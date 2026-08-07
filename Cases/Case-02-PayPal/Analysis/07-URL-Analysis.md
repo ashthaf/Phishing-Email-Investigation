@@ -1,12 +1,35 @@
-# URL & Domain Analysis
+# 🌐 Phase 07 – URL & Domain Analysis
 
-## Objective
-
-The objective of this phase was to investigate the URLs and domains embedded in the phishing email to determine whether they were malicious. Static analysis was performed using Linux command-line tools and multiple OSINT platforms.
+![Status](https://img.shields.io/badge/Status-Completed-44CC11)
+![Phase](https://img.shields.io/badge/Phase-07-blue)
+![Category](https://img.shields.io/badge/Category-URL%20%26%20Domain%20Analysis-red)
+![Case](https://img.shields.io/badge/Case-02-blue)
+![Evidence](https://img.shields.io/badge/Evidence-URLs%20%26%20Domains-orange)
 
 ---
 
-# Step 1 – Extract HTTPS URLs from the Email
+# 📖 Overview
+
+The purpose of this phase was to investigate the URLs and domains embedded within the phishing email to determine whether they were associated with malicious infrastructure. Static analysis was performed using Linux command-line tools and multiple Open-Source Intelligence (OSINT) platforms to validate the extracted domains.
+
+The investigation focused on identifying suspicious domains, resolving their infrastructure, validating DNS configurations, and assessing their reputation using publicly available threat intelligence sources.
+
+---
+
+# 🎯 Objectives
+
+The objectives of this phase were to:
+
+- Extract URLs embedded within the phishing email.
+- Identify associated domain names.
+- Investigate suspicious domains.
+- Validate DNS and WHOIS information.
+- Perform reputation analysis using multiple OSINT platforms.
+- Determine whether the identified infrastructure should be considered malicious.
+
+---
+
+# 📂 Step 1 – Extract HTTPS URLs from the Email
 
 The phishing email HTML file was searched to identify all embedded HTTPS links.
 
@@ -22,7 +45,7 @@ The extracted URLs were saved for later analysis.
 grep -Eo 'https://[^"]+' ~/CyberLab/Cases/Case-02-paypal/Evidence/Email-body/phishing-email.html | sort -u > ~/CyberLab/Cases/Case-02-paypal/Artifacts/URL-Analysis/extracted_urls.txt
 ```
 
-Verify:
+Verification:
 
 ```bash
 cat ~/CyberLab/Cases/Case-02-paypal/Artifacts/URL-Analysis/extracted_urls.txt
@@ -34,9 +57,9 @@ cat ~/CyberLab/Cases/Case-02-paypal/Artifacts/URL-Analysis/extracted_urls.txt
 
 ---
 
-# Step 2 – Extract Domain Name
+# 🌍 Step 2 – Extract Domain Name
 
-The domain name was extracted from the URL list.
+The domain names were extracted from the URL list.
 
 ### Command
 
@@ -50,7 +73,7 @@ Save output:
 awk -F/ '{print $3}' extracted_urls.txt | sort -u > domains.txt
 ```
 
-Verify:
+Verification:
 
 ```bash
 cat domains.txt
@@ -58,7 +81,7 @@ cat domains.txt
 
 ### Result
 
-```
+```text
 fonts.googleapis.com
 ```
 
@@ -70,21 +93,21 @@ Only Google's font service was directly referenced using HTTPS.
 
 ---
 
-# Step 3 – Investigate easilett.com
+# 🚨 Step 3 – Investigate easilett.com
 
 During manual inspection of the HTML source, multiple HTTP links pointed to:
 
-```
+```text
 easilett.com
 ```
 
-This became the primary investigation target.
+Because this domain hosted the embedded hyperlinks and image resources used within the phishing email, it became the primary target for further investigation.
 
 ---
 
-# Step 4 – DNS Resolution
+# 🌐 Step 4 – DNS Resolution
 
-DNS records were queried.
+DNS records were queried to determine the IP address associated with the suspicious domain.
 
 ### Command
 
@@ -100,9 +123,7 @@ dig easilett.com > dig.txt
 
 ### Result
 
-IP Address:
-
-```
+```text
 168.76.87.16
 ```
 
@@ -112,7 +133,7 @@ IP Address:
 
 ---
 
-# Step 5 – Host Lookup
+# 🖥️ Step 5 – Host Lookup
 
 ### Command
 
@@ -122,7 +143,7 @@ host easilett.com
 
 ### Result
 
-```
+```text
 easilett.com has address 168.76.87.16
 ```
 
@@ -132,9 +153,9 @@ easilett.com has address 168.76.87.16
 
 ---
 
-# Step 6 – WHOIS Lookup
+# 📑 Step 6 – WHOIS Lookup
 
-WHOIS information was collected.
+WHOIS information was collected to identify the registration details of the suspicious domain.
 
 ### Command
 
@@ -142,15 +163,15 @@ WHOIS information was collected.
 whois easilett.com
 ```
 
-Saved as
+Saved as:
 
-```
+```text
 whois.txt
 ```
 
 ### Findings
 
-- Domain registered: October 22, 2025
+- Domain Registered: October 22, 2025
 - Registrar: Name SRS AB
 - Status: Active
 - Name Servers:
@@ -163,13 +184,15 @@ whois.txt
 
 ---
 
-# Step 7 – MXToolbox Analysis
+# 📬 Step 7 – MXToolbox Analysis
 
-Multiple DNS and email security checks were performed.
+Multiple DNS and email security checks were performed using MXToolbox.
 
 ## MX Record
 
-No mail server (MX record) was configured.
+No MX record was configured for the domain.
+
+This indicates that the domain is not configured to receive email.
 
 Screenshot:
 
@@ -179,9 +202,9 @@ Screenshot:
 
 ## SPF Record
 
-No SPF record was found.
+No SPF record was identified.
 
-This increases the risk of email spoofing.
+The absence of an SPF policy increases the likelihood of email spoofing.
 
 Screenshot:
 
@@ -193,7 +216,7 @@ Screenshot:
 
 No DMARC policy was configured.
 
-Without DMARC protection, phishing emails are easier to spoof.
+Without DMARC enforcement, phishing emails are easier to spoof and more difficult to detect.
 
 Screenshot:
 
@@ -203,11 +226,9 @@ Screenshot:
 
 ## DNS Lookup
 
-DNS lookup confirmed:
+DNS resolution confirmed the following IP address:
 
-IP Address
-
-```
+```text
 168.76.87.16
 ```
 
@@ -217,29 +238,27 @@ Screenshot:
 
 ---
 
-# Step 8 – VirusTotal Analysis
+# 🛡️ Step 8 – VirusTotal Analysis
 
-VirusTotal reputation lookup was performed.
+A reputation lookup was performed using VirusTotal.
 
-## Detection
+### Detection
 
-Only
-
-```
+```text
 1 / 91
 ```
 
-security vendors detected the domain as malicious.
+security vendors classified the domain as malicious.
 
-Vendor:
+**Vendor**
 
-```
+```text
 Fortinet
 ```
 
-Classification:
+**Classification**
 
-```
+```text
 Phishing
 ```
 
@@ -253,16 +272,16 @@ Screenshots:
 
 ---
 
-# Step 9 – URLScan.io
+# 🔍 Step 9 – URLScan.io Analysis
 
-The domain was analyzed using URLScan.
+The domain was investigated using URLScan.io.
 
-Findings:
+### Findings
 
-- HTTP transactions observed
-- Multiple redirects
-- External links identified
-- Historical scans available
+- HTTP transactions observed.
+- Multiple redirects identified.
+- External resources detected.
+- Historical scan data available.
 
 Screenshots:
 
@@ -274,15 +293,15 @@ Screenshots:
 
 ---
 
-# Step 10 – Cisco Talos Reputation
+# 🛡️ Step 10 – Cisco Talos Reputation
 
 Cisco Talos classified the domain reputation as:
 
-```
+```text
 Neutral
 ```
 
-No Talos blocklisting was present.
+No Talos blocklisting was observed.
 
 Screenshot:
 
@@ -290,20 +309,20 @@ Screenshot:
 
 ---
 
-# Step 11 – AbuseIPDB
+# 🚨 Step 11 – AbuseIPDB
 
 The resolved IP address
 
-```
+```text
 168.76.87.16
 ```
 
-was checked.
+was checked using AbuseIPDB.
 
-Result:
+### Result
 
-- No abuse reports
-- Confidence of abuse: 0%
+- No abuse reports.
+- Confidence of Abuse: **0%**
 
 Screenshot:
 
@@ -311,36 +330,52 @@ Screenshot:
 
 ---
 
-# Analysis Summary
+# 📊 Analysis Summary
 
-| Item | Result |
-|------|--------|
+| Indicator | Result |
+|-----------|--------|
 | Primary Suspicious Domain | easilett.com |
-| Resolved IP | 168.76.87.16 |
+| Resolved IP Address | 168.76.87.16 |
 | MX Record | Not Found |
 | SPF Record | Missing |
 | DMARC Record | Missing |
-| VirusTotal | 1/91 flagged as phishing |
+| VirusTotal | 1 / 91 flagged as phishing |
 | Cisco Talos | Neutral |
-| AbuseIPDB | No reports |
-| WHOIS | Newly registered domain |
-| Risk Assessment | **High** |
+| AbuseIPDB | No Reports |
+| WHOIS | Newly Registered Domain |
+| Overall Risk | **High** |
 
 ---
 
-# Conclusion
+# 💡 Analyst Assessment
 
-The phishing email redirected users to the domain **easilett.com**, which exhibits multiple indicators commonly associated with phishing infrastructure.
+The domain **easilett.com** exhibits several characteristics commonly associated with phishing infrastructure.
+
+Although only one VirusTotal vendor classified the domain as phishing and other reputation services reported limited intelligence, the technical evidence provides a stronger basis for assessment. The domain lacks SPF and DMARC protection, has no MX configuration, was recently registered, and is directly embedded within the PayPal-themed phishing email as the destination for hyperlinks and externally hosted resources.
+
+When evaluated alongside the email content, sender analysis, and routing information, the infrastructure should be considered suspicious despite the limited public threat intelligence available.
+
+---
+
+# ✅ Conclusion
+
+The URL and domain analysis identified **easilett.com** as the primary infrastructure supporting the phishing campaign.
 
 Key observations include:
 
-- Newly registered domain
-- Missing SPF and DMARC records
-- Lack of legitimate email configuration
-- Flagged as phishing by VirusTotal
-- Hosted on external infrastructure
-- Embedded within a PayPal-themed phishing email
+- Newly registered domain.
+- Missing SPF and DMARC records.
+- No legitimate mail configuration.
+- Flagged as phishing by VirusTotal.
+- Hosted on external infrastructure.
+- Embedded throughout the PayPal-themed phishing email.
 
-Although not all threat intelligence platforms marked the domain as malicious, the combination of infrastructure weaknesses and its direct use within the phishing campaign strongly indicates that the domain should be treated as **malicious**.
+Although not all threat intelligence platforms classified the domain as malicious, the combination of weak DNS configuration, recent registration, and direct involvement in the phishing campaign provides **high confidence** that the domain is malicious and should be blocked.
 
-**Final Verdict:** 🔴 High Confidence Phishing Infrastructure
+**Final Verdict:** 🔴 **High Confidence Phishing Infrastructure**
+
+---
+
+# ➡️ Next Phase
+
+Continue to **Phase 08 – Attachment Analysis** to determine whether the phishing email contains malicious attachments or relies solely on embedded content and external infrastructure.
