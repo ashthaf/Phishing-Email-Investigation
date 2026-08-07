@@ -30,7 +30,7 @@ cat ~/CyberLab/Cases/Case-02-paypal/Artifacts/URL-Analysis/extracted_urls.txt
 
 ### Screenshot
 
-![URL Extraction](../../Screenshots/url-analysis/url-extraction.png)
+![URL Extraction](../Screenshots/url-analysis/url-extraction.png)
 
 ---
 
