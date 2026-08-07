@@ -288,7 +288,7 @@ The sender domain was investigated using VirusTotal.
 
 ### Screenshot
 
-![VirusTotal Stayfriends](../Screenshots/threat-intelligence/vt-stayfriends.png)
+![VirusTotal Stayfriends](../Screenshots/threat-intelligence/vt-stayfriends.png.png)
 
 ### Observation
 
@@ -308,7 +308,7 @@ The sender domain was further verified using Cisco Talos Intelligence.
 
 ### Screenshot
 
-![Talos Stayfriends](../Screenshots/threat-intelligence/talos-stayfriends.png)
+![Talos Stayfriends](../Screenshots/threat-intelligence/talos-stayfriends.png.png)
 
 ### Observation
 
@@ -447,7 +447,7 @@ The IP address was investigated using AbuseIPDB.
 
 ### Screenshot
 
-![AbuseIPDB](../Screenshots/threat-intelligence/abuseipdb.png)
+![AbuseIPDB](../Screenshots/threat-intelligence/abuseipdb-ip.png)
 
 ### Observation
 
