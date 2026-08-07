@@ -118,7 +118,7 @@ No attachment-related headers were found.
 
 **Screenshot**
 
-![Content Disposition](../Screenshots/attachment-analysis/content-disposition.png)
+![Content Disposition](../Screenshots/Attachment-analysis/content-disposition.png)
 
 ---
 
