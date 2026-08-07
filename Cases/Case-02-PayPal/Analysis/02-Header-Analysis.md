@@ -1,12 +1,32 @@
-# Header Analysis
+# 📧 Phase 02 – Header Analysis
 
-## Objective
-
-The objective of this phase is to extract the complete email header from the phishing email and identify important metadata required for further forensic investigation.
+![Status](https://img.shields.io/badge/Status-Completed-44CC11)
+![Phase](https://img.shields.io/badge/Phase-02-blue)
+![Category](https://img.shields.io/badge/Category-Header%20Analysis-red)
+![Case](https://img.shields.io/badge/Case-02-blue)
+![Evidence](https://img.shields.io/badge/Evidence-Email%20Header-orange)
 
 ---
 
-# Header Extraction
+# 📖 Overview
+
+The objective of this phase was to extract and analyze the complete email header from the phishing email. Email headers contain critical forensic metadata that reveal information about the sender, routing path, authentication status, and message origin.
+
+The extracted header serves as the foundation for subsequent routing, authentication, sender, and threat intelligence analysis.
+
+---
+
+# 🎯 Objectives
+
+- Extract the complete email header from the original email.
+- Preserve header integrity for forensic analysis.
+- Verify successful extraction.
+- Identify critical forensic header fields.
+- Collect metadata required for subsequent investigation phases.
+
+---
+
+# 📂 Header Extraction
 
 The email header was extracted from the original `.eml` file using the following command:
 
@@ -14,56 +34,56 @@ The email header was extracted from the original `.eml` file using the following
 sed '/^$/q' sample-1407.eml > ~/CyberLab/Cases/Case-02-paypal/Evidence/Headers/email-header.txt
 ```
 
-This command extracts everything from the beginning of the email until the first blank line, which represents the complete email header.
+The command extracts all content from the beginning of the email until the first blank line, which marks the end of the email header.
 
-### Screenshot
+### 📸 Screenshot
 
-![Header Extraction](../Screenshots/header-analysis/header-extraction.png)
+*Insert screenshot showing successful header extraction.*
 
 ---
 
-# Header File Verification
+# ✅ Header File Verification
 
-After extraction, the generated header file was verified.
+After extraction, the generated header file was verified to ensure the evidence had been successfully preserved.
 
-Command used:
+**Command Used**
 
 ```bash
 head ~/CyberLab/Cases/Case-02-paypal/Evidence/Headers/email-header.txt
 ```
 
-This confirmed that the header was successfully extracted before continuing the investigation.
+The output confirmed that the extracted file contained the expected SMTP header information.
 
-### Screenshot
+### 📸 Screenshot
 
-![Header Saved](../Screenshots/header-analysis/header-saved.png)
+*Insert verification screenshot.*
 
 ---
 
-# Header Size Verification
+# 📏 Header Size Verification
 
-The total number of header lines was verified.
+The total number of header lines was checked to verify that the extraction process completed successfully.
 
-Command:
+**Command Used**
 
 ```bash
 wc -l ~/CyberLab/Cases/Case-02-paypal/Evidence/Headers/email-header.txt
 ```
 
-This helps ensure that the entire header was extracted successfully.
+Verifying the line count helps ensure that the header was extracted completely without truncation.
 
-### Screenshot
+### 📸 Screenshot
 
-![Header Line Count](../Screenshots/header-analysis/header-line-count.png)
+*Insert screenshot.*
 
 ---
 
-# Important Header Fields Identified
+# 🔍 Important Header Fields Identified
 
-Several important forensic headers were identified during manual inspection.
+Manual inspection identified several forensic artifacts that are essential for subsequent investigation phases.
 
-| Header | Observation |
-|---------|-------------|
+| Header Field | Observation |
+|--------------|-------------|
 | From | Present |
 | Subject | Present |
 | MIME-Version | Present |
@@ -72,125 +92,157 @@ Several important forensic headers were identified during manual inspection.
 | Message-ID | Present |
 | Return-Path | Present |
 | Authentication-Results | Present |
-| Received | Multiple headers present |
+| Received | Multiple entries present |
 
 ---
 
-# From Header
+# 👤 From Header
 
-The visible sender address identified in the email header is:
+The visible sender address identified within the email header was:
 
-```
+```text
 service@stayfriends.de
 ```
 
-### Screenshot
+This represents the address displayed to the recipient and will be validated during the Sender Analysis phase.
 
-![From Header](../Screenshots/header-analysis/from-header.png)
+### 📸 Screenshot
+
+*Insert screenshot.*
 
 ---
 
-# Subject Header
+# 📨 Subject Header
 
-The email subject identified was:
+The email subject identified during header analysis was:
 
-```
+```text
 Ihre einmalige Chance
 ```
 
-### Screenshot
+The subject uses persuasive language intended to encourage user interaction and is consistent with phishing and social engineering campaigns.
 
-![Subject Header](../Screenshots/header-analysis/subject-header.png)
+### 📸 Screenshot
 
----
-
-# MIME Information
-
-The email uses MIME encoding for formatting.
-
-### Screenshot
-
-![MIME Information](../Screenshots/header-analysis/mime-info.png)
+*Insert screenshot.*
 
 ---
 
-# Return-Path
+# 📄 MIME Information
 
-The email contains the following Return-Path:
+The email contains standard MIME headers used for formatting HTML email content.
 
-```
+MIME metadata will be referenced later during the Content Analysis phase.
+
+### 📸 Screenshot
+
+*Insert screenshot.*
+
+---
+
+# 📬 Return-Path Analysis
+
+The extracted Return-Path was:
+
+```text
 return@messaggerocappuccino.it
 ```
 
-The Return-Path differs from the visible sender address.
+The Return-Path differs from the visible sender address (`service@stayfriends.de`).
 
-This indicates that although the user sees the email coming from **stayfriends.de**, bounce messages are directed to **messaggerocappuccino.it**, suggesting the email was transmitted through separate mail infrastructure.
+Although this configuration can be legitimate, it is an important forensic indicator because it demonstrates that the bounce address belongs to a different domain than the address displayed to the recipient.
 
-A different Return-Path is not unusual by itself, but it is an important indicator that should be validated together with SPF, DKIM, DMARC, and routing analysis.
+This discrepancy requires additional validation through:
 
-### Screenshot
+- SPF
+- DKIM
+- DMARC
+- SMTP Routing Analysis
 
-![Return Path](../Screenshots/header-analysis/rp.png)
+### 📸 Screenshot
+
+*Insert screenshot.*
 
 ---
 
-# Authentication Results Header
+# 🔐 Authentication Results
 
-The Authentication-Results header was extracted for detailed analysis.
+The **Authentication-Results** header contained the following results:
 
-Observed result:
-
-```
-SPF = Pass
-DKIM = Pass
+```text
+SPF   = Pass
+DKIM  = Pass
 DMARC = Pass
 ```
 
-These authentication results indicate that the email passed domain authentication checks at Microsoft's mail gateway.
+These results indicate that Microsoft's mail gateway successfully validated the authentication mechanisms for the sending domain.
 
-However, successful authentication alone does **not** guarantee that an email is legitimate because attackers may send emails from compromised or legitimately configured third-party infrastructure.
+However, successful authentication **does not guarantee legitimacy**. Threat actors frequently abuse compromised or legitimately configured third-party infrastructure capable of passing SPF, DKIM, and DMARC validation.
 
-Detailed authentication analysis is documented separately in the Authentication Analysis phase.
+A detailed examination of these authentication mechanisms is provided in **Phase 04 – Authentication Analysis**.
 
-### Screenshot
+### 📸 Screenshot
 
-![Authentication Results](../Screenshots/header-analysis/Authentication-Results.png)
-
----
-
-# Received Headers
-
-Multiple Received headers were identified.
-
-These will be analyzed separately during the Routing Analysis phase to reconstruct the email delivery path from the originating server to Microsoft's mail infrastructure.
+*Insert screenshot.*
 
 ---
 
-# Initial Findings
+# 🌐 Received Headers
 
-The header extraction phase successfully recovered the complete email metadata required for forensic analysis.
+Multiple **Received** headers were identified during inspection.
 
-Key observations include:
+These headers record each mail server involved in delivering the message and provide valuable evidence for reconstructing the complete delivery path.
 
-- Complete email header extracted successfully.
-- Multiple Received headers identified.
-- Return-Path present and differs from the visible sender.
-- Authentication-Results header present.
-- SPF, DKIM, and DMARC passed.
-- Sender information, routing information, and authentication data are available for further investigation.
+A dedicated routing investigation is documented in **Phase 03 – Routing Analysis**.
 
 ---
 
-# Conclusion
+# 📊 Key Findings
 
-The header extraction was completed successfully without data loss.
+| Finding | Result |
+|----------|--------|
+| Header Extraction | Successful |
+| Header Integrity | Verified |
+| Multiple Received Headers | Yes |
+| Return-Path Present | Yes |
+| Return-Path Matches Sender | No |
+| Authentication Header Present | Yes |
+| SPF | Pass |
+| DKIM | Pass |
+| DMARC | Pass |
 
-The extracted header provides sufficient forensic evidence to proceed with:
+---
+
+# 💡 Analyst Notes
+
+The header extraction process successfully recovered all critical forensic metadata without altering the original evidence.
+
+Several observations made during this phase guided the remainder of the investigation:
+
+- Multiple routing entries are available for delivery path reconstruction.
+- The Return-Path differs from the visible sender address.
+- Authentication records are present and valid.
+- Sufficient metadata was recovered to support sender validation, routing analysis, authentication verification, and threat intelligence enrichment.
+
+---
+
+# ✅ Conclusion
+
+The email header was successfully extracted and verified, providing a complete forensic record for subsequent investigation.
+
+The recovered metadata establishes the foundation for:
 
 - Routing Analysis
 - Sender Analysis
 - Authentication Analysis
 - Content Analysis
 - URL Analysis
+- Threat Intelligence
 
-The presence of multiple routing headers, a distinct Return-Path domain, and successful authentication records provides a strong foundation for the remaining phases of the investigation.
+The presence of multiple routing entries, a distinct Return-Path domain, and complete authentication records provides valuable evidence for determining the legitimacy of the email and identifying attacker infrastructure.
+
+---
+
+# ➡️ Next Phase
+
+Continue to **03-Routing-Analysis.md** to reconstruct the complete email delivery path and identify the infrastructure used to transmit the phishing email.
