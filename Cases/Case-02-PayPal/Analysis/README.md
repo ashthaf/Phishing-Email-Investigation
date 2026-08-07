@@ -1,15 +1,18 @@
 # 🛡️ PayPal Phishing Email Investigation
 
-<div align="center">
+<p align="left">
 
-![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
-![DFIR](https://img.shields.io/badge/DFIR-Incident_Response-blue?style=for-the-badge)
-![MITRE ATT&CK](https://img.shields.io/badge/MITRE-ATT%26CK-red?style=for-the-badge)
-![Threat Intelligence](https://img.shields.io/badge/Threat-Intelligence-orange?style=for-the-badge)
-![Platform](https://img.shields.io/badge/Platform-Kali_Linux-557C94?style=for-the-badge)
-![License](https://img.shields.io/badge/License-Educational-green?style=for-the-badge)
+<img src="https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge" />
+<img src="https://img.shields.io/badge/Severity-High-red?style=for-the-badge" />
+<img src="https://img.shields.io/badge/Case-02-blue?style=for-the-badge" />
+<img src="https://img.shields.io/badge/Incident-Credential%20Harvesting-darkred?style=for-the-badge" />
+<img src="https://img.shields.io/badge/Target-PayPal-00457C?style=for-the-badge" />
+<img src="https://img.shields.io/badge/Platform-Kali%20Linux-557C94?style=for-the-badge" />
+<img src="https://img.shields.io/badge/Framework-MITRE%20ATT%26CK-orange?style=for-the-badge" />
+<img src="https://img.shields.io/badge/IOC-Extracted-success?style=for-the-badge" />
+<img src="https://img.shields.io/badge/Threat%20Intel-Completed-yellow?style=for-the-badge" />
 
-</div>
+</p>
 
 ---
 
