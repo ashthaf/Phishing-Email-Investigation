@@ -51,7 +51,7 @@ Instead of delivering malware through attachments, the campaign attempted to red
 
 ### Screenshot
 
-![MITRE T1566.002](Images/mitre-t1566-002.png)
+![MITRE T1566.002](../Screenshots/mitre-mapping/mitre-t1566-002.png)
 
 ### Supporting Evidence
 
@@ -80,7 +80,7 @@ Although the sender domain (**stayfriends.de**) is legitimate, the email content
 
 ### Screenshot
 
-![MITRE T1036](Images/mitre-t1036.png)
+![MITRE T1036](../Screenshots/mitre-mapping/mitre-t1036.png)
 
 ### Supporting Evidence
 
@@ -101,7 +101,7 @@ Rather than exploiting a software vulnerability, the attacker relied on convinci
 
 ### Screenshot
 
-![MITRE T1204.001](Images/mitre-t1204.png)
+![MITRE T1204.001](../Screenshots/mitre-mapping/mitre-t1204.png)
 
 ### Supporting Evidence
 
