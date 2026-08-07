@@ -1,10 +1,37 @@
-# Incident Report
+# 📄 Phase 14 – Incident Report
 
-## Executive Summary
+![Status](https://img.shields.io/badge/Status-Completed-44CC11)
+![Phase](https://img.shields.io/badge/Phase-14-blue)
+![Category](https://img.shields.io/badge/Category-Incident%20Report-red)
+![Case](https://img.shields.io/badge/Case-02-blue)
+![Verdict](https://img.shields.io/badge/Verdict-Credential%20Harvesting%20Phishing-critical)
+
+---
+
+# 📖 Overview
+
+This report summarizes the complete phishing email investigation conducted throughout the Digital Forensics and Incident Response (DFIR) process.
+
+It consolidates the evidence collected, investigation findings, extracted Indicators of Compromise (IOCs), Threat Intelligence results, MITRE ATT&CK mapping, risk assessment, and recommended containment measures into a single incident report.
+
+---
+
+# 🎯 Objectives
+
+- Summarize the complete phishing investigation.
+- Document the scope and methodology of the investigation.
+- Present the key technical findings.
+- Record the extracted Indicators of Compromise (IOCs).
+- Summarize the overall risk and incident severity.
+- Provide a final incident assessment and recommendations.
+
+---
+
+# Executive Summary
 
 A phishing email impersonating the PayPal brand was investigated to determine its legitimacy, identify the attacker's infrastructure, and assess the potential impact on users and the organization.
 
-The investigation followed a structured Digital Forensics and Incident Response (DFIR) methodology, including initial triage, email header analysis, routing analysis, authentication verification, sender analysis, content analysis, URL investigation, attachment analysis, IOC extraction, threat intelligence analysis, MITRE ATT&CK mapping, risk assessment, and containment planning.
+The investigation followed a structured Digital Forensics and Incident Response (DFIR) methodology, including initial triage, email header analysis, routing analysis, authentication verification, sender analysis, content analysis, URL investigation, attachment analysis, IOC extraction, Threat Intelligence analysis, MITRE ATT&CK mapping, risk assessment, and containment planning.
 
 The investigation concluded that the email is a **credential harvesting phishing campaign** designed to deceive recipients into interacting with attacker-controlled infrastructure through embedded hyperlinks. No malware or malicious attachments were identified.
 
@@ -13,7 +40,7 @@ The investigation concluded that the email is a **credential harvesting phishing
 # Incident Overview
 
 | Item | Details |
-|------|---------|
+| -------------------- | --------------------- |
 | Incident Type | Phishing Email |
 | Target Brand | PayPal |
 | Investigation Status | Completed |
@@ -38,7 +65,7 @@ The investigation included analysis of:
 - Domains
 - Attachments
 - Indicators of Compromise (IOCs)
-- Threat intelligence
+- Threat Intelligence
 - MITRE ATT&CK mapping
 - Risk assessment
 
@@ -47,7 +74,7 @@ The investigation included analysis of:
 # Investigation Timeline
 
 | Phase | Status |
-|--------|--------|
+| ----------------------- | --------- |
 | Initial Triage | Completed |
 | Header Analysis | Completed |
 | Routing Analysis | Completed |
@@ -108,7 +135,7 @@ Legitimate resource identified:
 fonts.googleapis.com
 ```
 
-Threat intelligence analysis identified **easilett.com** as the primary suspicious infrastructure associated with the phishing campaign.
+Threat Intelligence analysis identified **easilett.com** as the primary suspicious infrastructure associated with the phishing campaign.
 
 ---
 
@@ -123,18 +150,18 @@ The phishing campaign relied entirely on HTML content and embedded hyperlinks ra
 # Indicators of Compromise (IOCs)
 
 | IOC Type | Value |
-|----------|-------|
-| Sender Email | service@stayfriends.de |
-| Return-Path | return@messagsgerocappuccino.it |
-| Source IP | 77.91.100.118 |
-| Suspicious Domain | easilett.com |
-| Legitimate Domain | fonts.googleapis.com |
+| ----------------- | -------------------------------------------------------------------------- |
+| Sender Email | `service@stayfriends.de` |
+| Return-Path | `return@messagsgerocappuccino.it` |
+| Source IP | `77.91.100.118` |
+| Suspicious Domain | `easilett.com` |
+| Legitimate Domain | `fonts.googleapis.com` |
 
 ---
 
 # Threat Intelligence Summary
 
-Multiple threat intelligence platforms were used to validate the extracted IOCs.
+Multiple Threat Intelligence platforms were used to validate the extracted IOCs.
 
 Platforms consulted:
 
@@ -163,7 +190,7 @@ The sender domain (**stayfriends.de**) maintained a favorable reputation and app
 The phishing campaign was mapped to the following ATT&CK techniques.
 
 | ATT&CK ID | Technique |
-|------------|------------------------------|
+| --------- | ------------------------------- |
 | T1566 | Phishing |
 | T1566.002 | Spearphishing Link |
 | T1036 | Masquerading |
@@ -178,7 +205,7 @@ The campaign relied primarily on social engineering rather than malware executio
 # Risk Assessment Summary
 
 | Category | Assessment |
-|----------|------------|
+| ---------------------- | ---------- |
 | Likelihood | High |
 | Confidentiality Impact | High |
 | Integrity Impact | Medium |
@@ -210,9 +237,19 @@ The following containment measures were recommended:
 
 ---
 
+# 💡 Analyst Assessment
+
+The investigation confirmed that the phishing campaign relied on social engineering, trusted branding, and attacker-controlled infrastructure rather than malware delivery.
+
+The combination of HTML phishing content, embedded hyperlinks, suspicious routing infrastructure, and credential harvesting techniques demonstrates a well-structured phishing campaign designed to maximize user interaction.
+
+The extracted Indicators of Compromise (IOCs), Threat Intelligence findings, and MITRE ATT&CK mapping provide sufficient evidence to classify this incident as a **High Severity Credential Harvesting Phishing Campaign**.
+
+---
+
 # Final Verdict
 
-Based on the technical investigation, threat intelligence findings, and MITRE ATT&CK mapping, the email has been confirmed as a **credential harvesting phishing campaign**.
+Based on the technical investigation, Threat Intelligence findings, and MITRE ATT&CK mapping, the email has been confirmed as a **credential harvesting phishing campaign**.
 
 The attack leveraged social engineering, trusted branding, and attacker-controlled infrastructure to increase the likelihood of user interaction.
 
@@ -230,14 +267,20 @@ To reduce the likelihood of similar phishing attacks, organizations should:
 - Enforce Multi-Factor Authentication (MFA).
 - Strengthen SPF, DKIM, and DMARC policies.
 - Block identified malicious domains and infrastructure.
-- Continuously monitor threat intelligence feeds.
+- Continuously monitor Threat Intelligence feeds.
 - Implement advanced email filtering and anti-phishing controls.
 - Encourage prompt reporting of suspicious emails.
 
 ---
 
-# Conclusion
+# ✅ Conclusion
 
-The investigation successfully identified the phishing infrastructure, extracted actionable Indicators of Compromise (IOCs), validated them using multiple threat intelligence platforms, and mapped the observed attacker behavior to the MITRE ATT&CK framework.
+The investigation successfully identified the phishing infrastructure, extracted actionable Indicators of Compromise (IOCs), validated them using multiple Threat Intelligence platforms, and mapped the observed attacker behavior to the MITRE ATT&CK framework.
 
 The structured investigation methodology provided a comprehensive understanding of the phishing campaign and produced actionable recommendations for improving organizational defenses against future phishing attacks.
+
+---
+
+# ➡️ Next Phase
+
+Continue to **Phase 15 – Lessons Learned** to summarize the key takeaways from the investigation and identify improvements for future phishing investigations and incident response activities.
