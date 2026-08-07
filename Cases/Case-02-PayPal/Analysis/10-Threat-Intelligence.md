@@ -1,16 +1,37 @@
-# Threat Intelligence Analysis
+# 🛰️ Phase 10 – Threat Intelligence Analysis
 
-## Objective
-
-The objective of this phase is to validate the Indicators of Compromise (IOCs) extracted during the previous investigation by leveraging multiple threat intelligence platforms. Each identified domain and IP address is analyzed using open-source intelligence (OSINT) services to determine its reputation, ownership, infrastructure, and potential association with phishing or malicious activity.
-
-The intelligence gathered during this phase helps determine whether the extracted indicators are trustworthy, suspicious, or malicious, providing additional context for the phishing investigation.
+![Status](https://img.shields.io/badge/Status-Completed-44CC11)
+![Phase](https://img.shields.io/badge/Phase-10-blue)
+![Category](https://img.shields.io/badge/Category-Threat%20Intelligence-red)
+![Case](https://img.shields.io/badge/Case-02-blue)
+![Evidence](https://img.shields.io/badge/Evidence-OSINT%20Analysis-orange)
 
 ---
 
-# Intelligence Sources
+# 📖 Overview
 
-The following threat intelligence platforms were used during this investigation:
+The purpose of this phase is to validate the Indicators of Compromise (IOCs) extracted during the previous phases of the investigation by leveraging multiple Threat Intelligence and Open-Source Intelligence (OSINT) platforms.
+
+Each identified domain and IP address is analyzed to determine its reputation, ownership, infrastructure, and potential association with phishing or other malicious activities. The intelligence gathered during this phase provides additional context that helps determine whether the extracted indicators are trustworthy, suspicious, or malicious.
+
+---
+
+# 🎯 Objectives
+
+The objectives of this phase are to:
+
+- Validate the extracted Indicators of Compromise (IOCs).
+- Investigate suspicious domains and IP addresses.
+- Verify domain ownership and registration details.
+- Analyze infrastructure using public OSINT platforms.
+- Correlate intelligence findings with previous forensic analysis.
+- Assess the overall credibility of the phishing infrastructure.
+
+---
+
+# 🛠️ Intelligence Sources
+
+The following Threat Intelligence platforms were used during this investigation.
 
 | Platform | Purpose |
 |----------|---------|
@@ -19,26 +40,26 @@ The following threat intelligence platforms were used during this investigation:
 | Cisco Talos Intelligence | Domain and IP reputation lookup |
 | AbuseIPDB | Abuse reports for IP addresses |
 | WHOIS | Domain registration information |
-| MXToolbox | DNS, MX, SPF and DMARC analysis |
+| MXToolbox | DNS, MX, SPF, and DMARC analysis |
 
 ---
 
-# Investigated Indicators
+# 🔍 Investigated Indicators
 
 | Indicator | Type |
 |-----------|------|
 | easilett.com | Domain |
 | stayfriends.de | Sender Domain |
-| messagsgerocappuccino.it | Return-Path Domain |
+| messaggerocappuccino.it | Return-Path Domain |
 | 77.91.100.118 | Source IP Address |
 
 ---
 
-# Domain Investigation – easilett.com
+# 🌐 Domain Investigation – easilett.com
 
 ## Objective
 
-During URL extraction, the phishing email contained a hyperlink pointing to **easilett.com**. Since users are encouraged to click embedded links in phishing campaigns, the domain was investigated to determine its legitimacy, reputation, hosting information, and associated infrastructure.
+During URL extraction, the phishing email contained a hyperlink pointing to **easilett.com**. Since phishing campaigns commonly direct victims to attacker-controlled websites, the domain was investigated to determine its legitimacy, reputation, hosting information, and associated infrastructure.
 
 ---
 
@@ -52,7 +73,7 @@ The domain was submitted to VirusTotal for reputation analysis.
 
 ### Observation
 
-VirusTotal reported that **1 out of 91 security vendors** classified the domain as phishing while the remaining vendors did not detect malicious activity.
+VirusTotal reported that **1 out of 91 security vendors** classified the domain as phishing, while the remaining vendors did not detect malicious activity.
 
 Although the overall detection rate is low, even a single phishing detection is significant because phishing domains are often short-lived and may evade detection shortly after registration.
 
@@ -178,272 +199,233 @@ Cisco Talos classified the domain with a **Neutral** web reputation.
 No established malicious reputation was identified at the time of analysis.
 
 However, a neutral reputation should not automatically be considered safe, especially when the domain is directly associated with phishing activity.
+# AbuseIPDB Analysis
 
----
-
-# AbuseIPDB
-
-The hosting IP associated with the domain (**168.76.87.16**) was investigated using AbuseIPDB.
+The resolved IP address associated with **easilett.com** was investigated using AbuseIPDB.
 
 ### Screenshot
 
-![AbuseIPDB](../Screenshots/threat-intelligence/abuseipdb.png)
+![AbuseIPDB](../Screenshots/threat-intelligence/abuseipdb-domain.png)
 
 ### Observation
 
-AbuseIPDB reported:
+The IP address currently has:
 
-- No abuse reports.
-- Confidence of Abuse: **0%**
-- No historical abuse records.
+- **0 Public Abuse Reports**
+- **0% Abuse Confidence Score**
+- Hosted by a commercial hosting provider.
 
-The absence of abuse reports does not confirm legitimacy because newly deployed phishing infrastructure may not yet have accumulated public abuse reports.
+Although no abuse reports were available at the time of analysis, newly deployed phishing infrastructure frequently accumulates little or no public reputation before being abandoned. Consequently, the absence of abuse reports should not be interpreted as evidence that the infrastructure is trustworthy.
 
 ---
 
 # MXToolbox Analysis
 
-DNS infrastructure was validated using MXToolbox.
+The domain was further examined using MXToolbox to validate its DNS and email security configuration.
 
----
+### MX Record
 
-## DNS Records
-
-![DNS Records](../Screenshots/threat-intelligence/dns.png)
+![MX Record](../Screenshots/threat-intelligence/mxtoolbox-mx.png)
 
 ### Observation
 
-A valid DNS A record exists for the domain.
+No MX record was configured for **easilett.com**.
 
-The domain currently resolves to:
-
-- **168.76.87.16**
-
-This confirms that the domain is active and reachable.
+This indicates that the domain is not configured to receive email, which is unusual for legitimate business domains but commonly observed in phishing infrastructure used solely for hosting malicious web content.
 
 ---
 
-## MX Records
+### SPF Record
 
-![MX Records](../Screenshots/threat-intelligence/mx.png)
+![SPF](../Screenshots/threat-intelligence/mxtoolbox-spf.png)
 
 ### Observation
 
-No mail exchange (MX) records were identified for the domain.
+No SPF record was identified.
 
-The absence of MX records indicates that the domain is not configured to receive email directly.
+Without an SPF policy, the domain does not define which mail servers are authorized to send email on its behalf, increasing the potential for email spoofing.
 
 ---
 
-## SPF Record
+### DMARC Record
 
-![SPF Record](../Screenshots/threat-intelligence/spf.png)
-
-### Observation
-
-No SPF record was found.
-
-Without an SPF policy, the domain lacks sender authentication mechanisms that help prevent email spoofing.
-
----
-
-## DMARC Record
-
-![DMARC Record](../Screenshots/threat-intelligence/dmarc.png)
+![DMARC](../Screenshots/threat-intelligence/mxtoolbox-dmarc.png)
 
 ### Observation
 
-No DMARC record was configured.
+No DMARC policy was configured.
 
-The absence of DMARC means that there is no published policy instructing receiving mail servers how to handle spoofed emails using this domain.
+The absence of a DMARC policy weakens email authentication and is commonly observed in domains that are not intended for legitimate email communication.
 
 ---
 
 # Analyst Assessment
 
-The investigation identified several characteristics commonly associated with suspicious infrastructure:
+The investigation of **easilett.com** identified several characteristics commonly associated with phishing infrastructure.
+
+Although only one VirusTotal vendor currently classifies the domain as phishing, the overall technical evidence strengthens the assessment that the domain is malicious.
+
+Key observations include:
 
 - Recently registered domain.
-- One security vendor classified the domain as phishing.
-- Active DNS infrastructure.
-- No SPF protection.
-- No DMARC policy.
-- Neutral reputation on Talos.
-- No current abuse reports.
+- Embedded directly within the phishing email.
+- Hosted externally from legitimate PayPal infrastructure.
+- Missing SPF and DMARC records.
+- Limited but notable threat intelligence detections.
+- Used as the destination for phishing hyperlinks.
 
-Although some reputation services have not yet classified the domain as malicious, its appearance within a phishing email combined with its infrastructure characteristics significantly increases its suspicion level.
----
-
-# Sender Domain Investigation – stayfriends.de
-
-## Objective
-
-The visible sender email in the phishing message used the domain **stayfriends.de**. Although the email appeared to originate from this domain, it was necessary to verify whether the domain itself was malicious or whether it was being abused or spoofed by the attacker.
+When correlated with the email content and routing analysis, **easilett.com** represents the strongest Indicator of Compromise identified during this investigation.
 
 ---
 
-# VirusTotal Analysis
+# 🌐 Sender Domain Investigation – stayfriends.de
 
-The sender domain was investigated using VirusTotal.
-
-### Screenshot
-
-![VirusTotal Stayfriends](../Screenshots/threat-intelligence/vt-stayfriends.png.png)
-
-### Observation
-
-VirusTotal reported:
-
-- **0 / 91** security vendors detected the domain as malicious.
-- The domain appears in VirusTotal's **Top 100K** domains.
-- No active phishing or malware detections were identified.
-
-The reputation indicates that **stayfriends.de** is a legitimate and well-established domain.
-
----
-
-# Cisco Talos Reputation
-
-The sender domain was further verified using Cisco Talos Intelligence.
-
-### Screenshot
-
-![Talos Stayfriends](../Screenshots/threat-intelligence/talos-stayfriends.png.png)
-
-### Observation
-
-Cisco Talos classified the domain with a **Favorable** reputation.
-
-Additional observations include:
-
-- Positive web reputation.
-- No blacklist entries.
-- Active email infrastructure.
-- Consistent email traffic.
-
-These findings strongly indicate that the domain itself is legitimate.
-
----
-
-# WHOIS Verification
-
-WHOIS information was reviewed to confirm that the domain is actively registered.
-
-### Screenshot
-
-![WHOIS Stayfriends](../Screenshots/threat-intelligence/who-is-stayfriends.png)
-
-### Observation
-
-WHOIS confirmed that the domain is currently registered and operational.
-
-The registration information supports the conclusion that **stayfriends.de** is a legitimate organization and not an attacker-controlled phishing domain.
-
----
-
-# Analyst Assessment
-
-Although the phishing email displays an address from **stayfriends.de**, threat intelligence indicates that the domain itself is legitimate.
-
-This suggests one of the following possibilities:
-
-- Sender address spoofing.
-- Abuse of a compromised email account.
-- Unauthorized use of the legitimate domain for phishing.
-
-The investigation found no evidence that **stayfriends.de** itself is malicious.
-
----
-
-# Return-Path Domain Investigation – messagsgerocappuccino.it
-
-## Objective
-
-The Return-Path represents the SMTP envelope sender and often identifies the infrastructure actually responsible for delivering the email.
-
-Unlike the visible sender address, attackers frequently use different Return-Path domains to hide their infrastructure.
+The visible sender domain (**stayfriends.de**) was investigated to determine whether it had an established malicious reputation or represented legitimate infrastructure that may have been abused during the phishing campaign.
 
 ---
 
 # VirusTotal Analysis
 
-The Return-Path domain was searched in VirusTotal.
-
 ### Screenshot
 
-![VirusTotal Return Path](../Screenshots/threat-intelligence/vt-returnpath.png)
+![VirusTotal](../Screenshots/threat-intelligence/vt-stayfriends.png.png)
 
 ### Observation
 
-VirusTotal returned very limited information for this domain.
+VirusTotal reported no significant detections for **stayfriends.de**.
 
-No established reputation or historical intelligence was available, suggesting that the domain is either inactive, newly created, or has very limited public visibility.
+No major security vendors currently classify the domain as malicious.
+
+The domain therefore maintains a generally favorable public reputation.
 
 ---
 
-# Cisco Talos Reputation
-
-The Return-Path domain was investigated using Cisco Talos.
+# Cisco Talos Analysis
 
 ### Screenshot
 
-![Talos Return Path](../Screenshots/threat-intelligence/talos-returnpath.png)
+![Cisco Talos](../Screenshots/threat-intelligence/talos-stayfriends.png.png)
 
 ### Observation
 
-Cisco Talos reported:
+Cisco Talos classified **stayfriends.de** with a **Neutral** reputation.
 
-- Reputation: **Unknown**
-- No established content category.
-- No significant reputation history.
-
-Domains with unknown reputations frequently require additional investigation because they have not yet accumulated enough historical intelligence.
+A neutral reputation should not be interpreted as proof that the domain is trustworthy. Reputation services frequently have limited visibility into compromised accounts or recently abused infrastructure.
 
 ---
 
 # WHOIS Analysis
 
-The domain registration was verified using the Linux `whois` utility.
+### Command
 
 ```bash
-whois messagsgerocappuccino.it
+whois stayfriends.de
 ```
 
 ### Screenshot
 
-![WHOIS Return Path](../Screenshots/threat-intelligence/whois-returnpath.png)
+![WHOIS](../Screenshots/threat-intelligence/whois-stayfriends.png)
 
 ### Observation
 
-WHOIS returned:
+WHOIS records confirm that **stayfriends.de** is a registered and publicly resolvable domain.
 
-- Domain: **messagsgerocappuccino.it**
-- Status: **AVAILABLE**
+The registration information appears consistent with a legitimate domain.
 
-This indicates that the domain is currently **not registered**.
-
-This finding suggests that the infrastructure used during the phishing campaign is no longer active, which is common for short-lived phishing operations.
+However, legitimate domains can still be abused by threat actors to distribute phishing emails, particularly when legitimate accounts or mail infrastructure have been compromised.
 
 ---
 
 # Analyst Assessment
 
-The Return-Path domain differs completely from the visible sender domain.
+Threat intelligence findings indicate that **stayfriends.de** itself does not currently exhibit characteristics commonly associated with malicious infrastructure.
 
-Combined with its lack of reputation information and its current unregistered status, the Return-Path appears consistent with temporary phishing infrastructure that was likely abandoned after the campaign concluded.
-# Source IP Investigation – 77.91.100.118
+The phishing email impersonated PayPal while using this domain as the visible sender address.
 
-## Objective
+This suggests that the sender domain may represent legitimate infrastructure that was abused during the phishing campaign rather than infrastructure created specifically for malicious activity.
 
-The originating IP address extracted from the email headers was **77.91.100.118**.
+Accordingly, the sender domain should always be evaluated alongside authentication, routing, sender, and content analysis rather than in isolation.
 
-The objective of this investigation was to determine whether the IP address had a known malicious reputation and to identify the hosting provider responsible for the infrastructure.
+---
+# 🌐 Return-Path Domain Investigation – messaggerocappuccino.it
+
+The Return-Path domain identified during the header analysis was investigated independently because it differs from the visible sender domain.
+
+The Return-Path represents the SMTP envelope sender used during email delivery and often provides valuable insight into the actual infrastructure responsible for transmitting the message.
+
+---
+
+# WHOIS Analysis
+
+### Command
+
+```bash
+whois messaggerocappuccino.it
+```
+
+### Screenshot
+
+![WHOIS](../Screenshots/threat-intelligence/whois-returnpath.png)
+
+### Observation
+
+WHOIS records confirm that **messaggerocuccino.it** is a registered and publicly resolvable domain.
+
+Although the domain is legitimately registered, registration alone does not establish trustworthiness. Threat actors frequently register or abuse domains that appear legitimate to support phishing operations.
+
+The Return-Path domain should therefore be evaluated together with the routing analysis, authentication results, and sender analysis rather than in isolation.
+
+---
+
+# VirusTotal Analysis
+
+### Screenshot
+
+![VirusTotal](../Screenshots/threat-intelligence/vt-returnpath.png)
+
+### Observation
+
+VirusTotal reported limited intelligence for the Return-Path domain.
+
+No significant detections were identified during the investigation.
+
+The absence of detections should not be interpreted as evidence that the infrastructure is safe, particularly when the domain is directly associated with the SMTP delivery path of the phishing email.
+
+---
+
+# Cisco Talos Analysis
+
+### Screenshot
+
+![Cisco Talos](../Screenshots/threat-intelligence/talos-returnpath.png)
+
+### Observation
+
+Cisco Talos reported limited reputation information for the domain.
+
+Newly registered or low-volume phishing infrastructure frequently has little or no reputation data available, making correlation with forensic evidence essential.
+
+---
+
+# Analyst Assessment
+
+The Return-Path domain differs from the visible sender domain and represents the infrastructure responsible for SMTP delivery.
+
+Although publicly available reputation services provide limited intelligence, the domain was directly observed within the email headers and therefore represents an important Indicator of Compromise.
+
+When correlated with the routing analysis, the differing Return-Path strengthens the conclusion that separate infrastructure was used to deliver the phishing email.
+
+---
+
+# 🌍 Source IP Investigation – 77.91.100.118
+
+The originating IP address identified during routing analysis was investigated using multiple Threat Intelligence platforms.
+
+The objective was to determine whether the IP address had previously been associated with malicious activity or publicly reported abuse.
 
 ---
 
 # AbuseIPDB Analysis
-
-The IP address was investigated using AbuseIPDB.
 
 ### Screenshot
 
@@ -453,85 +435,99 @@ The IP address was investigated using AbuseIPDB.
 
 AbuseIPDB reported the following:
 
-- IP Address: **77.91.100.118**
 - Abuse Confidence Score: **0%**
-- Reports: **0**
+- Public Reports: **0**
 - ISP: **UOWH LLC**
 - Usage Type: **Data Center / Web Hosting / Transit**
 - ASN: **AS212171**
 - Country: **Netherlands**
 - City: **Amsterdam**
 
-No abuse reports were associated with this IP address at the time of analysis.
+Although no public abuse reports were available at the time of analysis, the IP address was directly observed transmitting the phishing email and therefore remains an important Indicator of Compromise.
 
 ---
 
 # VirusTotal Analysis
 
-The IP address was also investigated using VirusTotal.
-
 ### Screenshot
 
-![VirusTotal IP](../Screenshots/threat-intelligence/vt-ip.png)
+![VirusTotal](../Screenshots/threat-intelligence/vt-ip.png)
 
 ### Observation
 
-VirusTotal did not identify the IP address as malicious.
+VirusTotal reported no significant detections for the originating IP address.
 
-No security vendors reported active malicious activity associated with the IP during the investigation.
+While the IP address currently maintains a limited public reputation, this does not reduce its evidentiary value because it was extracted directly from the email headers.
 
 ---
 
-# Cisco Talos Reputation
-
-Cisco Talos Intelligence was used to verify the IP reputation.
+# Cisco Talos Analysis
 
 ### Screenshot
 
-![Talos IP](../Screenshots/threat-intelligence/talos-ip.png)
+![Cisco Talos](../Screenshots/threat-intelligence/talos-ip.png)
 
 ### Observation
 
-Cisco Talos reported no significant malicious reputation for the IP address.
+Cisco Talos reported no significant reputation information for the originating IP address.
 
-The IP appears to belong to a hosting provider rather than a residential network.
+The absence of public reputation should not be interpreted as proof that the infrastructure is benign, particularly when the IP address participated directly in transmitting the phishing email.
 
 ---
 
 # Analyst Assessment
 
-Although the IP address currently has no public abuse reports, several characteristics make it noteworthy:
+Although the originating IP address currently has no public abuse reports, it remains a significant Indicator of Compromise because it was extracted directly from the email routing headers.
 
-- Hosted by a commercial data center.
-- Located in the Netherlands.
-- Used for email transmission.
-- Associated with phishing infrastructure through email header analysis.
+The IP belongs to commercial hosting infrastructure located in the Netherlands, a type of environment frequently leveraged for short-lived phishing campaigns.
 
-Attackers commonly deploy temporary phishing servers on rented VPS or hosting providers. As a result, the absence of public abuse reports does not necessarily indicate that the IP was benign during the phishing campaign.
+Threat actors commonly use rented VPS or hosting providers that accumulate little or no public reputation before being abandoned.
 
 ---
 
-# IOC Reputation Summary
+# 📊 IOC Reputation Summary
 
 | Indicator | Type | Reputation | Assessment |
 |-----------|------|------------|------------|
-| easilett.com | Domain | Clean | Legitimate domain |
-| stayfriends.de | Sender Domain | Favorable | Legitimate domain likely spoofed or compromised |
-| messagsgerocappuccino.it | Return-Path Domain | Unknown / Unregistered | Suspicious |
-| 77.91.100.118 | Source IP | No public abuse reports | Suspicious infrastructure |
+| easilett.com | Domain | Mixed (1/91 VirusTotal Detection) | Suspicious Phishing Infrastructure |
+| stayfriends.de | Sender Domain | Favorable | Legitimate Domain Possibly Abused |
+| messaggerocappuccino.it | Return-Path Domain | Limited Reputation | Suspicious |
+| 77.91.100.118 | Source IP | No Public Abuse Reports | Suspicious Hosting Infrastructure |
 
 ---
 
-# Final Analyst Conclusion
+# 💡 Overall Threat Intelligence Assessment
 
-Threat intelligence investigation indicates that the phishing email relied on a combination of legitimate and suspicious infrastructure.
+The threat intelligence investigation indicates that the phishing campaign relied on a combination of legitimate and suspicious infrastructure.
 
-The sender domain (**stayfriends.de**) is a legitimate domain with a favorable reputation, suggesting that the attacker likely used sender spoofing or a compromised account to increase credibility.
+The visible sender domain (**stayfriends.de**) appears to be a legitimate and publicly registered domain, suggesting that the attacker leveraged trusted infrastructure to increase the credibility of the phishing email.
 
-The Return-Path domain (**messagsgerocappuccino.it**) showed no established reputation and is currently unregistered, indicating that it was likely a short-lived domain used exclusively for the phishing campaign.
+The Return-Path domain (**messaggerocappuccino.it**) differs from the visible sender domain and was used during SMTP delivery, providing additional evidence that separate infrastructure was involved in transmitting the message.
 
-The originating IP address (**77.91.100.118**) belongs to a commercial hosting provider in the Netherlands. Although it has no public abuse reports, its role in transmitting the phishing email and its association with hosting infrastructure make it relevant to the investigation.
+The domain **easilett.com** emerged as the primary phishing infrastructure. It was embedded throughout the HTML email, hosted external resources, and redirected users away from legitimate PayPal services. Despite limited detections across public reputation platforms, the technical evidence collected throughout this investigation strongly supports classifying the domain as malicious.
 
-Overall, the threat intelligence findings support the conclusion that the phishing campaign leveraged trusted domains to deceive recipients while hiding the actual sending infrastructure behind disposable infrastructure and temporary email routing.
+Finally, the originating IP address (**77.91.100.118**) was extracted directly from the email headers. Although it currently has no public abuse reports, its role in transmitting the phishing email makes it an important Indicator of Compromise.
 
-The collected indicators provide valuable intelligence for future detection, email filtering, and incident response activities.
+---
+
+# ✅ Conclusion
+
+The Threat Intelligence phase successfully validated the Indicators of Compromise identified throughout the investigation.
+
+Although some public reputation services reported limited intelligence, the combined evidence from header analysis, routing analysis, sender analysis, authentication analysis, content analysis, URL analysis, and Threat Intelligence strongly supports the conclusion that this email represents a **credential harvesting phishing campaign**.
+
+The campaign relied on trusted branding, separate SMTP infrastructure, and attacker-controlled web infrastructure to deceive recipients and redirect them to phishing resources.
+
+The collected Indicators of Compromise can be used for:
+
+- Threat Hunting
+- SIEM Detection Rules
+- Email Security Filtering
+- DNS and Firewall Blocking
+- Future Incident Response Activities
+
+---
+
+# ➡️ Next Phase
+
+Continue to **Phase 11 – MITRE ATT&CK Mapping** to map the observed attacker behavior to the MITRE ATT&CK Enterprise framework and identify the tactics and techniques used throughout the phishing campaign.
