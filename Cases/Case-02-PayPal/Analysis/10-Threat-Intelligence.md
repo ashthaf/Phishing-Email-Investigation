@@ -225,7 +225,7 @@ The domain was further examined using MXToolbox to validate its DNS and email se
 
 ### MX Record
 
-![MX Record](../Screenshots/threat-intelligence/mxtoolbox-mx.png)
+![MX Record](../Screenshots/threat-intelligence/mx.png)
 
 ### Observation
 
@@ -237,7 +237,7 @@ This indicates that the domain is not configured to receive email, which is unus
 
 ### SPF Record
 
-![SPF](../Screenshots/threat-intelligence/mxtoolbox-spf.png)
+![SPF](../Screenshots/threat-intelligence/spf.png)
 
 ### Observation
 
@@ -249,7 +249,7 @@ Without an SPF policy, the domain does not define which mail servers are authori
 
 ### DMARC Record
 
-![DMARC](../Screenshots/threat-intelligence/mxtoolbox-dmarc.png)
+![DMARC](../Screenshots/threat-intelligence/dmarc.png)
 
 ### Observation
 
@@ -324,7 +324,7 @@ whois stayfriends.de
 
 ### Screenshot
 
-![WHOIS](../Screenshots/threat-intelligence/whois-stayfriends.png)
+![WHOIS](../Screenshots/threat-intelligence/who-is-stayfriends.png)
 
 ### Observation
 
