@@ -10,28 +10,26 @@
 
 # 📖 Overview
 
-The purpose of this phase is to validate the Indicators of Compromise (IOCs) extracted during the previous phases of the investigation by leveraging multiple Threat Intelligence and Open-Source Intelligence (OSINT) platforms.
+The objective of this phase is to validate the Indicators of Compromise (IOCs) extracted during the previous investigation by leveraging multiple threat intelligence platforms. Each identified domain and IP address is analyzed using open-source intelligence (OSINT) services to determine its reputation, ownership, infrastructure, and potential association with phishing or malicious activity.
 
-Each identified domain and IP address is analyzed to determine its reputation, ownership, infrastructure, and potential association with phishing or other malicious activities. The intelligence gathered during this phase provides additional context that helps determine whether the extracted indicators are trustworthy, suspicious, or malicious.
+The intelligence gathered during this phase helps determine whether the extracted indicators are trustworthy, suspicious, or malicious, providing additional context for the phishing investigation.
 
 ---
 
 # 🎯 Objectives
 
-The objectives of this phase are to:
-
 - Validate the extracted Indicators of Compromise (IOCs).
 - Investigate suspicious domains and IP addresses.
 - Verify domain ownership and registration details.
-- Analyze infrastructure using public OSINT platforms.
+- Analyze infrastructure using multiple OSINT platforms.
 - Correlate intelligence findings with previous forensic analysis.
-- Assess the overall credibility of the phishing infrastructure.
+- Assess the overall reputation of the phishing infrastructure.
 
 ---
 
-# 🛠️ Intelligence Sources
+# Intelligence Sources
 
-The following Threat Intelligence platforms were used during this investigation.
+The following threat intelligence platforms were used during this investigation:
 
 | Platform | Purpose |
 |----------|---------|
@@ -40,26 +38,26 @@ The following Threat Intelligence platforms were used during this investigation.
 | Cisco Talos Intelligence | Domain and IP reputation lookup |
 | AbuseIPDB | Abuse reports for IP addresses |
 | WHOIS | Domain registration information |
-| MXToolbox | DNS, MX, SPF, and DMARC analysis |
+| MXToolbox | DNS, MX, SPF and DMARC analysis |
 
 ---
 
-# 🔍 Investigated Indicators
+# Investigated Indicators
 
 | Indicator | Type |
 |-----------|------|
 | easilett.com | Domain |
 | stayfriends.de | Sender Domain |
-| messaggerocappuccino.it | Return-Path Domain |
+| messagsgerocappuccino.it | Return-Path Domain |
 | 77.91.100.118 | Source IP Address |
 
 ---
 
-# 🌐 Domain Investigation – easilett.com
+# Domain Investigation – easilett.com
 
 ## Objective
 
-During URL extraction, the phishing email contained a hyperlink pointing to **easilett.com**. Since phishing campaigns commonly direct victims to attacker-controlled websites, the domain was investigated to determine its legitimacy, reputation, hosting information, and associated infrastructure.
+During URL extraction, the phishing email contained a hyperlink pointing to **easilett.com**. Since users are encouraged to click embedded links in phishing campaigns, the domain was investigated to determine its legitimacy, reputation, hosting information, and associated infrastructure.
 
 ---
 
@@ -73,7 +71,7 @@ The domain was submitted to VirusTotal for reputation analysis.
 
 ### Observation
 
-VirusTotal reported that **1 out of 91 security vendors** classified the domain as phishing, while the remaining vendors did not detect malicious activity.
+VirusTotal reported that **1 out of 91 security vendors** classified the domain as phishing while the remaining vendors did not detect malicious activity.
 
 Although the overall detection rate is low, even a single phishing detection is significant because phishing domains are often short-lived and may evade detection shortly after registration.
 
@@ -199,13 +197,15 @@ Cisco Talos classified the domain with a **Neutral** web reputation.
 No established malicious reputation was identified at the time of analysis.
 
 However, a neutral reputation should not automatically be considered safe, especially when the domain is directly associated with phishing activity.
+---
+
 # AbuseIPDB Analysis
 
 The resolved IP address associated with **easilett.com** was investigated using AbuseIPDB.
 
 ### Screenshot
 
-![AbuseIPDB](../Screenshots/threat-intelligence/abuseipdb.png)
+![AbuseIPDB](../Screenshots/threat-intelligence/abuseipdb-domain.png)
 
 ### Observation
 
@@ -223,9 +223,11 @@ Although no abuse reports were available at the time of analysis, newly deployed
 
 The domain was further examined using MXToolbox to validate its DNS and email security configuration.
 
-### MX Record
+## MX Record
 
-![MX Record](../Screenshots/threat-intelligence/mx.png)
+### Screenshot
+
+![MX Record](../Screenshots/threat-intelligence/mxtoolbox-mx.png)
 
 ### Observation
 
@@ -235,9 +237,11 @@ This indicates that the domain is not configured to receive email, which is unus
 
 ---
 
-### SPF Record
+## SPF Record
 
-![SPF](../Screenshots/threat-intelligence/spf.png)
+### Screenshot
+
+![SPF Record](../Screenshots/threat-intelligence/mxtoolbox-spf.png)
 
 ### Observation
 
@@ -247,9 +251,11 @@ Without an SPF policy, the domain does not define which mail servers are authori
 
 ---
 
-### DMARC Record
+## DMARC Record
 
-![DMARC](../Screenshots/threat-intelligence/dmarc.png)
+### Screenshot
+
+![DMARC Record](../Screenshots/threat-intelligence/mxtoolbox-dmarc.png)
 
 ### Observation
 
@@ -278,7 +284,7 @@ When correlated with the email content and routing analysis, **easilett.com** re
 
 ---
 
-# 🌐 Sender Domain Investigation – stayfriends.de
+# Sender Domain Investigation – stayfriends.de
 
 The visible sender domain (**stayfriends.de**) was investigated to determine whether it had an established malicious reputation or represented legitimate infrastructure that may have been abused during the phishing campaign.
 
@@ -324,7 +330,7 @@ whois stayfriends.de
 
 ### Screenshot
 
-![WHOIS](../Screenshots/threat-intelligence/who-is-stayfriends.png)
+![WHOIS](../Screenshots/threat-intelligence/whois-stayfriends.png)
 
 ### Observation
 
@@ -347,11 +353,11 @@ This suggests that the sender domain may represent legitimate infrastructure tha
 Accordingly, the sender domain should always be evaluated alongside authentication, routing, sender, and content analysis rather than in isolation.
 
 ---
-# 🌐 Return-Path Domain Investigation – messaggerocappuccino.it
+# Return-Path Domain Investigation – messagsgerocappuccino.it
 
 The Return-Path domain identified during the header analysis was investigated independently because it differs from the visible sender domain.
 
-The Return-Path represents the SMTP envelope sender used during email delivery and often provides valuable insight into the actual infrastructure responsible for transmitting the message.
+The Return-Path represents the SMTP envelope sender used during email delivery and often provides valuable insight into the infrastructure responsible for transmitting the email.
 
 ---
 
@@ -360,7 +366,7 @@ The Return-Path represents the SMTP envelope sender used during email delivery a
 ### Command
 
 ```bash
-whois messaggerocappuccino.it
+whois messagsgerocappuccino.it
 ```
 
 ### Screenshot
@@ -369,11 +375,11 @@ whois messaggerocappuccino.it
 
 ### Observation
 
-WHOIS records confirm that **messaggerocuccino.it** is a registered and publicly resolvable domain.
+WHOIS records were collected for the Return-Path domain to determine its registration status and ownership information.
 
-Although the domain is legitimately registered, registration alone does not establish trustworthiness. Threat actors frequently register or abuse domains that appear legitimate to support phishing operations.
+Although the domain is publicly registered, registration alone does not establish legitimacy. Threat actors frequently register or abuse domains that appear legitimate to support phishing operations.
 
-The Return-Path domain should therefore be evaluated together with the routing analysis, authentication results, and sender analysis rather than in isolation.
+The Return-Path domain should therefore be evaluated together with the routing analysis, authentication results, and sender analysis.
 
 ---
 
@@ -417,7 +423,7 @@ When correlated with the routing analysis, the differing Return-Path strengthens
 
 ---
 
-# 🌍 Source IP Investigation – 77.91.100.118
+# Source IP Investigation – 77.91.100.118
 
 The originating IP address identified during routing analysis was investigated using multiple Threat Intelligence platforms.
 
@@ -433,17 +439,13 @@ The objective was to determine whether the IP address had previously been associ
 
 ### Observation
 
-AbuseIPDB reported the following:
+The IP address currently has:
 
-- Abuse Confidence Score: **0%**
-- Public Reports: **0**
-- ISP: **UOWH LLC**
-- Usage Type: **Data Center / Web Hosting / Transit**
-- ASN: **AS212171**
-- Country: **Netherlands**
-- City: **Amsterdam**
+- **0 Public Abuse Reports**
+- **0% Abuse Confidence Score**
+- Hosted by a commercial hosting provider.
 
-Although no public abuse reports were available at the time of analysis, the IP address was directly observed transmitting the phishing email and therefore remains an important Indicator of Compromise.
+Although no abuse reports were available at the time of analysis, the IP address was directly observed transmitting the phishing email and therefore remains an important Indicator of Compromise.
 
 ---
 
@@ -457,7 +459,7 @@ Although no public abuse reports were available at the time of analysis, the IP 
 
 VirusTotal reported no significant detections for the originating IP address.
 
-While the IP address currently maintains a limited public reputation, this does not reduce its evidentiary value because it was extracted directly from the email headers.
+No major security vendors currently classify the IP address as malicious.
 
 ---
 
@@ -485,40 +487,47 @@ Threat actors commonly use rented VPS or hosting providers that accumulate littl
 
 ---
 
-# 📊 IOC Reputation Summary
+# IOC Reputation Summary
 
 | Indicator | Type | Reputation | Assessment |
 |-----------|------|------------|------------|
-| easilett.com | Domain | Mixed (1/91 VirusTotal Detection) | Suspicious Phishing Infrastructure |
-| stayfriends.de | Sender Domain | Favorable | Legitimate Domain Possibly Abused |
-| messaggerocappuccino.it | Return-Path Domain | Limited Reputation | Suspicious |
-| 77.91.100.118 | Source IP | No Public Abuse Reports | Suspicious Hosting Infrastructure |
+| easilett.com | Domain | Mixed Reputation | Suspicious |
+| stayfriends.de | Sender Domain | Favorable | Legitimate Infrastructure |
+| messagsgerocappuccino.it | Return-Path Domain | Limited Intelligence | Suspicious |
+| 77.91.100.118 | Source IP | No Public Abuse Reports | Suspicious Infrastructure |
 
 ---
 
-# 💡 Overall Threat Intelligence Assessment
+# Overall Threat Intelligence Assessment
 
-The threat intelligence investigation indicates that the phishing campaign relied on a combination of legitimate and suspicious infrastructure.
+The Threat Intelligence investigation indicates that the phishing campaign relied on a combination of legitimate and suspicious infrastructure.
 
-The visible sender domain (**stayfriends.de**) appears to be a legitimate and publicly registered domain, suggesting that the attacker leveraged trusted infrastructure to increase the credibility of the phishing email.
+The visible sender domain appears to be legitimate and publicly registered, while the phishing email itself impersonates PayPal.
 
-The Return-Path domain (**messaggerocappuccino.it**) differs from the visible sender domain and was used during SMTP delivery, providing additional evidence that separate infrastructure was involved in transmitting the message.
+The Return-Path domain differs from the visible sender domain and represents separate SMTP infrastructure involved in message delivery.
 
-The domain **easilett.com** emerged as the primary phishing infrastructure. It was embedded throughout the HTML email, hosted external resources, and redirected users away from legitimate PayPal services. Despite limited detections across public reputation platforms, the technical evidence collected throughout this investigation strongly supports classifying the domain as malicious.
+The domain **easilett.com** remains the strongest Indicator of Compromise because it was directly embedded within the phishing email and hosted the phishing hyperlinks delivered to recipients.
 
-Finally, the originating IP address (**77.91.100.118**) was extracted directly from the email headers. Although it currently has no public abuse reports, its role in transmitting the phishing email makes it an important Indicator of Compromise.
+Although several public reputation platforms reported limited detections, the combined evidence from previous investigation phases strongly supports classifying this campaign as phishing.
 
 ---
 
-# ✅ Conclusion
+# Conclusion
 
-The Threat Intelligence phase successfully validated the Indicators of Compromise identified throughout the investigation.
+Threat Intelligence successfully validated the Indicators of Compromise identified during the investigation.
 
-Although some public reputation services reported limited intelligence, the combined evidence from header analysis, routing analysis, sender analysis, authentication analysis, content analysis, URL analysis, and Threat Intelligence strongly supports the conclusion that this email represents a **credential harvesting phishing campaign**.
+Although several public reputation services reported limited detections, the combined evidence obtained from:
 
-The campaign relied on trusted branding, separate SMTP infrastructure, and attacker-controlled web infrastructure to deceive recipients and redirect them to phishing resources.
+- Header Analysis
+- Routing Analysis
+- Authentication Analysis
+- Sender Analysis
+- Content Analysis
+- URL Analysis
 
-The collected Indicators of Compromise can be used for:
+strongly supports the conclusion that this email represents a phishing campaign.
+
+The collected Indicators of Compromise should be retained for:
 
 - Threat Hunting
 - SIEM Detection Rules
@@ -528,6 +537,6 @@ The collected Indicators of Compromise can be used for:
 
 ---
 
-# ➡️ Next Phase
+# Next Phase
 
-Continue to **Phase 11 – MITRE ATT&CK Mapping** to map the observed attacker behavior to the MITRE ATT&CK Enterprise framework and identify the tactics and techniques used throughout the phishing campaign.
+Continue to **Phase 11 – MITRE ATT&CK Mapping** to map the observed attacker behavior to the MITRE ATT&CK Enterprise Framework and identify the tactics and techniques used throughout the phishing campaign.
