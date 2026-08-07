@@ -1,27 +1,49 @@
-# Attachment Analysis
+# 📎 Phase 08 – Attachment Analysis
 
-## Objective
-
-The purpose of this phase is to determine whether the phishing email contains any malicious file attachments such as PDF documents, Microsoft Office files, archives, executables, or scripts that could be used to deliver malware.
+![Status](https://img.shields.io/badge/Status-Completed-44CC11)
+![Phase](https://img.shields.io/badge/Phase-08-blue)
+![Category](https://img.shields.io/badge/Category-Attachment%20Analysis-red)
+![Case](https://img.shields.io/badge/Case-02-blue)
+![Evidence](https://img.shields.io/badge/Evidence-Email%20Attachments-orange)
 
 ---
 
-## Methodology
+# 📖 Overview
+
+The purpose of this phase was to determine whether the phishing email contained any malicious file attachments that could be used to deliver malware. The investigation focused on identifying common attachment types such as PDF documents, Microsoft Office files, archives, executables, scripts, and other potentially malicious files.
+
+The extracted email contents and MIME headers were examined to verify whether the phishing campaign relied on file-based malware delivery or solely on embedded HTML content.
+
+---
+
+# 🎯 Objectives
+
+The objectives of this phase were to:
+
+- Identify any extracted attachment files.
+- Search for common malicious attachment types.
+- Review MIME headers for attachment indicators.
+- Verify the email's Content-Type.
+- Determine whether the phishing campaign relied on malware attachments or credential harvesting.
+
+---
+
+# 🔍 Methodology
 
 The extracted email contents were examined using Linux command-line utilities. The investigation included:
 
-- Listing extracted files
-- Searching for common attachment types
-- Reviewing MIME headers
-- Checking for attachment-related headers
+- Listing extracted files.
+- Searching for common attachment types.
+- Reviewing MIME headers.
+- Checking for attachment-related headers.
 
 ---
 
-## Step 1 – List Extracted Files
+# 📂 Step 1 – List Extracted Files
 
 The extracted email directory was inspected.
 
-**Command**
+### Command
 
 ```bash
 ls -lah
@@ -31,17 +53,17 @@ ls -lah
 
 Only one HTML file was extracted.
 
-**Screenshot**
+### Screenshot
 
 ![Attachment Files](../Screenshots/Attachement-analysis/Attachemnt-files.png)
 
 ---
 
-## Step 2 – Search for Attachments
+# 📂 Step 2 – Search for Attachments
 
-A recursive search was performed.
+A recursive search was performed to identify all extracted files.
 
-**Command**
+### Command
 
 ```bash
 find . -type f
@@ -51,17 +73,17 @@ find . -type f
 
 Only the HTML email body was present.
 
-```
+```text
 ./phishing-email.html
 ```
 
-**Screenshot**
+### Screenshot
 
 ![Attachment Search](../Screenshots/Attachement-analysis/Attachement-search.png)
 
 ---
 
-## Step 3 – Search for Common Attachment Types
+# 📄 Step 3 – Search for Common Attachment Types
 
 The following attachment types were searched:
 
@@ -76,7 +98,7 @@ The following attachment types were searched:
 - ISO images
 - Windows shortcut files
 
-Example:
+### Example Commands
 
 ```bash
 find . -name "*.pdf"
@@ -90,17 +112,17 @@ find . -name "*.exe"
 
 No attachment files were identified.
 
-**Screenshot**
+### Screenshot
 
 ![Attachment Types](../Screenshots/Attachement-analysis/Attachement-types.png)
 
 ---
 
-## Step 4 – Check Content-Disposition
+# 📑 Step 4 – Check Content-Disposition
 
 The email headers were inspected to determine whether any MIME attachment sections were present.
 
-**Command**
+### Command
 
 ```bash
 grep -i "Content-Disposition" sample-1407.eml
@@ -116,17 +138,17 @@ grep -i "attachment" sample-1407.eml
 
 No attachment-related headers were found.
 
-**Screenshot**
+### Screenshot
 
 ![Content Disposition](../Screenshots/Attachement-analysis/content-disposition.png)
 
 ---
 
-## Step 5 – Verify MIME Content-Type
+# 📧 Step 5 – Verify MIME Content-Type
 
 The MIME type of the email was examined.
 
-**Command**
+### Command
 
 ```bash
 grep -i "Content-Type" sample-1407.eml
@@ -136,22 +158,22 @@ grep -i "Content-Type" sample-1407.eml
 
 The email contains:
 
-```
+```text
 Content-Type: text/html; charset="UTF-8"
 ```
 
 This confirms that the email consists solely of an HTML message body.
 
-**Screenshot**
+### Screenshot
 
 ![Content Type](../Screenshots/Attachement-analysis/content-type.png)
 
 ---
 
-# Findings
+# 📊 Findings
 
-| Item | Status |
-|------|--------|
+| Indicator | Result |
+|-----------|--------|
 | HTML Email Body | ✅ Present |
 | PDF Attachments | ❌ Not Found |
 | Microsoft Office Documents | ❌ Not Found |
@@ -165,10 +187,24 @@ This confirms that the email consists solely of an HTML message body.
 
 ---
 
-# Conclusion
+# 💡 Analyst Assessment
 
-The investigation confirmed that the phishing email does **not** contain any file attachments or embedded malware payloads. The email is composed entirely of an HTML message (`text/html`) and does not include MIME attachment sections such as `Content-Disposition: attachment`.
+The attachment analysis confirmed that the phishing email does not rely on file-based malware delivery.
 
-Instead of distributing malware through attached files, the threat actor attempts to compromise victims by embedding malicious hyperlinks within the HTML content. This behavior is characteristic of a **credential harvesting phishing campaign**, where users are redirected to external websites designed to steal sensitive information rather than execute malicious files.
+No attachments, MIME attachment sections, or executable content were identified during the investigation. Instead, the email consists entirely of HTML content designed to persuade recipients to interact with embedded hyperlinks.
+
+This behavior is consistent with modern **credential harvesting phishing campaigns**, where attackers avoid malicious attachments to reduce detection rates and instead redirect victims to attacker-controlled websites for credential theft.
 
 ---
+
+# ✅ Conclusion
+
+The investigation confirmed that the phishing email does **not** contain any file attachments or embedded malware payloads. The message is composed entirely of an HTML email (`text/html`) and does not include MIME attachment sections such as `Content-Disposition: attachment`.
+
+Rather than distributing malware through attached files, the threat actor relies on embedded hyperlinks within the HTML content to redirect victims to external infrastructure. This approach is characteristic of a **credential harvesting phishing campaign**, where the primary objective is to obtain sensitive information rather than execute malicious code on the victim's system.
+
+---
+
+# ➡️ Next Phase
+
+Continue to **Phase 09 – IOC Extraction** to identify and document the Indicators of Compromise (IOCs) collected throughout the investigation for use in threat hunting, detection engineering, and incident response.
