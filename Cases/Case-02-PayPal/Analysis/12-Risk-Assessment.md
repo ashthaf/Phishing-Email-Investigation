@@ -1,8 +1,27 @@
-# Risk Assessment
+# ⚠️ Phase 12 – Risk Assessment
 
-## Objective
+![Status](https://img.shields.io/badge/Status-Completed-44CC11)
+![Phase](https://img.shields.io/badge/Phase-12-blue)
+![Category](https://img.shields.io/badge/Category-Risk%20Assessment-red)
+![Case](https://img.shields.io/badge/Case-02-blue)
+![Severity](https://img.shields.io/badge/Overall%20Risk-High-red)
 
-The objective of this phase is to evaluate the overall security risk posed by the phishing email based on the investigation findings. The assessment considers the likelihood of a successful attack, the potential impact on the organization, and the effectiveness of the attack techniques used by the threat actor.
+---
+
+# 📖 Overview
+
+This phase evaluates the overall security risk posed by the phishing email based on the evidence collected throughout the investigation. The assessment considers the likelihood of a successful attack, the potential business impact, and the effectiveness of the attack techniques used by the threat actor.
+
+---
+
+# 🎯 Objectives
+
+- Evaluate the overall risk posed by the phishing campaign.
+- Assess the likelihood of successful exploitation.
+- Determine the potential impact on users and organizational assets.
+- Evaluate the attack using the CIA Triad.
+- Summarize the overall severity of the incident.
+- Provide a final risk rating based on the investigation findings.
 
 ---
 
@@ -22,7 +41,7 @@ The assessment is based on the following factors:
 # Risk Matrix
 
 | Category | Rating | Justification |
-|----------|--------|---------------|
+| -------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Likelihood | High | The phishing email uses convincing branding and persuasive social engineering techniques to encourage user interaction. |
 | Business Impact | High | Successful credential theft could result in unauthorized access to user accounts and sensitive information. |
 | Confidentiality | High | Users may unknowingly disclose credentials or personal information to the attacker. |
@@ -74,7 +93,7 @@ If a recipient interacts with the phishing email and submits their credentials, 
 # Threat Severity
 
 | Category | Assessment |
-|----------|------------|
+| -------- | ------------------------------ |
 | Threat Type | Credential Harvesting Phishing |
 | Severity | High |
 | Confidence | High |
@@ -84,7 +103,7 @@ If a recipient interacts with the phishing email and submits their credentials, 
 
 ---
 
-# Analyst Assessment
+# 💡 Analyst Assessment
 
 The investigation determined that the phishing campaign poses a **High** security risk due to its convincing impersonation of the PayPal brand, the use of malicious infrastructure, and its reliance on social engineering techniques.
 
@@ -96,7 +115,7 @@ The combination of suspicious sender infrastructure, the identified phishing dom
 
 # Overall Risk Rating
 
-**High**
+## **High**
 
 The phishing campaign represents a significant threat to end users and organizations. If successful, the attack could lead to credential compromise, unauthorized account access, financial loss, and reputational damage.
 
@@ -104,8 +123,14 @@ Immediate defensive measures, including user awareness, email filtering, and dom
 
 ---
 
-# Conclusion
+# ✅ Conclusion
 
 Based on the investigation findings, threat intelligence analysis, and MITRE ATT&CK mapping, this phishing campaign has been assessed as **High Risk**.
 
 The campaign combines trusted branding, deceptive messaging, and attacker-controlled infrastructure to maximize the likelihood of user interaction. Although no malware payload was delivered, the potential impact of credential theft justifies prioritizing this incident for containment and remediation.
+
+---
+
+# ➡️ Next Phase
+
+Continue to **Phase 13 – Containment Recommendations** to outline the immediate and long-term defensive measures required to mitigate the phishing campaign and prevent similar attacks in the future.
