@@ -1,95 +1,137 @@
-# Evidence Notes
+# 📝 Investigation Notes
 
-## Overview
-
-This document contains analyst notes recorded during the evidence preservation phase of **CASE-02 – PayPal Gift Card Phishing Investigation**.
-
----
-
-# Evidence Summary
-
-| Property | Value |
-|----------|-------|
-| Case ID | CASE-02 |
-| Sample Name | sample-1407.eml |
-| Stored Name | phishing-email.eml |
-| File Type | RFC 822 Mail |
-| Investigation Platform | Kali Linux |
-| Analyst | Abdull Ashthaf CK |
+![Category](https://img.shields.io/badge/Category-Investigation%20Notes-blue)
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
 
 ---
 
-# Evidence Metadata
+# Purpose
 
-The following metadata was collected before beginning the investigation:
+This document contains investigation notes recorded throughout the analysis of the PayPal phishing email.
 
-- File information (`file`)
-- File metadata (`stat`)
-- MD5 hash
-- SHA256 hash
-
-These values were documented to ensure evidence integrity.
+These notes summarize significant observations made during each phase of the investigation.
 
 ---
 
-# Evidence Source
+# Investigation Timeline
 
-The phishing email was obtained from a publicly available phishing email sample repository for educational and defensive research purposes.
+## Initial Triage
 
-The sample was selected because it impersonates the PayPal brand and demonstrates common phishing techniques suitable for forensic analysis.
-
----
-
-# Preservation Activities
-
-The following actions were completed:
-
-- Original email preserved.
-- Working copy created.
-- MD5 hash generated.
-- SHA256 hash generated.
-- Hash values verified.
-- Password-protected archive created.
-- Chain of custody documented.
+- Opened the phishing email in an isolated Kali Linux virtual machine.
+- Thunderbird blocked remote content automatically.
+- No attachments were observed.
+- Email impersonated the PayPal brand.
 
 ---
 
-# Initial Analyst Observations
+## Header Analysis
 
-Initial observations made before technical analysis:
-
-- Email impersonates the PayPal brand.
-- Subject attempts to attract user attention using a gift card promotion.
-- HTML formatting is present.
-- External resources are referenced.
-- Full technical analysis will determine whether the campaign attempts credential harvesting or another phishing objective.
-
-These observations represent preliminary findings and do not constitute the final investigation conclusion.
+- Successfully extracted the complete email header.
+- Multiple Received headers identified.
+- Return-Path differed from the visible sender.
+- Authentication headers were present.
 
 ---
 
-# Related Evidence
+## Routing Analysis
 
-- Original Email
-- Protected ZIP Archive
-- MD5 Hash
-- SHA256 Hash
-- File Metadata
-- Chain of Custody
+- Reconstructed the SMTP delivery path.
+- Email originated from messaggerocappuccino.it.
+- Message passed through Microsoft Exchange Online infrastructure.
+- No suspicious relay servers observed after Microsoft accepted the message.
 
 ---
 
-# Notes
+## Authentication Analysis
 
-Further evidence will be collected during:
+- SPF passed.
+- DKIM signature not present.
+- DMARC passed.
+- MX records verified.
+- WHOIS information collected.
 
-- Header Analysis
-- Routing Analysis
-- Authentication Analysis
-- Sender Analysis
-- Content Analysis
-- URL Analysis
-- Threat Intelligence
-- IOC Extraction
+---
 
-All findings will be documented in their respective investigation phases.
+## Sender Analysis
+
+- Visible sender differed from Return-Path.
+- Reply-To header not present.
+- Sender infrastructure investigated.
+
+---
+
+## Content Analysis
+
+- HTML phishing email.
+- German-language content.
+- Fake PayPal promotion.
+- Multiple embedded hyperlinks.
+- External images loaded from easilett.com.
+- Fake unsubscribe mechanism identified.
+
+---
+
+## URL Analysis
+
+- Extracted embedded URLs.
+- Investigated easilett.com.
+- DNS and WHOIS completed.
+- Threat Intelligence collected.
+
+---
+
+## Attachment Analysis
+
+- No attachments identified.
+- Email consisted only of HTML content.
+
+---
+
+## IOC Extraction
+
+Primary Indicators of Compromise:
+
+- service@stayfriends.de
+- return@messaggerocappuccino.it
+- easilett.com
+- 77.91.100.118
+
+---
+
+## Threat Intelligence
+
+Platforms consulted:
+
+- VirusTotal
+- URLScan.io
+- Cisco Talos
+- AbuseIPDB
+- MXToolbox
+- WHOIS
+
+---
+
+## MITRE ATT&CK Mapping
+
+Observed techniques included:
+
+- T1566 – Phishing
+- T1566.002 – Spearphishing Link
+- T1036 – Masquerading
+- T1204.001 – User Execution: Malicious Link
+- T1583.001 – Acquire Infrastructure: Domains
+- T1585.001 – Establish Accounts
+
+---
+
+## Final Assessment
+
+The investigation confirmed that the email was a **credential harvesting phishing campaign** targeting users through PayPal brand impersonation and malicious hyperlinks.
+
+No malware or malicious attachments were identified.
+
+---
+
+# Conclusion
+
+These notes document the major observations recorded throughout the investigation and provide a concise summary of the analytical process followed during the incident response workflow.
