@@ -56,7 +56,7 @@ The output confirmed that the extracted file contained the expected SMTP header 
 
 ### 📸 Screenshot
 
-*Insert verification screenshot.*
+![Received Headers](../Screenshots/header-analysis/header-extraction.png)
 
 ---
 
@@ -74,7 +74,7 @@ Verifying the line count helps ensure that the header was extracted completely w
 
 ### 📸 Screenshot
 
-*Insert screenshot.*
+![Received Headers](../Screenshots/header-analysis/header-line-count.png)
 
 ---
 
@@ -108,7 +108,7 @@ This represents the address displayed to the recipient and will be validated dur
 
 ### 📸 Screenshot
 
-*Insert screenshot.*
+![Received Headers](../Screenshots/header-analysis/from-header.png)
 
 ---
 
@@ -124,7 +124,7 @@ The subject uses persuasive language intended to encourage user interaction and 
 
 ### 📸 Screenshot
 
-*Insert screenshot.*
+![Received Headers](../Screenshots/header-analysis/subject-header.png)
 
 ---
 
@@ -136,7 +136,7 @@ MIME metadata will be referenced later during the Content Analysis phase.
 
 ### 📸 Screenshot
 
-*Insert screenshot.*
+![Received Headers](../Screenshots/header-analysis/mime-info.png)
 
 ---
 
@@ -161,7 +161,7 @@ This discrepancy requires additional validation through:
 
 ### 📸 Screenshot
 
-*Insert screenshot.*
+![Received Headers](../Screenshots/header-analysis/rp.png)
 
 ---
 
@@ -183,7 +183,7 @@ A detailed examination of these authentication mechanisms is provided in **Phase
 
 ### 📸 Screenshot
 
-*Insert screenshot.*
+![Received Headers](../Screenshots/header-analysis/Authentication-Results.png)
 
 ---
 
